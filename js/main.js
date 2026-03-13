@@ -65,39 +65,55 @@
 
   /* ============================================================
      INFINITE AUTO-SCROLL REVIEW CAROUSEL
+     – bidirectional, 4 cards desktop / 2 tablet / 1 mobile
+     – prev/next arrows + pause/play button
   ============================================================ */
   (function initInfiniteCarousel() {
-    var wrapper = qs('#reviewsCarouselWrapper');
-    var track   = qs('#infiniteTrack');
+    var wrapper    = qs('#reviewsCarouselWrapper');
+    var track      = qs('#infiniteTrack');
+    var prevBtn    = qs('#reviewPrev');
+    var nextBtn    = qs('#reviewNext');
+    var pauseBtn   = qs('#carouselPause');
+    var pauseIcon  = qs('#pauseIcon');
     if (!wrapper || !track) return;
 
-    var GAP           = 24;   // matches CSS gap: 1.5rem
-    var SCROLL_SPEED  = 4000; // ms between advances
-    var TRANSITION_MS = 600;  // ms for the slide animation
+    var GAP           = 24;   // px — matches CSS gap 1.5rem
+    var SCROLL_SPEED  = 2000; // ms between auto-advances
+    var TRANSITION_MS = 550;  // ms for slide animation
 
-    // Snapshot original cards before cloning
-    var origCards   = Array.prototype.slice.call(track.querySelectorAll('.review-card'));
-    var totalOrig   = origCards.length;
-    var currentIdx  = 0;
-    var autoTimer   = null;
-    var jumping     = false;  // true during the instant snap-back
+    // ---- Snapshot originals, then clone on both sides ----
+    var origCards = Array.prototype.slice.call(track.querySelectorAll('.review-card'));
+    var totalOrig = origCards.length;
 
-    // Clone all cards and append — enables seamless loop
+    // Prepend clones (copy of originals at the beginning, for seamless backward)
+    origCards.slice().reverse().forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.insertBefore(clone, track.firstChild);
+    });
+    // Append clones (copy of originals at the end, for seamless forward)
     origCards.forEach(function (card) {
       var clone = card.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
     });
 
+    // Structure: [0..N-1 prepended clones][N..2N-1 originals][2N..3N-1 appended clones]
+    // Start displaying at index N (first real card)
+    var currentIdx  = totalOrig;
+    var autoTimer   = null;
+    var isPlaying   = true;
+    var isBusy      = false; // guard against overlapping transitions
+
     function getVisible() {
       if (window.innerWidth <= 480) return 1;
       if (window.innerWidth <= 900) return 2;
-      return 3;
+      return 4;
     }
 
     function cardWidth() {
-      var visible = getVisible();
-      return (wrapper.offsetWidth - GAP * (visible - 1)) / visible;
+      var vis = getVisible();
+      return (wrapper.offsetWidth - GAP * (vis - 1)) / vis;
     }
 
     function applyWidths() {
@@ -120,46 +136,101 @@
       currentIdx = idx;
     }
 
-    function advance() {
-      if (jumping) return;
-      var next = currentIdx + 1;
-      moveTo(next, true);
-
-      // Once the animated slide lands on the first clone set,
-      // snap instantly back to the matching original position.
-      setTimeout(function () {
-        if (currentIdx >= totalOrig) {
-          jumping = true;
-          moveTo(0, false);
-          // Force a reflow so the browser registers the no-transition state
-          void track.offsetWidth;
-          jumping = false;
-        }
-      }, TRANSITION_MS + 20);
+    function afterTransition(fn) {
+      setTimeout(fn, TRANSITION_MS + 30);
     }
 
+    // ---- Forward ----
+    function advance() {
+      if (isBusy) return;
+      isBusy = true;
+      moveTo(currentIdx + 1, true);
+      afterTransition(function () {
+        // Snapped past the appended clones → jump back to the originals
+        if (currentIdx >= totalOrig * 2) {
+          moveTo(totalOrig, false);
+          void track.offsetWidth;
+        }
+        isBusy = false;
+      });
+    }
+
+    // ---- Backward ----
+    function retreat() {
+      if (isBusy) return;
+      isBusy = true;
+      moveTo(currentIdx - 1, true);
+      afterTransition(function () {
+        // Snapped before the originals → jump to the matching position in the originals
+        if (currentIdx < totalOrig) {
+          moveTo(totalOrig * 2 - 1, false);
+          void track.offsetWidth;
+        }
+        isBusy = false;
+      });
+    }
+
+    // ---- Auto-play ----
     function startAuto() {
       clearInterval(autoTimer);
       autoTimer = setInterval(advance, SCROLL_SPEED);
     }
     function stopAuto() { clearInterval(autoTimer); }
 
-    // Pause on hover so users can read
-    wrapper.addEventListener('mouseenter', stopAuto);
-    wrapper.addEventListener('mouseleave', startAuto);
+    // ---- Pause / Play button ----
+    function setPaused(paused) {
+      isPlaying = !paused;
+      if (pauseIcon) {
+        pauseIcon.className = paused ? 'fa-solid fa-play' : 'fa-solid fa-pause';
+      }
+      if (pauseBtn) {
+        pauseBtn.setAttribute('aria-label', paused ? 'Spela automatisk scrollning' : 'Pausa automatisk scrollning');
+        pauseBtn.title = paused ? 'Spela' : 'Pausa';
+      }
+      paused ? stopAuto() : startAuto();
+    }
 
-    // Touch / swipe support
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', function () {
+        setPaused(isPlaying); // toggle
+      });
+    }
+
+    // ---- Arrow buttons ----
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        retreat();
+        if (isPlaying) { stopAuto(); startAuto(); } // reset interval
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        advance();
+        if (isPlaying) { stopAuto(); startAuto(); }
+      });
+    }
+
+    // ---- Pause on hover (carousel wrapper + arrow buttons) ----
+    var hoverEls = [wrapper, prevBtn, nextBtn].filter(Boolean);
+    hoverEls.forEach(function (el) {
+      el.addEventListener('mouseenter', function () { if (isPlaying) stopAuto(); });
+      el.addEventListener('mouseleave', function () { if (isPlaying) startAuto(); });
+    });
+
+    // ---- Touch / swipe ----
     var touchX = 0;
     wrapper.addEventListener('touchstart', function (e) {
       touchX = e.changedTouches[0].clientX;
-      stopAuto();
+      if (isPlaying) stopAuto();
     }, { passive: true });
     wrapper.addEventListener('touchend', function (e) {
-      if (e.changedTouches[0].clientX - touchX < -40) advance();
-      startAuto();
+      var diff = touchX - e.changedTouches[0].clientX;
+      if (diff > 40)       advance();
+      else if (diff < -40) retreat();
+      if (isPlaying) startAuto();
     }, { passive: true });
 
-    // Recalculate card sizes on resize
+    // ---- Resize ----
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
@@ -169,9 +240,9 @@
       }, 150);
     });
 
-    // Kick off
+    // ---- Init ----
     applyWidths();
-    moveTo(0, false);
+    moveTo(currentIdx, false);
     startAuto();
   })();
 
