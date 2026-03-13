@@ -64,168 +64,115 @@
   }
 
   /* ============================================================
-     REVIEW CAROUSEL
+     INFINITE AUTO-SCROLL REVIEW CAROUSEL
   ============================================================ */
-  (function initCarousel() {
-    const track    = qs('#reviewsTrack');
-    const prevBtn  = qs('#reviewPrev');
-    const nextBtn  = qs('#reviewNext');
-    const dotsWrap = qs('#carouselDots');
+  (function initInfiniteCarousel() {
+    var wrapper = qs('#reviewsCarouselWrapper');
+    var track   = qs('#infiniteTrack');
+    if (!wrapper || !track) return;
 
-    if (!track || !prevBtn || !nextBtn) return;
+    var GAP           = 24;   // matches CSS gap: 1.5rem
+    var SCROLL_SPEED  = 4000; // ms between advances
+    var TRANSITION_MS = 600;  // ms for the slide animation
 
-    const cards       = qsa('.review-card', track);
-    const totalCards  = cards.length;
-    let currentIndex  = 0;
-    let autoplayTimer = null;
-    let cardsVisible  = getCardsVisible();
+    // Snapshot original cards before cloning
+    var origCards   = Array.prototype.slice.call(track.querySelectorAll('.review-card'));
+    var totalOrig   = origCards.length;
+    var currentIdx  = 0;
+    var autoTimer   = null;
+    var jumping     = false;  // true during the instant snap-back
 
-    function getCardsVisible() {
-      if (window.innerWidth <= 600)  return 1;
-      if (window.innerWidth <= 900)  return 2;
-      if (window.innerWidth <= 1100) return 3;
-      return 4;
+    // Clone all cards and append — enables seamless loop
+    origCards.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
+
+    function getVisible() {
+      if (window.innerWidth <= 480) return 1;
+      if (window.innerWidth <= 900) return 2;
+      return 3;
     }
 
-    function totalPages() {
-      return Math.ceil(totalCards / cardsVisible);
+    function cardWidth() {
+      var visible = getVisible();
+      return (wrapper.offsetWidth - GAP * (visible - 1)) / visible;
     }
 
-    // Build dots
-    function buildDots() {
-      if (!dotsWrap) return;
-      dotsWrap.innerHTML = '';
-      const pages = totalPages();
-      for (let i = 0; i < pages; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', 'Sida ' + (i + 1) + ' av recensioner');
-        dot.setAttribute('aria-selected', String(i === 0));
-        dot.dataset.index = i;
-        dot.addEventListener('click', function () {
-          goTo(parseInt(this.dataset.index, 10));
-          resetAutoplay();
-        });
-        dotsWrap.appendChild(dot);
-      }
-    }
-
-    function updateDots() {
-      if (!dotsWrap) return;
-      const page = currentPage();
-      qsa('.carousel-dot', dotsWrap).forEach(function (dot, i) {
-        const active = i === page;
-        dot.classList.toggle('active', active);
-        dot.setAttribute('aria-selected', String(active));
+    function applyWidths() {
+      var w = cardWidth();
+      track.querySelectorAll('.review-card').forEach(function (c) {
+        c.style.width    = w + 'px';
+        c.style.minWidth = w + 'px';
       });
     }
 
-    function currentPage() {
-      return Math.round(currentIndex / cardsVisible);
+    function offsetForIndex(idx) {
+      return idx * (cardWidth() + GAP);
     }
 
-    function goTo(page) {
-      const pages = totalPages();
-      page = Math.max(0, Math.min(page, pages - 1));
-      currentIndex = page * cardsVisible;
-      // Clamp to valid index
-      const maxIndex = Math.max(0, totalCards - cardsVisible);
-      currentIndex   = Math.min(currentIndex, maxIndex);
-      applyTransform();
-      updateDots();
-      updateButtons();
+    function moveTo(idx, animate) {
+      track.style.transition = animate
+        ? 'transform ' + TRANSITION_MS + 'ms cubic-bezier(0.4, 0, 0.2, 1)'
+        : 'none';
+      track.style.transform = 'translateX(-' + offsetForIndex(idx) + 'px)';
+      currentIdx = idx;
     }
 
-    function applyTransform() {
-      // Calculate card width + gap dynamically
-      if (cards.length === 0) return;
-      const card    = cards[0];
-      const style   = getComputedStyle(track);
-      const gap     = parseFloat(style.gap) || 24;
-      const percent = (card.offsetWidth + gap) * currentIndex;
-      track.style.transform = 'translateX(-' + percent + 'px)';
+    function advance() {
+      if (jumping) return;
+      var next = currentIdx + 1;
+      moveTo(next, true);
+
+      // Once the animated slide lands on the first clone set,
+      // snap instantly back to the matching original position.
+      setTimeout(function () {
+        if (currentIdx >= totalOrig) {
+          jumping = true;
+          moveTo(0, false);
+          // Force a reflow so the browser registers the no-transition state
+          void track.offsetWidth;
+          jumping = false;
+        }
+      }, TRANSITION_MS + 20);
     }
 
-    function updateButtons() {
-      const page  = currentPage();
-      const pages = totalPages();
-      prevBtn.disabled = page === 0;
-      nextBtn.disabled = page >= pages - 1;
-      prevBtn.style.opacity = page === 0 ? '0.4' : '1';
-      nextBtn.style.opacity = page >= pages - 1 ? '0.4' : '1';
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(advance, SCROLL_SPEED);
     }
+    function stopAuto() { clearInterval(autoTimer); }
 
-    function prev() {
-      const page = currentPage();
-      if (page > 0) goTo(page - 1);
-    }
+    // Pause on hover so users can read
+    wrapper.addEventListener('mouseenter', stopAuto);
+    wrapper.addEventListener('mouseleave', startAuto);
 
-    function next() {
-      const page  = currentPage();
-      const pages = totalPages();
-      if (page < pages - 1) goTo(page + 1);
-      else goTo(0); // Loop back for autoplay
-    }
-
-    function resetAutoplay() {
-      clearInterval(autoplayTimer);
-      autoplayTimer = setInterval(next, 5000);
-    }
-
-    prevBtn.addEventListener('click', function () { prev(); resetAutoplay(); });
-    nextBtn.addEventListener('click', function () { next(); resetAutoplay(); });
-
-    // Keyboard navigation on carousel
-    track.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft')  { prev(); resetAutoplay(); }
-      if (e.key === 'ArrowRight') { next(); resetAutoplay(); }
-    });
-
-    // Touch/swipe support
-    let touchStartX = 0;
-    let touchEndX   = 0;
-    track.addEventListener('touchstart', function (e) {
-      touchStartX = e.changedTouches[0].clientX;
+    // Touch / swipe support
+    var touchX = 0;
+    wrapper.addEventListener('touchstart', function (e) {
+      touchX = e.changedTouches[0].clientX;
+      stopAuto();
     }, { passive: true });
-    track.addEventListener('touchend', function (e) {
-      touchEndX = e.changedTouches[0].clientX;
-      const diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 40) {
-        if (diff > 0) { next(); } else { prev(); }
-        resetAutoplay();
-      }
+    wrapper.addEventListener('touchend', function (e) {
+      if (e.changedTouches[0].clientX - touchX < -40) advance();
+      startAuto();
     }, { passive: true });
 
-    // Pause autoplay on hover/focus
-    track.addEventListener('mouseenter', function () { clearInterval(autoplayTimer); });
-    track.addEventListener('mouseleave', resetAutoplay);
-    track.addEventListener('focusin',    function () { clearInterval(autoplayTimer); });
-    track.addEventListener('focusout',   resetAutoplay);
-
-    // Recalculate on resize
-    let resizeTimer;
+    // Recalculate card sizes on resize
+    var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
-        const newVisible = getCardsVisible();
-        if (newVisible !== cardsVisible) {
-          cardsVisible = newVisible;
-          currentIndex = 0;
-          buildDots();
-          applyTransform();
-          updateButtons();
-        } else {
-          applyTransform();
-        }
+        applyWidths();
+        moveTo(currentIdx, false);
       }, 150);
     });
 
-    // Init
-    buildDots();
-    applyTransform();
-    updateButtons();
-    resetAutoplay();
+    // Kick off
+    applyWidths();
+    moveTo(0, false);
+    startAuto();
   })();
 
   /* ============================================================

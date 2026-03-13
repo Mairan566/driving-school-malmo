@@ -439,97 +439,235 @@
         </div>
       </div>
 
-      <!-- Review Carousel -->
-      <div class="reviews-carousel" aria-label="Kundrecensioner">
-        <div class="reviews-track" id="reviewsTrack" role="list">
+      <!-- Infinite Auto-Scroll Carousel -->
+      <div class="infinite-carousel-wrapper" id="reviewsCarouselWrapper" aria-label="Kundrecensioner">
+        <div class="infinite-carousel-track" id="infiniteTrack" role="list">
 
-          <div class="review-card" role="listitem" aria-label="Recension av Sara Magnusson">
+          <div class="review-card" role="listitem">
             <div class="review-header">
-              <div class="review-avatar" aria-hidden="true">SM</div>
+              <div class="review-avatar" style="background:#4285F4;">AE</div>
               <div class="review-meta">
-                <span class="review-name">Sara Magnusson</span>
+                <span class="review-name">Adila Eve</span>
                 <div class="review-stars" aria-label="5 stjärnor">
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
               </div>
-              <img src="https://www.google.com/favicon.ico" alt="Google recension" class="review-google-icon" width="20" height="20" loading="lazy" />
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
             </div>
-            <p class="review-text">"Fantastisk trafiklärare! Andre är otroligt tålmodig och pedagogisk. Klarade uppkörningen på första försöket tack vare hans undervisning. Varmt rekommenderat!"</p>
+            <p class="review-text">Jag vill rikta ett stort och varmt tack till Andres Trafikskola för deras enastående professionalism och engagemang genom hela min utbildning. Från första lektionen till godkänt körprov har jag blivit bemött med respekt, tålamod och hög pedagogisk kompetens. Tack vare deras stöd klarade jag mitt körprov!</p>
+            <span class="review-date">1 vecka sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#34A853;">YO</div>
+              <div class="review-meta">
+                <span class="review-name">Yones Okelmi</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">En mycket engagerad skola med proffsigt lärande, började helt från noll med inget självförtroende men nu kör jag helt utan bekymmer och har körkortet i fickan. Stort tack!!</p>
+            <span class="review-date">2 veckor sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#EA4335;">AM</div>
+              <div class="review-meta">
+                <span class="review-name">Aya Mahdi</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Bästa trafikskolan i hela Malmö! Du får inte bara en trafiklärare utan en människa som bryr sig om dig och vill se dig lyckas. Andre gav inte upp även när jag själv ville ge upp. Rekommenderar starkt!</p>
             <span class="review-date">3 veckor sedan</span>
           </div>
 
-          <div class="review-card" role="listitem" aria-label="Recension av Ahmed Karimi">
+          <div class="review-card" role="listitem">
             <div class="review-header">
-              <div class="review-avatar avatar-blue" aria-hidden="true">AK</div>
+              <div class="review-avatar" style="background:#FF6D00;">MF</div>
               <div class="review-meta">
-                <span class="review-name">Ahmed Karimi</span>
+                <span class="review-name">Mona Fakhro</span>
                 <div class="review-stars" aria-label="5 stjärnor">
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
               </div>
-              <img src="https://www.google.com/favicon.ico" alt="Google recension" class="review-google-icon" width="20" height="20" loading="lazy" />
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
             </div>
-            <p class="review-text">"Rekommenderar varmt Andre's Trafikskola. Undervisning på arabiska var ett enormt plus för mig. Bra priser, professionell och flexibel. Fick körkortet på kortast möjliga tid!"</p>
+            <p class="review-text">Rekommenderar starkt denna skola, allt va perfekt dessutom väldigt bra lärare.</p>
             <span class="review-date">1 månad sedan</span>
           </div>
 
-          <div class="review-card" role="listitem" aria-label="Recension av Fatima Al-Hassan">
+          <div class="review-card" role="listitem">
             <div class="review-header">
-              <div class="review-avatar avatar-green" aria-hidden="true">FA</div>
+              <div class="review-avatar" style="background:#9C27B0;">BD</div>
               <div class="review-meta">
-                <span class="review-name">Fatima Al-Hassan</span>
+                <span class="review-name">Betul Duran</span>
                 <div class="review-stars" aria-label="5 stjärnor">
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
               </div>
-              <img src="https://www.google.com/favicon.ico" alt="Google recension" class="review-google-icon" width="20" height="20" loading="lazy" />
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
             </div>
-            <p class="review-text">"Andre är den bästa trafikläraren jag kunde hitta i Malmö! Han anpassar undervisningen perfekt och skapar en trygg och positiv miljö. Verkligen värd varenda krona!"</p>
+            <p class="review-text">Med lärarens hjälp tog jag mitt körkort inom bara tre månader efter två års kämpande på en annan trafikskola. Jag är så tacksam för allt jag lärt mig och för det självförtroende jag fått bakom ratten. Rekommenderar starkt!</p>
+            <span class="review-date">1 månad sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#00ACC1;">KA</div>
+              <div class="review-meta">
+                <span class="review-name">Karar A</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Proffsiga, pedagogiska och 100% resultat med Andres Trafikskola. Jag tog körkort på första försöket. Undervisningen är strukturerad, tydlig och anpassad efter individen. De bygger riktiga förare. Rekommenderar starkt!</p>
             <span class="review-date">2 månader sedan</span>
           </div>
 
-          <div class="review-card" role="listitem" aria-label="Recension av Erik Lindström">
+          <div class="review-card" role="listitem">
             <div class="review-header">
-              <div class="review-avatar avatar-orange" aria-hidden="true">EL</div>
+              <div class="review-avatar" style="background:#FF5722;">AR</div>
               <div class="review-meta">
-                <span class="review-name">Erik Lindström</span>
+                <span class="review-name">Arda</span>
                 <div class="review-stars" aria-label="5 stjärnor">
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
-                  <i class="fa-solid fa-star" aria-hidden="true"></i>
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
                 </div>
               </div>
-              <img src="https://www.google.com/favicon.ico" alt="Google recension" class="review-google-icon" width="20" height="20" loading="lazy" />
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
             </div>
-            <p class="review-text">"Körde med Andre i ungefär 3 månader och fick körkortet på första försöket. Flexibla tider, bra kommunikation och en lärare som verkligen bryr sig om sina elever. Topp!"</p>
+            <p class="review-text">Jag är väldigt nöjd med trafikskolan. Allt har fungerat bra, lärarna har varit tydliga och hjälpsamma och jag har känt mig trygg under hela utbildningen. Tack vare deras stöd klarade jag mitt körprov. Rekommenderas starkt!</p>
             <span class="review-date">2 månader sedan</span>
           </div>
 
-        </div>
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#1565C0;">BD2</div>
+              <div class="review-meta">
+                <span class="review-name">Baraa Daoud</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Det som gör denna trafikskola speciell är inte bara deras professionella förmåga att lära ut, utan hur genuint de bryr sig om varje elev. Varje lektion gav mig inte bara kunskap, utan också självförtroende. Tack vare deras trygghet och engagemang blev resan mot mitt körkort något jag minns med tacksamhet.</p>
+            <span class="review-date">3 månader sedan</span>
+          </div>
 
-        <!-- Carousel Controls -->
-        <div class="carousel-controls" aria-label="Karuselkontroller">
-          <button class="carousel-btn carousel-prev" id="reviewPrev" aria-label="Föregående recension">
-            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-          </button>
-          <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Recensionssidor"></div>
-          <button class="carousel-btn carousel-next" id="reviewNext" aria-label="Nästa recension">
-            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-          </button>
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#2E7D32;">OZ</div>
+              <div class="review-meta">
+                <span class="review-name">Omar Zourab</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Jag rekommenderar verkligen Andre's trafikskola! Redan från första lektionen fick jag ett varmt bemötande och kände direkt att jag var i trygga händer. Jag klarade uppkörningen på första försöket! Stort tack till Josef och Raif för all hjälp.</p>
+            <span class="review-date">3 månader sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#C62828;">MK</div>
+              <div class="review-meta">
+                <span class="review-name">Marina Kasmi</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Läraren är utan tvekan den bästa i Sverige! Jag klarade uppkörningen på första försöket tack vare hans lugn, tålamod och stora engagemang. Rekommenderar varmt till alla som vill ta körkort i Malmö!</p>
+            <span class="review-date">4 månader sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#6A1B9A;">RI</div>
+              <div class="review-meta">
+                <span class="review-name">Rosa Ivanov</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Jag vill bara säga tack på riktigt. Utan dig hade jag varken haft motivationen eller klarat körkortet. Nu har jag äntligen körkort! Du förtjänar verkligen allt bra i livet. Du är världens bästa trafiklärare.</p>
+            <span class="review-date">4 månader sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#1565C0;">HS</div>
+              <div class="review-meta">
+                <span class="review-name">Harun S</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Stort tack till Andres Trafikskola, jag klarade uppkörningen på första försöket! Ingen har varit lika professionell, lugn och stöttande. Redan från första lektionen kände jag mig trygg tack vare att Andre är så pedagogisk och tålmodig.</p>
+            <span class="review-date">5 månader sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#00695C;">MC</div>
+              <div class="review-meta">
+                <span class="review-name">Maya Chahrour</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Instruktörerna är otroligt kunniga och väldigt bra på att förklara och anpassa undervisningen efter mina behov. Tack vare deras hjälp klarade jag både teoriprovet och uppkörningen på första försöket!</p>
+            <span class="review-date">5 månader sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#E65100;">FA</div>
+              <div class="review-meta">
+                <span class="review-name">Fatima</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">André får en att känna sig trygg, hörd och säker. Om du inte förstår något förklarar han om och om igen tills allt sitter. När du inte tror på dig själv gör han det. Starkt rekommenderad!</p>
+            <span class="review-date">6 månader sedan</span>
+          </div>
+
+          <div class="review-card" role="listitem">
+            <div class="review-header">
+              <div class="review-avatar" style="background:#AD1457;">JA</div>
+              <div class="review-meta">
+                <span class="review-name">Jassi</span>
+                <div class="review-stars" aria-label="5 stjärnor">
+                  <i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i>
+                </div>
+              </div>
+              <svg class="google-g-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <p class="review-text">Bästa körskolan inte bara i Malmö utan i hela Sverige! Andre är en oerhört omtänksam trafiklärare med ett hjärta som brinner för sina elever. Tack vare Andre tog jag körkortet idag!</p>
+            <span class="review-date">6 månader sedan</span>
+          </div>
+
         </div>
       </div>
     </div>
