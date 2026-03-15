@@ -13,6 +13,12 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://andrestrafikskola.se/" />
 
+  <!-- Geolocation -->
+  <meta name="geo.region" content="SE-M" />
+  <meta name="geo.placename" content="Malmö, Sweden" />
+  <meta name="geo.position" content="55.58303196859333;13.011142384994773" />
+  <meta name="ICBM" content="55.58303196859333, 13.011142384994773" />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Andre's Trafikskola Malmö | Körkort i Malmö" />
@@ -46,8 +52,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 55.5734,
-      "longitude": 13.0827
+      "latitude": 55.58303196859333,
+      "longitude": 13.011142384994773
     },
     "openingHours": "Mo-Fr 09:00-18:00",
     "priceRange": "SEK",
@@ -80,7 +86,7 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
     <div class="nav-container">
       <a href="#hero" class="nav-logo" aria-label="Andre's Trafikskola - Till startsidan">
-        <img src="images/logo.png" alt="Andre's Trafikskola" class="nav-logo-img" width="150" height="auto" />
+        <img src="images/logo.png" alt="Andres Trafikskola logotyp - Trafikskola i Malmö" title="Andres Trafikskola - Vägen till körkortet, Vår prioritet" class="nav-logo-img" width="150" height="auto" />
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Öppna meny" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -160,66 +166,28 @@
     <div class="container">
       <div class="signs-row" role="list" aria-label="Trafikskyltar">
 
-        <!-- Sign 1: Speed Limit 50 -->
-        <div class="sign-item fade-in" role="listitem" aria-label="Hastighetsbegränsning 50 km/h">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="50" cy="50" r="47" fill="white" stroke="#CC0000" stroke-width="8"/>
-            <text x="50" y="63" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="30" font-weight="700" fill="#1a1a1a">50</text>
-          </svg>
-          <span class="sign-label">Hastighetsbegränsning</span>
+        <div class="sign-item fade-in" role="listitem">
+          <img src="images/traffic-light.png" alt="A22 Trafiksignaler skylt - Andres Trafikskola Malmö" title="Vägskylt A22 Trafiksignaler - Trafikskola i Malmö" class="sign-img" width="100" height="100" loading="lazy" />
         </div>
 
-        <!-- Sign 2: Give Way -->
-        <div class="sign-item fade-in" role="listitem" aria-label="Väjningsplikt">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="50,95 5,95 27.5,55" fill="white" stroke="#CC0000" stroke-width="5" stroke-linejoin="round"/>
-            <polygon points="50,10 95,88 5,88" fill="white" stroke="#CC0000" stroke-width="6" stroke-linejoin="round"/>
-            <polygon points="50,20 88,84 12,84" fill="white" stroke="none"/>
-          </svg>
-          <span class="sign-label">Väjningsplikt</span>
+        <div class="sign-item fade-in" role="listitem">
+          <img src="images/no-entry.png" alt="C1 Förbud mot trafik skylt - Andres Trafikskola Malmö" title="Vägskylt C1 Förbud mot trafik - Körkort Malmö" class="sign-img" width="100" height="100" loading="lazy" />
         </div>
 
-        <!-- Sign 3: Stop -->
-        <div class="sign-item fade-in" role="listitem" aria-label="Stoppskylt">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="35,5 65,5 95,35 95,65 65,95 35,95 5,65 5,35" fill="#CC0000" stroke="#8B0000" stroke-width="3"/>
-            <text x="50" y="57" text-anchor="middle" font-family="Poppins,Arial,sans-serif" font-size="20" font-weight="800" fill="white" letter-spacing="1">STOP</text>
-          </svg>
-          <span class="sign-label">Stopp</span>
+        <div class="sign-item fade-in" role="listitem">
+          <img src="images/crosswalk.png" alt="B8 Övergångsställe skylt - Andres Trafikskola Malmö" title="Vägskylt B8 Övergångsställe - Trafikskola Malmö" class="sign-img" width="100" height="100" loading="lazy" />
         </div>
 
-        <!-- Sign 4: Warning - Crossroads -->
-        <div class="sign-item fade-in" role="listitem" aria-label="Varning för vägkorsning">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="50,5 95,88 5,88" fill="white" stroke="#CC0000" stroke-width="6" stroke-linejoin="round"/>
-            <line x1="50" y1="35" x2="50" y2="72" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
-            <line x1="35" y1="55" x2="65" y2="55" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-          <span class="sign-label">Vägkorsning</span>
+        <div class="sign-item fade-in" role="listitem">
+          <img src="images/speed-limit.png" alt="C31 Hastighetsbegränsning skylt - Andres Trafikskola Malmö" title="Vägskylt C31 Hastighetsbegränsning - Körkort Malmö" class="sign-img" width="100" height="100" loading="lazy" />
         </div>
 
-        <!-- Sign 5: Pedestrian Crossing Warning -->
-        <div class="sign-item fade-in" role="listitem" aria-label="Varning för övergångsställe">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polygon points="50,5 95,88 5,88" fill="white" stroke="#CC0000" stroke-width="6" stroke-linejoin="round"/>
-            <!-- Walking person -->
-            <circle cx="50" cy="36" r="5" fill="#1a1a1a"/>
-            <line x1="50" y1="41" x2="50" y2="62" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round"/>
-            <line x1="50" y1="50" x2="42" y2="58" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
-            <line x1="50" y1="50" x2="58" y2="58" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
-            <line x1="50" y1="62" x2="43" y2="74" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
-            <line x1="50" y1="62" x2="57" y2="74" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <span class="sign-label">Övergångsställe</span>
+        <div class="sign-item fade-in" role="listitem">
+          <img src="images/cliff-danger.png" alt="A7 Kaj eller flodbank skylt - Andres Trafikskola Malmö" title="Vägskylt A7 Kaj eller flodbank - Trafikskola Malmö" class="sign-img" width="100" height="100" loading="lazy" />
         </div>
 
-        <!-- Sign 6: Priority Road -->
-        <div class="sign-item fade-in" role="listitem" aria-label="Huvudled">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="28" y="28" width="44" height="44" fill="#F5A623" stroke="#CC7A00" stroke-width="3" transform="rotate(45 50 50)"/>
-            <rect x="34" y="34" width="32" height="32" fill="white" transform="rotate(45 50 50)"/>
-          </svg>
-          <span class="sign-label">Huvudled</span>
+        <div class="sign-item fade-in" role="listitem">
+          <img src="images/olycka.png" alt="X6 Särskild varningsanordning skylt - Andres Trafikskola Malmö" title="Vägskylt X6 Särskild varningsanordning - Körkort Malmö" class="sign-img" width="100" height="100" loading="lazy" />
         </div>
 
       </div>
@@ -238,16 +206,22 @@
     <div class="container">
       <div class="about-grid">
 
-        <!-- Left: Video placeholder -->
-        <div class="about-video fade-in" aria-label="Presentationsvideo">
-          <div class="video-placeholder">
-            <div class="video-overlay-text">
-              <div class="play-btn" aria-label="Spela upp video" role="button" tabindex="0">
-                <i class="fa-solid fa-play" aria-hidden="true"></i>
-              </div>
-              <p>Se vår presentation</p>
-            </div>
-          </div>
+        <!-- Left: Video -->
+        <div class="about-video fade-in">
+          <video
+            class="about-video-player"
+            src="videos/video.mp4"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            title="Andres Trafikskola reklamfilm - Trafikskola i Malmö"
+            aria-label="Reklamfilm för Andres Trafikskola i Malmö"
+          >
+            Din webbläsare stöder inte videouppspelning.
+          </video>
         </div>
 
         <!-- Right: Text -->
@@ -950,8 +924,7 @@
   <footer class="footer" role="contentinfo" aria-label="Sidfot">
     <div class="footer-top">
       <div class="footer-logo" aria-label="Andre's Trafikskola">
-        <span class="footer-logo-icon" aria-hidden="true"><i class="fa-solid fa-car-side"></i></span>
-        <span class="footer-logo-text">Andre's <strong>Trafikskola</strong></span>
+        <img src="images/logo.png" alt="Andres Trafikskola logotyp - Trafikskola i Malmö" title="Andres Trafikskola - Vägen till körkortet, Vår prioritet" class="footer-logo-img" width="160" height="auto" />
       </div>
       <p class="footer-tagline">Vägen till körkortet, Vår prioritet!</p>
     </div>

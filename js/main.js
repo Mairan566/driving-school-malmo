@@ -469,36 +469,6 @@
     });
   })();
 
-  /* ============================================================
-     VIDEO PLACEHOLDER CLICK
-  ============================================================ */
-  (function initVideoPlaceholder() {
-    const playBtn = qs('.play-btn');
-    if (!playBtn) return;
-    playBtn.addEventListener('click', function () {
-      // Replace with actual YouTube embed URL when available
-      const videoWrap = this.closest('.video-placeholder');
-      if (!videoWrap) return;
-      const iframe = document.createElement('iframe');
-      iframe.src            = 'https://www.youtube.com/embed/?autoplay=1';
-      iframe.width          = '100%';
-      iframe.height         = '100%';
-      iframe.frameBorder    = '0';
-      iframe.allow          = 'autoplay; encrypted-media';
-      iframe.allowFullscreen = true;
-      iframe.style.cssText  = 'position:absolute;inset:0;width:100%;height:100%;';
-      iframe.title          = 'Andre\'s Trafikskola presentationsvideo';
-      videoWrap.innerHTML   = '';
-      videoWrap.appendChild(iframe);
-    });
-    // Keyboard accessible
-    playBtn.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  })();
 
   /* ============================================================
      ACTIVE NAV LINK on scroll (highlight current section)
