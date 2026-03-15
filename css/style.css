@@ -1823,3 +1823,130 @@ button {
   .hero { min-height: auto; }
   body { color: #000; }
 }
+
+
+/* ============================================================
+   Categories Section – Homepage
+   ============================================================ */
+
+.categories-section {
+  padding: 5rem 0;
+  background: var(--off-white);
+}
+
+.categories-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.categories-heading {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0.5rem 0 1rem;
+}
+
+.categories-subtext {
+  font-size: 1.05rem;
+  color: #5a6a82;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 2rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.category-desc {
+  font-size: 0.95rem;
+  color: #5a6a82;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.category-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.category-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.category-links a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.category-cta {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.65rem 1.4rem;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.category-cta:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .categories-section {
+    padding: 3rem 0;
+  }
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
