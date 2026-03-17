@@ -58,6 +58,10 @@
   margin-bottom: 1rem;
 }
 
+.page-hero p {
+  color: rgba(255,255,255,0.8);
+}
+
 .page-hero-subtitle {
   font-size: 1.05rem;
   color: rgba(255,255,255,0.8);
@@ -719,6 +723,64 @@
 .page-rtl .highlight-box { border-left: none; border-right: 4px solid var(--accent); border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
 .page-rtl .faq-question { flex-direction: row-reverse; text-align: right; }
 
+/* ---------- Inner-page Footer ---------- */
+.site-footer {
+  background: var(--dark-footer);
+  padding: 3.5rem 0 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2.5rem;
+}
+
+.site-footer .footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.site-footer .footer-col h3 {
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.site-footer .footer-col p,
+.site-footer .footer-col li {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  padding: 0.2rem 0;
+}
+
+.site-footer .footer-col a {
+  color: rgba(255,255,255,0.6);
+}
+
+.site-footer .footer-col a:hover {
+  color: var(--accent);
+}
+
+.site-footer .footer-bottom {
+  display: block;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.site-footer .footer-bottom p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.35);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .info-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -735,4 +797,5 @@
   .content-section { padding: 3.5rem 0; }
   .faq-section { padding: 3.5rem 0; }
   .cta-banner { padding: 3.5rem 0; }
+  .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }

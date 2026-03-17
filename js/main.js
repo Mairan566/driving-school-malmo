@@ -278,23 +278,54 @@
   })();
 
   /* ============================================================
-     HERO BACKGROUND LOAD
+     HERO BACKGROUND LOAD (real <img> tag)
   ============================================================ */
   (function initHeroBg() {
-    const heroBg = qs('.hero-bg');
-    if (!heroBg) return;
+    const heroBgImg = qs('.hero-bg-img');
+    if (!heroBgImg) return;
 
-    // Trigger zoom-in on load, then lock the transform so it never replays on scroll-back
-    const img = new Image();
-    const url = heroBg.style.backgroundImage.replace(/url\(['"]?([^'"]+)['"]?\)/, '$1');
-    img.onload = function () {
-      heroBg.classList.add('loaded');
-      heroBg.addEventListener('transitionend', function () {
-        heroBg.style.transition = 'none';
-        heroBg.style.transform  = 'scale(1)';
+    function onLoaded() {
+      heroBgImg.classList.add('loaded');
+      heroBgImg.addEventListener('transitionend', function () {
+        heroBgImg.style.transition = 'none';
+        heroBgImg.style.transform  = 'scale(1)';
       }, { once: true });
-    };
-    img.src = url;
+    }
+
+    if (heroBgImg.complete) {
+      onLoaded();
+    } else {
+      heroBgImg.addEventListener('load', onLoaded);
+    }
+  })();
+
+  /* ============================================================
+     VIDEO – play only when in viewport (Intersection Observer)
+  ============================================================ */
+  (function initVideoOnScroll() {
+    const video = qs('.about-video-player');
+    if (!video) return;
+
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: just play it
+      video.play();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(video);
   })();
 
   /* ============================================================
