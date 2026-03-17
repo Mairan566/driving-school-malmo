@@ -278,28 +278,23 @@
   })();
 
   /* ============================================================
-     HERO BACKGROUND PARALLAX + LOAD
+     HERO BACKGROUND LOAD
   ============================================================ */
   (function initHeroBg() {
     const heroBg = qs('.hero-bg');
     if (!heroBg) return;
 
-    // Once image is painted, trigger the subtle zoom-in
+    // Trigger zoom-in on load, then lock the transform so it never replays on scroll-back
     const img = new Image();
     const url = heroBg.style.backgroundImage.replace(/url\(['"]?([^'"]+)['"]?\)/, '$1');
-    img.onload = function () { heroBg.classList.add('loaded'); };
+    img.onload = function () {
+      heroBg.classList.add('loaded');
+      heroBg.addEventListener('transitionend', function () {
+        heroBg.style.transition = 'none';
+        heroBg.style.transform  = 'scale(1)';
+      }, { once: true });
+    };
     img.src = url;
-
-    // Subtle parallax on scroll
-    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-      window.addEventListener('scroll', function () {
-        const scrolled = window.scrollY;
-        const heroHeight = heroBg.parentElement.offsetHeight;
-        if (scrolled < heroHeight) {
-          heroBg.style.transform = 'scale(1) translateY(' + (scrolled * 0.3) + 'px)';
-        }
-      }, { passive: true });
-    }
   })();
 
   /* ============================================================
