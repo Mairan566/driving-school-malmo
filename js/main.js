@@ -278,6 +278,59 @@
   })();
 
   /* ============================================================
+     PRICE TABLE – scroll hint fades out once user swipes
+  ============================================================ */
+  (function initTableScrollHint() {
+    qsa('.table-scroll-container').forEach(function (container) {
+      var wrap = container.querySelector('.price-table-wrap');
+      if (!wrap) return;
+      wrap.addEventListener('scroll', function () {
+        if (wrap.scrollLeft > 20) {
+          container.classList.add('scrolled');
+        }
+      }, { passive: true });
+    });
+  })();
+
+  /* ============================================================
+     STEPS GRID – staggered fade-in on scroll
+  ============================================================ */
+  (function initStepsAnimation() {
+    var grids = qsa('.steps-grid');
+    if (!grids.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      grids.forEach(function (g) { g.classList.add('steps-animated'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var grid = entry.target;
+          grid.classList.add('steps-animated');
+          observer.unobserve(grid);
+
+          // Once the last card finishes animating, lock opacity via inline
+          // style so the visible state is permanent and never replays.
+          var cards = grid.querySelectorAll('.step-card');
+          var lastCard = cards[cards.length - 1];
+          if (lastCard) {
+            lastCard.addEventListener('animationend', function () {
+              cards.forEach(function (c) {
+                c.style.opacity = '1';
+                c.style.animation = 'none';
+              });
+            }, { once: true });
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    grids.forEach(function (g) { observer.observe(g); });
+  })();
+
+  /* ============================================================
      HERO BACKGROUND LOAD (real <img> tag)
   ============================================================ */
   (function initHeroBg() {
