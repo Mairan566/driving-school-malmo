@@ -297,7 +297,7 @@ button {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .fade-in.visible {
   opacity: 1;
@@ -1549,6 +1549,29 @@ button {
   align-items: start;
 }
 
+/* Divider hidden by default (desktop), shown only on mobile */
+.contact-email-divider {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  justify-content: center;
+}
+.contact-email-divider::before,
+.contact-email-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* Make phone number look clearly clickable */
+.contact-phone-number {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .contact-heading {
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   font-weight: 700;
@@ -2071,6 +2094,10 @@ button {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  /* Mobile: reorder — phone card first, divider, form last */
+  .contact-phone-wrap    { order: -1; }
+  .contact-email-divider { display: flex; order: 0; }
+  .contact-form-wrap     { order: 1; }
   .map-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;

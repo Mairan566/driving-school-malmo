@@ -1045,7 +1045,7 @@
     <div class="container">
       <div class="contact-grid">
 
-        <!-- Left: Form -->
+        <!-- Left: Form (original order preserved for desktop) -->
         <div class="contact-form-wrap fade-in">
           <div class="section-badge-light">Kontakta oss</div>
           <h2 id="contact-heading" class="contact-heading">Hör av dig till oss</h2>
@@ -1116,17 +1116,25 @@
           </form>
         </div>
 
-        <!-- Right: Phone -->
+        <!-- Mobile-only divider (hidden on desktop via CSS) -->
+        <div class="contact-email-divider" aria-hidden="true">
+          <span>Eller skicka oss ett e-postmeddelande</span>
+        </div>
+
+        <!-- Right: Phone card -->
         <div class="contact-phone-wrap fade-in">
           <div class="contact-phone-card">
             <div class="phone-icon-wrap" aria-hidden="true">
               <i class="fa-solid fa-phone-volume"></i>
             </div>
-            <h3 class="contact-phone-label">Eller ring oss direkt på:</h3>
+            <h3 class="contact-phone-label">Ring oss idag!</h3>
             <a href="tel:+46700099924" class="contact-phone-number" aria-label="Ring +46 700 09 99 24">
               +46 700 09 99 24
             </a>
-            <p class="contact-phone-sub">Tillgänglig mån–fre</p>
+            <p class="contact-phone-sub">Du kan också skicka oss ett SMS</p>
+            <a href="sms:+46700099924" class="btn-cta-sms" aria-label="Skicka SMS till Andre's Trafikskola">
+              <i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Skicka SMS
+            </a>
             <div class="contact-info-list" aria-label="Kontaktuppgifter">
               <div class="contact-info-item">
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>

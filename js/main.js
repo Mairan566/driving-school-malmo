@@ -272,7 +272,7 @@
 
     qsa('.fade-in').forEach(function (el, i) {
       // Stagger delay for sibling elements
-      el.style.transitionDelay = (i % 4) * 0.1 + 's';
+      el.style.transitionDelay = (i % 4) * 0.05 + 's';
       observer.observe(el);
     });
   })();
