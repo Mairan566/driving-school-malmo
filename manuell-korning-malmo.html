@@ -16,6 +16,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Manuella Körlektioner Malmö | Andre's Trafikskola" />
   <meta property="og:description" content="Manuella körlektioner i Malmö med Andre's Trafikskola. Lär dig köra bil med manuell växellåda. 70 min lektioner med Audi A3. Erfaren instruktör. Boka idag!" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Manuella Körlektioner Malmö | Andre's Trafikskola" />
+  <meta name="twitter:description" content="Manuella körlektioner i Malmö med Andre's Trafikskola. Lär dig köra bil med manuell växellåda. 70 min lektioner med Audi A3. Erfaren instruktör. Boka idag!" />
+  <meta name="twitter:image" content="https://andrestrafikskola.se/images/og-image.jpg" />
   <meta property="og:url" content="https://andrestrafikskola.se/manuell-korning-malmo.html" />
   <meta property="og:image" content="https://andrestrafikskola.se/images/og-image.jpg" />
   <meta property="og:locale" content="sv_SE" />
@@ -46,7 +50,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "122"
+      "reviewCount": "123"
     }
   }
   </script>
@@ -54,6 +58,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preload" href="css/inner-page.css" as="style" />
+  <link rel="preload" href="css/style.css" as="style" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/inner-page.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -254,6 +260,28 @@
   </div>
 </section>
 
+<section class="content-section bg-white">
+  <div class="container">
+    <h2 class="section-title">Vad säger våra elever?</h2>
+    <div class="reviews-compact-grid">
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"Lärde mig manuell växling snabbare än jag trodde. Audi A3:an är perfekt att öva i."</p>
+        <div class="review-compact-author">Daniel A., Malmö</div>
+      </div>
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"Tålmodig instruktör som inte stressade mig med kopplingen. Blev trygg efter bara 3 lektioner."</p>
+        <div class="review-compact-author">Samira E., Malmö</div>
+      </div>
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"Valde manuell för att få bredare behörighet. Helt rätt beslut!"</p>
+        <div class="review-compact-author">Oskar B., Malmö</div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="cta-banner">
   <div class="container">
     <h2>Boka manuell körlektion i Malmö</h2>
@@ -333,7 +361,7 @@
 <footer class="footer" role="contentinfo" aria-label="Sidfot">
   <div class="footer-top">
     <div class="footer-logo" aria-label="Andre's Trafikskola">
-      <img src="images/logo.png" alt="Andres Trafikskola logotyp - Trafikskola i Malmö" class="footer-logo-img" width="160" height="50" />
+      <img src="images/logo.png" alt="Andres Trafikskola logotyp - Trafikskola i Malmö" class="footer-logo-img" width="160" height="50" loading="lazy" />
     </div>
     <p class="footer-tagline">Vägen till körkortet, Vår prioritet!</p>
   </div>
@@ -353,6 +381,8 @@
         <li><a href="korlektioner-malmo.html">Körlektioner</a></li>
         <li><a href="intensivkurs-korkort-malmo.html">Intensivkurs</a></li>
         <li><a href="korkort-pris-malmo.html">Priser</a></li>
+        <li><a href="uppkorning-malmo.html">Uppkörning</a></li>
+        <li><a href="korkortsteori-malmo.html">Teori</a></li>
       </ul>
     </div>
     <div class="footer-col-section">
@@ -398,6 +428,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 </script>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

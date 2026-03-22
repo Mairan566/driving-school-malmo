@@ -142,6 +142,33 @@ button {
   outline: none;
 }
 
+.about-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn-cta-sms {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--secondary);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 50px;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(44, 74, 124, 0.35);
+}
+.btn-cta-sms:hover, .btn-cta-sms:focus-visible {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 74, 124, 0.45);
+  outline: none;
+}
+
 .btn-light {
   display: inline-flex;
   align-items: center;
@@ -604,7 +631,7 @@ button {
    4. ABOUT
    ============================================================ */
 .about-section {
-  background: #f0f4f8;
+  background: #ffffff;
   padding: 5rem 0;
 }
 

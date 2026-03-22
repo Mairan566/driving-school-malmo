@@ -16,6 +16,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Automatkörkort Malmö | Andre's Trafikskola" />
   <meta property="og:description" content="Automatkörkort i Malmö med Andre's Trafikskola. Körlektioner med automatisk växellåda i Volvo V60. Enklare start för nya förare. 70 min lektioner. Boka idag!" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Automatkörkort Malmö | Andre's Trafikskola" />
+  <meta name="twitter:description" content="Automatkörkort i Malmö med Andre's Trafikskola. Körlektioner med automatisk växellåda i Volvo V60. Enklare start för nya förare. 70 min lektioner. Boka idag!" />
+  <meta name="twitter:image" content="https://andrestrafikskola.se/images/og-image.jpg" />
   <meta property="og:url" content="https://andrestrafikskola.se/automat-korkort-malmo.html" />
   <meta property="og:image" content="https://andrestrafikskola.se/images/og-image.jpg" />
   <meta property="og:locale" content="sv_SE" />
@@ -46,7 +50,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "122"
+      "reviewCount": "123"
     }
   }
   </script>
@@ -54,6 +58,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="preload" href="css/inner-page.css" as="style" />
+  <link rel="preload" href="css/style.css" as="style" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/inner-page.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -147,7 +153,7 @@
     <span><i class="fa-solid fa-star"></i> 5.0 Google-betyg</span>
     <span><i class="fa-solid fa-users"></i> 123+ elever</span>
     <span><i class="fa-solid fa-clock"></i> 70 min/lektion</span>
-    <span><i class="fa-solid fa-car"></i> Audi A3 &amp; Volvo V60</span>
+    <span><i class="fa-solid fa-car"></i> Volvo V60 Automat</span>
     <span><i class="fa-solid fa-language"></i> 3 språk</span>
   </div>
 </div>
@@ -232,6 +238,28 @@
   </div>
 </section>
 
+<section class="content-section bg-white">
+  <div class="container">
+    <h2 class="section-title">Vad säger våra elever?</h2>
+    <div class="reviews-compact-grid">
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"Volvo V60:n är fantastisk att köra i. Automat var det bästa valet för mig som ny förare."</p>
+        <div class="review-compact-author">Linnéa G., Malmö</div>
+      </div>
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"Utan koppling kunde jag fokusera helt på trafiken. Klarade uppkörningen på första försöket!"</p>
+        <div class="review-compact-author">Hassan M., Malmö</div>
+      </div>
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"André rekommenderade automat direkt, och han hade helt rätt. Kändes naturligt och tryggt."</p>
+        <div class="review-compact-author">Petra W., Malmö</div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="cta-banner">
   <div class="container">
     <h2>Boka automatkörkort i Malmö</h2>
@@ -289,7 +317,7 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Vår Audi A3 Sportback (2026) är utrustad med automatväxellåda och används för automatkörlektioner. Kontakta oss för att bekräfta tillgänglighet och boka din plats.</p>
+          <p>Vår Volvo V60 är utrustad med automatväxellåda och används för automatkörlektioner. Kontakta oss för att bekräfta tillgänglighet och boka din plats.</p>
         </div>
       </div>
     </div>
@@ -311,7 +339,7 @@
 <footer class="footer" role="contentinfo" aria-label="Sidfot">
   <div class="footer-top">
     <div class="footer-logo" aria-label="Andre's Trafikskola">
-      <img src="images/logo.png" alt="Andres Trafikskola logotyp - Trafikskola i Malmö" class="footer-logo-img" width="160" height="50" />
+      <img src="images/logo.png" alt="Andres Trafikskola logotyp - Trafikskola i Malmö" class="footer-logo-img" width="160" height="50" loading="lazy" />
     </div>
     <p class="footer-tagline">Vägen till körkortet, Vår prioritet!</p>
   </div>
@@ -331,6 +359,8 @@
         <li><a href="korlektioner-malmo.html">Körlektioner</a></li>
         <li><a href="intensivkurs-korkort-malmo.html">Intensivkurs</a></li>
         <li><a href="korkort-pris-malmo.html">Priser</a></li>
+        <li><a href="uppkorning-malmo.html">Uppkörning</a></li>
+        <li><a href="korkortsteori-malmo.html">Teori</a></li>
       </ul>
     </div>
     <div class="footer-col-section">
@@ -376,6 +406,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 </script>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
