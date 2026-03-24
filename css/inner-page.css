@@ -1202,3 +1202,26 @@ a.feature-card {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Inner Page Contact Form ---------- */
+.inner-contact-section {
+  padding: 3rem 0;
+  background: var(--primary);
+}
+
+.inner-contact-form-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.inner-contact-section .inner-section-heading {
+  color: var(--white);
+}
+
+.inner-contact-section .form-label {
+  color: rgba(255,255,255,0.75);
+}
+
+.inner-contact-section .form-success {
+  color: #9ae6b4;
+}
