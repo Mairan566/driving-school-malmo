@@ -25,7 +25,7 @@
   <meta property="og:locale" content="sv_SE" />
   <meta property="og:site_name" content="Andre's Trafikskola" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"DrivingSchool","name":"Andre's Trafikskola","description":"Professionell körkortsutbildning i Malmö på svenska, engelska och arabiska.","url":"https://andrestrafikskola.se/","telephone":"+46700099924","email":"andreskorskola@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Ystadvägen 22B","addressLocality":"Malmö","postalCode":"214 30","addressCountry":"SE"},"geo":{"@type":"GeoCoordinates","latitude":55.58303196859333,"longitude":13.011142384994773},"openingHours":"Mo-Fr 09:00-18:00","priceRange":"SEK","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"123"}}
+  {"@context":"https://schema.org","@type":"DrivingSchool","name":"Andre's Trafikskola","description":"Professionell körkortsutbildning i Malmö på svenska, engelska och arabiska.","url":"https://andrestrafikskola.se/","telephone":"+46700099924","email":"andreskorskola@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Ystadvägen 22B","addressLocality":"Malmö","postalCode":"214 30","addressCountry":"SE"},"geo":{"@type":"GeoCoordinates","latitude":55.58303196859333,"longitude":13.011142384994773},"openingHours":"Mo-Su 10:00-16:00","priceRange":"SEK","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"123"}}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -344,6 +344,44 @@
         <button class="faq-question" aria-expanded="false">Var ligger Trafikverkets uppkörningsstation?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></button>
         <div class="faq-answer"><p>Trafikverkets uppkörningsstation i Malmö ligger på Cederströmsgatan 1, 212 39 Malmö. Vi övar regelbundet på de vägar som ofta ingår i uppkörningsrutten.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="inner-contact-section" id="kontakt">
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Kontakta oss</h2>
+    <p style="text-align:center; margin-bottom:2rem; color:#555;">Fyll i formuläret så återkommer vi inom kort – eller ring oss direkt på <a href="tel:+46700099924" style="color:var(--accent); font-weight:600;">+46 700 09 99 24</a></p>
+    <div class="inner-contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
+        <div class="form-group">
+          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
+          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
+          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
+        </button>
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          Tack! Vi återkommer till dig så snart som möjligt.
+        </div>
+      </form>
     </div>
   </div>
 </section>

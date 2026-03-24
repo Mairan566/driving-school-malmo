@@ -45,7 +45,7 @@
       "latitude": 55.58303196859333,
       "longitude": 13.011142384994773
     },
-    "openingHours": "Mo-Fr 09:00-18:00",
+    "openingHours": "Mo-Su 10:00-16:00",
     "priceRange": "SEK",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -301,6 +301,44 @@
           <p>أفضل طريقة للتحضير: احصل على رمز النظرية الرقمي (800 كرونة) للدراسة الإلكترونية بالعربية، أو احجز دروساً نظرية مع أندريه (2500 كرونة) للحصول على إرشاد شخصي. ادرس بانتظام، وأجرِ اختبارات تدريبية كثيرة، ولا تحجز الاختبار الرسمي إلا عندما تحقق نتائج جيدة باستمرار في التدريب.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="inner-contact-section" id="kontakt">
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">تواصل معنا</h2>
+    <p style="text-align:center; margin-bottom:2rem; color:#555;">املأ النموذج وسنعود إليك قريبًا – أو اتصل بنا مباشرة على <a href="tel:+46700099924" style="color:var(--accent); font-weight:600;" dir="ltr">+46 700 09 99 24</a></p>
+    <div class="inner-contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate aria-label="نموذج الاتصال">
+        <div class="form-group">
+          <label for="contactName" class="form-label">الاسم <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" class="form-input" placeholder="اسمك" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">الهاتف <span aria-hidden="true">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" dir="ltr" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">البريد الإلكتروني <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="بريدك@email.com" required autocomplete="email" aria-required="true" dir="ltr" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage" class="form-label">الرسالة <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="اكتب رسالتك هنا..." required rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" aria-label="إرسال الرسالة">
+          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> إرسال</span>
+          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جاري الإرسال...</span>
+        </button>
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          شكرًا! سنعود إليك في أقرب وقت ممكن.
+        </div>
+      </form>
     </div>
   </div>
 </section>

@@ -45,7 +45,7 @@
       "latitude": 55.58303196859333,
       "longitude": 13.011142384994773
     },
-    "openingHours": "Mo-Fr 09:00-18:00",
+    "openingHours": "Mo-Su 10:00-16:00",
     "priceRange": "SEK",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -340,6 +340,44 @@
           <p>Best preparation: Get our digital theory code (800 SEK) for online study access in English, or book teacher-led theory (2 500 SEK) with Andre for personal guidance. Study consistently, do lots of practice tests, and only book the official test when you consistently score above 80% on practice exams.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="inner-contact-section" id="kontakt">
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Contact Us</h2>
+    <p style="text-align:center; margin-bottom:2rem; color:#555;">Fill in the form and we'll get back to you shortly – or call us directly at <a href="tel:+46700099924" style="color:var(--accent); font-weight:600;">+46 700 09 99 24</a></p>
+    <div class="inner-contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+        <div class="form-group">
+          <label for="contactName" class="form-label">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" class="form-input" placeholder="Your name" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">Phone <span aria-hidden="true">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage" class="form-label">Message <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Write your message here..." required rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Send message">
+          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SEND</span>
+          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending...</span>
+        </button>
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          Thank you! We'll get back to you as soon as possible.
+        </div>
+      </form>
     </div>
   </div>
 </section>
