@@ -170,8 +170,9 @@
     <h1>Körskola i Limhamn</h1>
     <p class="page-hero-subtitle">Vi välkomnar elever från Limhamn! Andres Trafikskola i Malmö – 5.0 i betyg, moderna bilar, undervisning på 3 språk.</p>
     <div class="page-hero-ctas">
-      <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring nu</a>
-      <a href="index.html#contact" class="btn-light">Skicka e-post</a>
+      <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
+      <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
+      <a href="#kontakt" class="btn-light"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
     </div>
   </div>
 </section>
@@ -185,16 +186,6 @@
     <span><i class="fa-solid fa-language"></i> 3 språk</span>
   </div>
 </div>
-<section class="content-section bg-white">
-  <div class="container">
-    <div class="stats-row">
-      <div class="stat-box"><div class="stat-number">5.0 ⭐</div><div class="stat-label">Google-betyg</div></div>
-      <div class="stat-box"><div class="stat-number">123+</div><div class="stat-label">Nöjda elever</div></div>
-      <div class="stat-box"><div class="stat-number">3</div><div class="stat-label">Språk</div></div>
-      <div class="stat-box"><div class="stat-number">70 min</div><div class="stat-label">Per körlektion</div></div>
-    </div>
-  </div>
-</section>
 
 <section class="content-section bg-light">
   <div class="container">
@@ -255,23 +246,6 @@
   </div>
 </section>
 
-<section class="content-section bg-light">
-  <div class="container">
-    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:2rem;">Priser – Körskola Limhamn</h2>
-    <div class="price-table-wrap">
-      <table class="price-table">
-        <thead><tr><th>Tjänst</th><th>Beskrivning</th><th>Pris</th></tr></thead>
-        <tbody>
-          <tr><td>Testlektion</td><td>1 körlektion á 70 min</td><td>870 SEK</td></tr>
-          <tr><td>Litet paket</td><td>5 körlektioner á 70 min</td><td>4 050 SEK <span class="save-tag">Spara 300 kr</span></td></tr>
-          <tr><td>Mellan paket</td><td>10 körlektioner á 70 min</td><td>7 900 SEK <span class="save-tag">Spara 800 kr</span></td></tr>
-          <tr><td>Stort paket</td><td>15 körlektioner á 70 min</td><td>11 650 SEK <span class="save-tag">Spara 1 400 kr</span></td></tr>
-          <tr class="featured-row"><td>Intensivt paket <span class="badge-best">Bäst värde</span></td><td>15 lektioner + Risk 1 + Risk 2 + Teorikod</td><td>15 250 SEK <span class="save-tag">Spara 1 650 kr</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
 
 <section class="content-section bg-white">
   <div class="container">
@@ -292,16 +266,54 @@
         <p>"Från Limhamn tar det 15 min till skolan. Väl värt resan!"</p>
         <div class="review-compact-author">Maria P., Malmö</div>
       </div>
+      <div class="review-compact-card">
+        <div class="review-compact-stars">★★★★★</div>
+        <p>"Övade rondellerna vid Limhamns centrum och parkering vid hamnen. Bästa förberedelsen inför uppkörning!"</p>
+        <div class="review-compact-author">Axel J., Malmö</div>
+      </div>
     </div>
   </div>
 </section>
-<section class="cta-banner">
+<section class="inner-contact-section" id="kontakt">
   <div class="container">
-    <h2>Börja din körkortsutbildning från Limhamn!</h2>
-    <p>Ring oss idag och boka din första körlektion. Vi hämtar dig bekvämt eller möts vid vår skola.</p>
-    <div class="cta-btn-group">
-      <a href="tel:+46700099924" class="btn-cta-primary"><i class="fa-solid fa-phone"></i> Ring +46 700 09 99 24</a>
-      <a href="index.html#contact" class="btn-cta-secondary">Skicka e-post</a>
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Kontakta oss</h2>
+    <div style="text-align:center; margin-bottom:2rem;">
+      <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Ring oss eller skicka ett SMS.</p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
+        <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
+      </div>
+      <p style="color:#555;">Du kan också fylla i formuläret så återkommer vi så snart vi kan.</p>
+    </div>
+    <div class="inner-contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
+        <div class="form-group">
+          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
+          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
+          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
+        </button>
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          Tack! Vi återkommer till dig så snart som möjligt.
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -348,44 +360,6 @@
   </div>
 </section>
 
-
-<section class="inner-contact-section" id="kontakt">
-  <div class="container">
-    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Kontakta oss</h2>
-    <p style="text-align:center; margin-bottom:2rem; color:#555;">Fyll i formuläret så återkommer vi inom kort – eller ring oss direkt på <a href="tel:+46700099924" style="color:var(--accent); font-weight:600;">+46 700 09 99 24</a></p>
-    <div class="inner-contact-form-wrap">
-      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
-        <div class="form-group">
-          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
-          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
-            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
-          </div>
-          <div class="form-group">
-            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
-            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
-          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
-        </div>
-        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
-          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
-          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
-        </button>
-        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
-          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-          Tack! Vi återkommer till dig så snart som möjligt.
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
 <section class="related-links">
   <div class="container">
     <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">Relaterade sidor</h3>
@@ -394,6 +368,7 @@
           <a href="korskola-hyllie.html" class="related-link-btn"><i class="fa-solid fa-map-marker-alt"></i> Körskola Hyllie</a>
           <a href="korskola-centrum-malmo.html" class="related-link-btn"><i class="fa-solid fa-map-marker-alt"></i> Körskola Centrum</a>
           <a href="b-korkort-malmo.html" class="related-link-btn"><i class="fa-solid fa-id-card"></i> B-körkort</a>
+          <a href="korskola-vastra-hamnen.html" class="related-link-btn"><i class="fa-solid fa-map-marker-alt"></i> Körskola Västra Hamnen</a>
     </div>
   </div>
 </section>
@@ -413,39 +388,15 @@
       <p><a href="tel:+46700099924">+46 700 09 99 24</a></p>
       <p><a href="mailto:andreskorskola@gmail.com">andreskorskola@gmail.com</a></p>
     </div>
-    <div class="footer-col-section">
-      <h4>Bil-körkort</h4>
-      <ul>
-        <li><a href="korskola-malmo.html">Körskola</a></li>
-        <li><a href="b-korkort-malmo.html">B-körkort</a></li>
-        <li><a href="korlektioner-malmo.html">Körlektioner</a></li>
-        <li><a href="intensivkurs-korkort-malmo.html">Intensivkurs</a></li>
-        <li><a href="korkort-pris-malmo.html">Priser</a></li>
-        <li><a href="uppkorning-malmo.html">Uppkörning</a></li>
-        <li><a href="korkortsteori-malmo.html">Teori</a></li>
-        <li><a href="testlektion-malmo.html">Testlektion</a></li>
-        <li><a href="korpaket-malmo.html">Körpaket</a></li>
-      </ul>
-    </div>
-    <div class="footer-col-section">
-      <h4>MC-körkort</h4>
-      <ul>
-        <li><a href="mc-korkort-malmo.html">MC Körkort</a></li>
-        <li><a href="a1-korkort-malmo.html">A1</a></li>
-        <li><a href="a2-korkort-malmo.html">A2</a></li>
-        <li><a href="a-korkort-malmo.html">A</a></li>
-        <li><a href="mc-korlektioner-malmo.html">MC Lektioner</a></li>
-        <li><a href="mc-testlektion-malmo.html">MC Testlektion</a></li>
-        <li><a href="mc-riskpaket-malmo.html">MC Riskpaket</a></li>
-      </ul>
-    </div>
-    <div class="footer-col-section">
-      <h4>Övrigt</h4>
-      <ul>
+    <div class="footer-col-section footer-links-wide">
+      <h4>Snabblänkar</h4>
+      <ul class="footer-links-grid">
         <li><a href="trafikskola.html">Trafikskola</a></li>
         <li><a href="mc-trafikskola.html">MC Trafikskola</a></li>
         <li><a href="faq-korkort.html">FAQ Bil</a></li>
         <li><a href="faq-mc-korkort.html">FAQ MC</a></li>
+        <li><a href="integritetspolicy.html">Integritetspolicy</a></li>
+        <li><a href="villkor.html">Villkor</a></li>
         <li><a href="index.html#contact">Kontakt</a></li>
       </ul>
     </div>
@@ -454,7 +405,7 @@
   <div class="footer-bottom">
     <div class="footer-col" aria-label="Organisationsuppgifter">
       <span>Orgnr: 559435-8979</span>
-      <span>&copy; Andre's Trafikskola AB | 2023 | All rights reserved.</span>
+      <span>&copy; Andre's Trafikskola AB | 2026 | All rights reserved.</span>
     </div>
   </div>
 </footer>
@@ -471,5 +422,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 <script src="js/main.js" defer></script>
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
 </body>
 </html>

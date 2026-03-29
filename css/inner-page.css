@@ -194,6 +194,23 @@
   margin-bottom: 0.45rem;
 }
 
+.feature-card h3 a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.feature-card h3 a::after {
+  content: " →";
+  font-size: 0.85em;
+}
+
+.feature-card h3 a:hover,
+.feature-card h3 a:focus-visible {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
 .feature-card p {
   font-size: 0.9rem;
   color: var(--text-mid);
@@ -891,6 +908,7 @@
 .steps-grid.steps-animated .step-card:nth-child(4) { animation-delay: 0.45s; }
 .steps-grid.steps-animated .step-card:nth-child(5) { animation-delay: 0.60s; }
 .steps-grid.steps-animated .step-card:nth-child(6) { animation-delay: 0.75s; }
+.steps-grid.steps-animated .step-card:nth-child(7) { animation-delay: 0.90s; }
 
 /* ---------- How it works – steps ---------- */
 .steps-grid {
@@ -904,6 +922,21 @@
 }
 .steps-grid > .step-card:nth-child(5) {
   grid-column: 2;
+}
+.steps-grid.steps-grid--7 {
+  grid-template-columns: repeat(8, 1fr);
+}
+.steps-grid.steps-grid--7 > .step-card:nth-child(-n+4) {
+  grid-column: span 2;
+}
+.steps-grid.steps-grid--7 > .step-card:nth-child(5) {
+  grid-column: 2 / span 2;
+}
+.steps-grid.steps-grid--7 > .step-card:nth-child(6) {
+  grid-column: 4 / span 2;
+}
+.steps-grid.steps-grid--7 > .step-card:nth-child(7) {
+  grid-column: 6 / span 2;
 }
 .step-card {
   background: var(--white);
@@ -1107,8 +1140,18 @@ a.feature-card {
   .info-grid.reverse { direction: ltr; }
   .steps-grid { grid-template-columns: repeat(2, 1fr); }
   .steps-grid > .step-card:nth-child(5) { grid-column: auto; }
+  .steps-grid.steps-grid--7 { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid.steps-grid--7 > .step-card,
+  .steps-grid.steps-grid--7 > .step-card:nth-child(-n+4),
+  .steps-grid.steps-grid--7 > .step-card:nth-child(5),
+  .steps-grid.steps-grid--7 > .step-card:nth-child(6),
+  .steps-grid.steps-grid--7 > .step-card:nth-child(7) { grid-column: auto; }
   .reviews-compact-grid { grid-template-columns: repeat(2, 1fr); }
   .pricing-summary-grid { grid-template-columns: repeat(3, 1fr); }
+  .location-grid .feature-card {
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
 }
 
 @media (max-width: 600px) {
@@ -1123,8 +1166,25 @@ a.feature-card {
   .cta-banner { padding: 3.5rem 0; }
   .footer-container { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .steps-grid { grid-template-columns: 1fr; }
+  .steps-grid.steps-grid--7 { grid-template-columns: 1fr; }
+  .steps-grid.steps-grid--7 > .step-card,
+  .steps-grid.steps-grid--7 > .step-card:nth-child(-n+4),
+  .steps-grid.steps-grid--7 > .step-card:nth-child(5),
+  .steps-grid.steps-grid--7 > .step-card:nth-child(6),
+  .steps-grid.steps-grid--7 > .step-card:nth-child(7) { grid-column: auto; }
   .reviews-compact-grid { grid-template-columns: 1fr; }
+  .reviews-compact-grid > .review-compact-card:last-child { display: none; }
   .pricing-summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-summary-grid > .pricing-summary-featured {
+    grid-column: 1 / -1;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .paket-grid > .feature-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
 
   /* 2-column service cards on mobile */
   .feature-grid {
@@ -1157,27 +1217,27 @@ a.feature-card {
 /* Footer columns */
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  padding: 2.5rem 2rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 .footer-col-section h4 {
-  color: var(--primary, #00897B);
-  font-size: 0.95rem;
+  color: #fff;
+  font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .footer-col-section p,
 .footer-col-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 0.875rem;
-  line-height: 2;
+  font-size: 0.85rem;
+  line-height: 1.7;
 }
 .footer-col-section a {
   color: var(--text-muted, #ccc);
@@ -1186,6 +1246,14 @@ a.feature-card {
 }
 .footer-col-section a:hover {
   color: #fff;
+}
+.footer-links-wide h4 {
+  text-align: center;
+}
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem 1.5rem;
 }
 .footer-col-section p {
   color: var(--text-muted, #ccc);
