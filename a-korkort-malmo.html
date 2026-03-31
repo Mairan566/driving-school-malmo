@@ -50,7 +50,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "123"
+      "reviewCount": "124"
     }
   }
   </script>
@@ -177,7 +177,6 @@
 </nav>
 
 <section class="page-hero" aria-label="A-körkort Malmö">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');"></div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Brödsmulor">
       <a href="index.html">Hem</a>
@@ -192,7 +191,7 @@
     <div class="page-hero-ctas">
       <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
       <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-      <a href="mailto:andreskorskola@gmail.com" class="btn-light"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
+      <a href="mailto:andreskorskola@gmail.com" class="btn-cta-sms" id="emailCta"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
     </div>
   </div>
 </section>
@@ -251,34 +250,6 @@
       <h2 class="inner-section-heading">Varför ta A-körkort hos Andre's Trafikskola?</h2>
       <p class="inner-text">A-körkort representerar toppen av MC-körkortskedjan. Många som kommer till oss har redan erfarenhet från A2-körkort och vill uppgradera till full frihet, medan andra tar A-körkort direkt vid 24 år. Oavsett bakgrund anpassar vi utbildningen efter din nivå. BMW F800 GS 2025 är en idealisk utbildningsmotorcykel – den är tillräckligt kraftfull för att ge dig en realistisk upplevelse av en obegränsad motorcykel, men samtidigt stabil och förlåtande nog att lära sig på. Den har ABS, bra ergonomi och ett upprätt sittläge som ger överblick i trafiken.</p>
       <p class="inner-text">Våra 80-minuterslektioner är längre än branschstandard, vilket ger dig mer effektiv sadeltid per pass. Vi lägger stor vikt vid säkert körande i alla hastigheter – från precision vid låg fart (manöverträning) till motorvägskörning och snabba landsvägar. Utbildningen på Andre's Trafikskola i Malmö genomförs på svenska, engelska eller arabiska beroende på dina behov. Vår instruktör har omfattande erfarenhet av MC-utbildning och ser till att du är fullt förberedd inför både manöverprov och trafikprov hos Trafikverket.</p>
-    </div>
-  </div>
-</section>
-
-<section class="content-section bg-light">
-  <div class="container">
-    <h2 class="section-title">Vad säger våra elever?</h2>
-    <div class="reviews-compact-grid">
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Uppgraderade från A2 till A-körkort. Andre förberedde mig perfekt – klarade provet på första försöket. Nu kör jag min drömhoj utan begränsningar!"</p>
-        <div class="review-compact-author">Marcus L., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Tog A-körkort direkt vid 24. BMW F800 GS är en fantastisk utbildningsmotorcykel – stabil, kraftfull och inspirerande att köra."</p>
-        <div class="review-compact-author">Erik S., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Bästa beslutet att ta A-körkort hos Andre. Professionell, tålmodig och verkligen kunnig. 80-minuterslektionerna ger ordentlig tid att utvecklas."</p>
-        <div class="review-compact-author">Johan R., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Som erfaren A2-förare var uppgraderingen smidig. Andre fokuserade på det som var nytt – tyngre maskin, mer kraft, avancerade manövrar. Rekommenderar!"</p>
-        <div class="review-compact-author">Fatima A., Malmö</div>
-      </div>
     </div>
   </div>
 </section>
@@ -458,5 +429,23 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 </script>
 <script src="js/main.js" defer></script>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('emailCta');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      var isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+      if (isDesktop) {
+        e.preventDefault();
+        var target = document.getElementById('kontakt') || document.getElementById('contact') || document.getElementById('mc-kontakt');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          var firstInput = target.querySelector('input');
+          if (firstInput) setTimeout(function () { firstInput.focus(); }, 600);
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>

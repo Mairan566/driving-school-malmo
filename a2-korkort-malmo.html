@@ -50,7 +50,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "123"
+      "reviewCount": "124"
     }
   }
   </script>
@@ -177,7 +177,6 @@
 </nav>
 
 <section class="page-hero" aria-label="A2-körkort Malmö">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80');"></div>
   <div class="container">
     <nav class="breadcrumb" aria-label="Brödsmulor">
       <a href="index.html">Hem</a>
@@ -192,7 +191,7 @@
     <div class="page-hero-ctas">
       <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
       <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-      <a href="mailto:andreskorskola@gmail.com" class="btn-light"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
+      <a href="mailto:andreskorskola@gmail.com" class="btn-cta-sms" id="emailCta"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
     </div>
   </div>
 </section>
@@ -251,34 +250,6 @@
       <h2 class="inner-section-heading">Varför A2-körkort med Andre's Trafikskola?</h2>
       <p class="inner-text">A2-körkort ger dig verklig motorcykelfrihet från 18 år. Med 35 kW under sadeln kan du köra populära modeller som Yamaha MT-07, Honda CB500, Kawasaki Z400 och många fler. Skillnaden mellan A1, A2 och A-körkort handlar om effekt och ålder – A2 är den gyllene medelvägen som ger dig tillgång till kraftfulla motorcyklar utan att kräva att du väntar till 24 år. Det är också det smidigaste steget mot fullständigt A-körkort, eftersom du kan uppgradera redan vid 20 års ålder efter 2 år med A2.</p>
       <p class="inner-text">Hos oss i Malmö får du en personlig MC-utbildning med fokus på säkerhet och körskicklighet. Vi använder Yamaha MT-07 2026 – samma typ av motorcykel som du sannolikt kommer att köra privat efter att du tagit körkortet. Varje lektion är 80 minuter lång, vilket ger dig mer sadeltid per pass jämfört med de flesta andra MC-körskolor i Malmö. Vår instruktör talar svenska, engelska och arabiska och anpassar utbildningen efter din nivå, oavsett om du är helt ny på motorcykel eller har erfarenhet från A1.</p>
-    </div>
-  </div>
-</section>
-
-<section class="content-section bg-light">
-  <div class="container">
-    <h2 class="section-title">Vad säger våra elever?</h2>
-    <div class="reviews-compact-grid">
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Yamaha MT-07 är en dröm att köra! Tog mitt A2-körkort med Andre och kände mig helt redo för trafiken efteråt. Toppenupplevelse."</p>
-        <div class="review-compact-author">Viktor L., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Bästa MC-körskolan i Malmö. 80-minuterslektioner gör verkligen skillnad – man hinner utvecklas ordentligt varje gång."</p>
-        <div class="review-compact-author">Sandra M., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Tog A2-körkortet på första försöket tack vare Andreas grundliga utbildning. Manöverprovet kändes som en vanlig lektion!"</p>
-        <div class="review-compact-author">Karim B., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Gick från noll MC-erfarenhet till A2-körkort. Yamaha MT-07 var perfekt att lära sig på – sportig men inte skrämmande. Rekommenderar!"</p>
-        <div class="review-compact-author">Hanna E., Malmö</div>
-      </div>
     </div>
   </div>
 </section>
@@ -458,5 +429,23 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 </script>
 <script src="js/main.js" defer></script>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('emailCta');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      var isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+      if (isDesktop) {
+        e.preventDefault();
+        var target = document.getElementById('kontakt') || document.getElementById('contact') || document.getElementById('mc-kontakt');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          var firstInput = target.querySelector('input');
+          if (firstInput) setTimeout(function () { firstInput.focus(); }, 600);
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>

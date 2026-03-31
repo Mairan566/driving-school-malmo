@@ -50,7 +50,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "123"
+      "reviewCount": "124"
     }
   }
   </script>
@@ -143,7 +143,8 @@
     <p class="page-hero-subtitle">Automatiska körlektioner á 70 minuter. Lättare att lära sig – fokusera på trafiken istället för växling.</p>
     <div class="page-hero-ctas">
       <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring nu</a>
-      <a href="index.html#contact" class="btn-light">Skicka e-post</a>
+      <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
+      <a href="mailto:andreskorskola@gmail.com" class="btn-cta-sms" id="emailCta"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
     </div>
   </div>
 </section>
@@ -151,7 +152,7 @@
 <div class="trust-bar">
   <div class="container">
     <span><i class="fa-solid fa-star"></i> 5.0 Google-betyg</span>
-    <span><i class="fa-solid fa-users"></i> 123+ elever</span>
+    <span><i class="fa-solid fa-users"></i> 124+ elever</span>
     <span><i class="fa-solid fa-clock"></i> 70 min/lektion</span>
     <span><i class="fa-solid fa-car"></i> Volvo V60 Automat</span>
     <span><i class="fa-solid fa-language"></i> 3 språk</span>
@@ -234,29 +235,6 @@
           <tr class="featured-row"><td>Intensivt paket <span class="badge-best">Bäst värde</span></td><td>15 lektioner + Risk 1 + Risk 2 + Teorikod</td><td>15 250 SEK <span class="save-tag">Spara 1 650 kr</span></td></tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</section>
-
-<section class="content-section bg-white">
-  <div class="container">
-    <h2 class="section-title">Vad säger våra elever?</h2>
-    <div class="reviews-compact-grid">
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Volvo V60:n är fantastisk att köra i. Automat var det bästa valet för mig som ny förare."</p>
-        <div class="review-compact-author">Linnéa G., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"Utan koppling kunde jag fokusera helt på trafiken. Klarade uppkörningen på första försöket!"</p>
-        <div class="review-compact-author">Hassan M., Malmö</div>
-      </div>
-      <div class="review-compact-card">
-        <div class="review-compact-stars">★★★★★</div>
-        <p>"André rekommenderade automat direkt, och han hade helt rätt. Kändes naturligt och tryggt."</p>
-        <div class="review-compact-author">Petra W., Malmö</div>
-      </div>
     </div>
   </div>
 </section>
@@ -433,5 +411,23 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 </script>
 <script src="js/main.js" defer></script>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('emailCta');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      var isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+      if (isDesktop) {
+        e.preventDefault();
+        var target = document.getElementById('kontakt') || document.getElementById('contact') || document.getElementById('mc-kontakt');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          var firstInput = target.querySelector('input');
+          if (firstInput) setTimeout(function () { firstInput.focus(); }, 600);
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>

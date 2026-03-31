@@ -107,6 +107,15 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="alternate" hreflang="sv" href="https://andrestrafikskola.se/mc-trafikskola.html" />
   <link rel="alternate" hreflang="x-default" href="https://andrestrafikskola.se/" />
+<style>
+  @media (max-width: 600px) {
+    .feature-card.center-mobile {
+      grid-column: 1 / -1;
+      max-width: 60%;
+      margin: 0 auto;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -143,7 +152,7 @@
       <div class="page-hero-ctas">
         <a href="tel:+46700099924" class="btn-cta-primary"><i class="fa-solid fa-phone"></i> Ring oss: +46 700 09 99 24</a>
         <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-        <a href="mailto:andreskorskola@gmail.com" class="btn-cta-sms"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
+        <a href="mailto:andreskorskola@gmail.com" class="btn-cta-sms" id="emailCta"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
       </div>
       <div style="text-align:center; margin-top:1rem;">
         <a href="mc-paket-malmo.html" class="btn-cta-secondary"><i class="fa-solid fa-list"></i> Se MC-paket & priser</a>
@@ -156,7 +165,7 @@
     <div class="trust-bar">
       <div class="container">
         <span><i class="fa-solid fa-star"></i> 5.0 Google-betyg</span>
-        <span><i class="fa-solid fa-users"></i> 123+ elever</span>
+        <span><i class="fa-solid fa-users"></i> 124+ elever</span>
         <span><i class="fa-solid fa-clock"></i> 80 min/lektion</span>
         <span><i class="fa-solid fa-motorcycle"></i> BMW F800 GS &amp; Yamaha MT-07</span>
         <span><i class="fa-solid fa-language"></i> 3 språk</span>
@@ -326,8 +335,8 @@
           </a>
           <a class="feature-card" href="mc-intensivkurs-malmo.html">
             <div class="feature-card-icon"><i class="fa-solid fa-bolt"></i></div>
-            <h3>Motorcykel intensivkurs</h3>
-            <p>Ta MC-körkortet snabbt med koncentrerade lektioner. Perfekt för dig som vill bli klar under säsongen – manöver, trafik och prov på kort tid.</p>
+            <h3>MC Intensivkurs<br>(Paket 3)</h3>
+            <p>Vårt mest kompletta MC-paket: 20 körlektioner, riskutbildning och teori online för 17 990 SEK. Koncentrerat upplägg – perfekt för dig som vill ta MC-körkort snabbt.</p>
             <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
           </a>
           <a class="feature-card" href="mc-paket-malmo.html">
@@ -353,7 +362,7 @@
             <p>Obligatorisk praktisk riskutbildning del 2 för MC. Halkbana, nödbromsning och undanmanöver i hög hastighet. Du kör med full skyddsutrustning.</p>
             <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
           </a>
-          <a class="feature-card" href="mc-riskpaket-malmo.html">
+          <a class="feature-card center-mobile" href="mc-riskpaket-malmo.html">
             <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <h3>Riskpaket motorcykel</h3>
             <p>Riskettan och Risktvåan för MC i ett samlat paket. Bekvämt, billigare och klart på några dagar – båda delarna måste vara klara innan du gör prov.</p>
@@ -364,7 +373,7 @@
         <!-- Teori -->
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Teori & förberedelser</h3>
         <div class="feature-grid">
-          <a class="feature-card" href="mc-teori-malmo.html">
+          <a class="feature-card center-mobile" href="mc-teori-malmo.html">
             <div class="feature-card-icon"><i class="fa-solid fa-laptop"></i></div>
             <h3>MC teori – digitalt material</h3>
             <p>Studera MC-teori digitalt i din egen takt. Övningsfrågor som speglar Trafikverkets prov – 70 frågor, 52 rätt krävs. Täcker fordonskännedom, trafikregler och riskmedvetenhet.</p>
@@ -458,92 +467,9 @@
             <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
-      </section>
 
-      <!-- ====== Pricing summary ====== -->
-      <section class="content-section pricing-summary-section">
-        <div class="section-intro">
-          <h2 class="inner-section-heading">Priser – MC-körkort</h2>
-          <p>Översikt av våra populäraste MC-paket och tjänster.</p>
-        </div>
-        <div class="pricing-summary-grid">
-          <div class="pricing-summary-card">
-            <h3>Introduktionslektion</h3>
-            <div class="pricing-summary-price">790 <span>SEK</span></div>
-            <p>Prova på MC-körning utan åtaganden</p>
-          </div>
-          <div class="pricing-summary-card">
-            <h3>Körlektion</h3>
-            <div class="pricing-summary-price">990 <span>SEK</span></div>
-            <p>Bana eller trafik – alla nivåer</p>
-          </div>
-          <div class="pricing-summary-card">
-            <h3>Riskettan MC</h3>
-            <div class="pricing-summary-price">750 <span>SEK</span></div>
-            <p>Obligatorisk riskutbildning del 1</p>
-          </div>
-          <div class="pricing-summary-card">
-            <h3>Risktvåan MC</h3>
-            <div class="pricing-summary-price">3 200 <span>SEK</span></div>
-            <p>Obligatorisk halkbaneövning för MC</p>
-          </div>
-          <div class="pricing-summary-card pricing-summary-featured">
-            <div class="pricing-summary-badge">Bäst värde</div>
-            <h3>Intensivkurs MC</h3>
-            <div class="pricing-summary-price">17 990 <span>SEK</span></div>
-            <p>Körlektioner + Risk 1 &amp; 2 + Teori</p>
-            <div class="pricing-summary-save">Komplett paket</div>
-          </div>
-        </div>
-        <div style="text-align:center; margin-top:1.5rem;">
-          <a href="mc-paket-malmo.html" class="btn-cta-outline"><i class="fa-solid fa-list"></i> Se fullständig MC-prislista</a>
-        </div>
-      </section>
-
-      <!-- ====== Reviews ====== -->
-      <section class="content-section reviews-compact-section">
-        <div class="section-intro">
-          <h2 class="inner-section-heading">Vad säger våra MC-elever?</h2>
-          <p>5.0 på Google med 123+ recensioner. Här är några av dem.</p>
-        </div>
-        <div class="reviews-compact-grid">
-          <div class="review-compact-card">
-            <div class="review-compact-stars" aria-label="5 stjärnor">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"Äntligen en MC-skola som tar säkerhet på allvar. Klarade uppkörningen på första försöket!"</p>
-            <span class="review-compact-author">– Jonas K., Malmö</span>
-          </div>
-          <div class="review-compact-card">
-            <div class="review-compact-stars" aria-label="5 stjärnor">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"Fantastisk instruktör som förklarar allt på arabiska. Kände mig trygg från dag ett på motorcykeln."</p>
-            <span class="review-compact-author">– Reza M., Malmö</span>
-          </div>
-          <div class="review-compact-card">
-            <div class="review-compact-stars" aria-label="5 stjärnor">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"Tog A2-körkortet snabbare än jag trodde. Strukturerad utbildning och mycket manöverträning."</p>
-            <span class="review-compact-author">– Sandra B., Malmö</span>
-          </div>
-          <div class="review-compact-card">
-            <div class="review-compact-stars" aria-label="5 stjärnor">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <p>"Bästa beslutet jag tagit. Undervisning på engelska, tålmodig instruktör och klart på 3 månader."</p>
-            <span class="review-compact-author">– Viktor L., Malmö</span>
-          </div>
-        </div>
-        <div style="text-align:center; margin-top:1.5rem;">
-          <a href="index.html#reviews" class="btn-cta-outline"><i class="fa-solid fa-star"></i> Läs alla recensioner</a>
-        </div>
-      </section>
-
-      <!-- ====== Undervisning på ditt språk ====== -->
-      <section class="content-section">
-        <div class="section-intro">
+        <!-- ====== Undervisning på ditt språk ====== -->
+        <div class="section-intro" style="margin-top:2.5rem;">
           <h2 class="inner-section-heading">MC-undervisning på ditt språk</h2>
           <p>Vi erbjuder MC-körundervisning och teorigenomgång på svenska, engelska och arabiska.</p>
         </div>
@@ -575,6 +501,98 @@
           </a>
         </div>
       </section>
+
+      <!-- ====== MC Körskola i ditt område ====== -->
+      <section class="content-section">
+        <div class="section-intro">
+          <h2 class="inner-section-heading">MC Körskola i ditt område</h2>
+          <p>Vi kör i hela Malmö och anpassar MC-utbildningen till de trafikmiljöer du möter i din vardag.</p>
+        </div>
+
+        <div class="feature-grid location-grid">
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-city"></i></div>
+            <h3><a href="mc-korskola-centrum-malmo.html">Malmö Centrum</a></h3>
+            <p>MC-körskola i centrala Malmö – tät stadstrafik, rondeller, cyklister och fotgängare runt Triangeln och Stortorget.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-wind"></i></div>
+            <h3><a href="mc-korskola-vastra-hamnen.html">Västra Hamnen</a></h3>
+            <p>Modern stadsdel med breda gator, kustnära vägar och sidvind – unika förhållanden för MC-körning.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-train-subway"></i></div>
+            <h3><a href="mc-korskola-hyllie.html">Hyllie</a></h3>
+            <p>MC-körskola nära Hyllie – modern stadsdel med blandad trafik och närhet till motorvägsanslutning.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-anchor"></i></div>
+            <h3><a href="mc-korskola-limhamn.html">Limhamn</a></h3>
+            <p>MC-körskola nära Limhamn – kustnära vägar, lugna bostadsgator och varierade trafikmiljöer.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3><a href="mc-korskola-varnhem.html">Värnhem</a></h3>
+            <p>Central knutpunkt med livlig trafik, korsningar och nära motorvägsanslutning – krävande MC-övning.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3><a href="mc-korskola-rosengard.html">Rosengård</a></h3>
+            <p>MC-körskola nära Rosengård – undervisning på svenska, engelska och arabiska. Alla är välkomna.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-store"></i></div>
+            <h3><a href="mc-korskola-mollevangen.html">Möllevången</a></h3>
+            <p>Livlig stadsdel med smala gator, parkerade bilar och mycket folk – perfekt MC-övning i uppmärksamhet.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon"><i class="fa-solid fa-map-pin"></i></div>
+            <h3><a href="mc-korskola-sodervarn.html">Södervärn</a></h3>
+            <p>Knutpunkt i södra Malmö nära vår körskola – blandad trafik och närhet till övningsbanan.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====== Pricing summary ====== -->
+      <section class="content-section pricing-summary-section">
+        <div class="section-intro">
+          <h2 class="inner-section-heading">Priser – MC-körkort</h2>
+          <p>Översikt av våra populäraste MC-paket och tjänster.</p>
+        </div>
+        <div class="pricing-summary-grid">
+          <div class="pricing-summary-card">
+            <h3>Introduktionslektion</h3>
+            <div class="pricing-summary-price">790 <span>SEK</span></div>
+            <p>Prova på MC-körning utan åtaganden</p>
+          </div>
+          <div class="pricing-summary-card">
+            <h3>Körlektion</h3>
+            <div class="pricing-summary-price">990 <span>SEK</span></div>
+            <p>Bana eller trafik – alla nivåer</p>
+          </div>
+          <div class="pricing-summary-card">
+            <h3>Riskettan MC</h3>
+            <div class="pricing-summary-price">750 <span>SEK</span></div>
+            <p>Obligatorisk riskutbildning del 1</p>
+          </div>
+          <div class="pricing-summary-card">
+            <h3>Risktvåan MC</h3>
+            <div class="pricing-summary-price">3 200 <span>SEK</span></div>
+            <p>Obligatorisk halkbaneövning för MC</p>
+          </div>
+          <div class="pricing-summary-card pricing-summary-featured">
+            <div class="pricing-summary-badge">Bäst värde</div>
+            <h3>MC Paket 3 – Intensivkurs</h3>
+            <div class="pricing-summary-price">17 990 <span>SEK</span></div>
+            <p>20 lektioner + Risk 1 &amp; 2 + Teori</p>
+            <div class="pricing-summary-save">Spara 1 610 SEK</div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:1.5rem;">
+          <a href="mc-paket-malmo.html" class="btn-cta-outline"><i class="fa-solid fa-list"></i> Se fullständig MC-prislista</a>
+        </div>
+      </section>
+
     </div><!-- end .container -->
 
     <!-- ====== CTA Banner (full-width) ====== -->
@@ -586,9 +604,70 @@
           <i class="fa-solid fa-clock"></i> Öppettider: Måndag–Fredag 09:00–18:00 &nbsp;|&nbsp;
           <i class="fa-solid fa-map-marker-alt"></i> Ystadvägen 22B, 214 30 Malmö
         </div>
-        <div class="cta-btn-group">
-          <a href="tel:+46700099924" class="btn-cta-primary"><i class="fa-solid fa-phone"></i> Ring oss: +46 700 09 99 24</a>
-          <a href="mc-paket-malmo.html" class="btn-cta-secondary"><i class="fa-solid fa-list"></i> Se MC-paket & priser</a>
+        <div id="mc-kontakt" class="contact-form-wrap fade-in">
+          <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
+            <div class="form-group">
+              <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="contactName"
+                name="name"
+                class="form-input"
+                placeholder="Ditt namn"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
+                <input
+                  type="tel"
+                  id="contactPhone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="+46 7XX XXX XXX"
+                  required
+                  autocomplete="tel"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  name="email"
+                  class="form-input"
+                  placeholder="din@email.com"
+                  required
+                  autocomplete="email"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
+              <textarea
+                id="contactMessage"
+                name="message"
+                class="form-input form-textarea"
+                placeholder="Skriv ditt meddelande här..."
+                required
+                rows="5"
+                aria-required="true"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
+              <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
+              <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
+            </button>
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              Tack! Vi återkommer till dig så snart som möjligt.
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -733,6 +812,24 @@
   });
   </script>
   <script src="js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('emailCta');
+      if (!btn) return;
+      btn.addEventListener('click', function (e) {
+        var isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+        if (isDesktop) {
+          e.preventDefault();
+          var target = document.getElementById('mc-kontakt');
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            var firstInput = target.querySelector('input');
+            if (firstInput) setTimeout(function () { firstInput.focus(); }, 600);
+          }
+        }
+      });
+    });
+  </script>
 
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
 </body>
