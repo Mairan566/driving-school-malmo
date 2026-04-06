@@ -54,6 +54,16 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Hem", "item": "https://andrestrafikskola.se/" },
+    { "@type": "ListItem", "position": 2, "name": "Villkor", "item": "https://andrestrafikskola.se/villkor.html" }
+  ]
+}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -67,129 +77,142 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="alternate" hreflang="sv" href="https://andrestrafikskola.se/villkor.html" />
   <link rel="alternate" hreflang="x-default" href="https://andrestrafikskola.se/" />
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Hem",
-      "item": "https://andrestrafikskola.se/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Villkor",
-      "item": "https://andrestrafikskola.se/villkor.html"
-    }
-  ]
-}
-  </script>
 </head>
 <body>
 
 <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
   <div class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Andre's Trafikskola - Till startsidan">
-      <img src="images/logo.png" alt="Andres Trafikskola logotyp" class="nav-logo-img" width="150" height="50" loading="eager" />
+      <img src="images/logo.png" alt="Andres Trafikskola logotyp" class="nav-logo-img" width="150" height="50" />
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Öppna meny" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="navLinks" role="list">
+        <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="trafikskola.html" class="nav-link">Trafikskola</a></li>
+      <li><a href="mc-trafikskola.html" class="nav-link">MC Trafikskola</a></li>
       <li><a href="index.html#about" class="nav-link">Om oss</a></li>
-      <li class="nav-dropdown">
-        <a href="index.html#services" class="nav-link">Tjänster</a>
-        <ul class="nav-dropdown-menu" role="list">
-          <li><a href="trafikskola.html">B-körkort – Personbil</a></li>
-          <li><a href="mc-trafikskola.html">MC-körkort – Motorcykel</a></li>
-        </ul>
-      </li>
-      <li><a href="index.html#pricing" class="nav-link">Priser</a></li>
-      <li><a href="index.html#reviews" class="nav-link">Recensioner</a></li>
       <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
       <li><a href="tel:+46700099924" class="nav-cta"><i class="fa-solid fa-phone"></i> Ring nu</a></li>
     </ul>
   </div>
 </nav>
 
-<section class="inner-hero-section">
-  <div class="inner-hero-content">
-    <nav aria-label="Brödsmulor" class="breadcrumb">
-      <a href="index.html">Hem</a> &raquo; <span>Villkor</span>
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Brödsmulor">
+      <a href="index.html">Hem</a>
+      <span class="breadcrumb-sep">&rsaquo;</span>
+      <span class="breadcrumb-current">Villkor</span>
     </nav>
+    <div class="location-badge"><i class="fa-solid fa-file-contract"></i> Allmänna villkor</div>
     <h1>Allmänna villkor</h1>
-    <p>Villkor för tjänster hos Andre's Trafikskola i Malmö. Senast uppdaterad: 2026-03-27.</p>
+    <p class="page-hero-subtitle">Villkor för tjänster hos Andre's Trafikskola i Malmö. Senast uppdaterad: 2026-03-27.</p>
   </div>
 </section>
 
-<section class="inner-content-section">
-  <div class="inner-content-container">
+<section class="content-section bg-white">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">1. Bokning och avbokning</h2>
+      <p class="inner-text">Bokning av körlektion, kurs eller annat tillfälle sker via telefon, e-post eller personligen på trafikskolan. Bokningen bekräftas av oss och är bindande för båda parter.</p>
+      <p class="inner-text"><strong>Avbokning</strong> ska göras senast kl 13.00 föregående vardag. Avbokning görs per telefon eller SMS till <a href="tel:+46700099924">+46 700 09 99 24</a>.</p>
+      <p class="inner-text">Vid sen avbokning eller utebliven närvaro debiteras eleven full lektionsavgift. Trafikskolan förbehåller sig rätten att ställa in en lektion vid t.ex. extrema väderförhållanden eller sjukdom hos trafikläraren. I sådana fall erbjuds en ny tid utan extra kostnad.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>1. Bokning och avbokning</h2>
-    <p>Bokning av körlektion, kurs eller annat tillfälle sker via telefon, e-post eller personligen på trafikskolan. Bokningen bekräftas av oss och är bindande för båda parter.</p>
-    <p><strong>Avbokning</strong> ska göras senast 24 timmar före bokad lektionstid. Avbokning görs per telefon eller SMS till <a href="tel:+46700099924">+46 700 09 99 24</a>.</p>
-    <p>Vid sen avbokning (mindre än 24 timmar före bokad tid) eller utebliven närvaro debiteras eleven full lektionsavgift. Detta gäller även vid sjukdom utan läkarintyg.</p>
-    <p>Trafikskolan förbehåller sig rätten att ställa in en lektion vid t.ex. extrema väderförhållanden eller sjukdom hos trafikläraren. I sådana fall erbjuds en ny tid utan extra kostnad.</p>
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">2. Betalningsvillkor</h2>
+      <p class="inner-text">Betalning ska ske innan lektionen påbörjas, om inget annat avtalats. Vi accepterar Swish och kortbetalning (kredit- och betalkort).</p>
+      <p class="inner-text">Vid köp av körpaket ska hela beloppet betalas innan första lektionen, om inget annat överenskommits skriftligt. Vi erbjuder ingen återbetalning vid köp av paket.</p>
+      <p class="inner-text">Priser anges inklusive moms. Aktuella priser finns på vår webbplats och kan ändras utan föregående meddelande. Eventuella prisändringar påverkar inte redan betalda paket.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>2. Betalningsvillkor</h2>
-    <p>Betalning ska ske innan lektionen påbörjas, om inget annat avtalats. Vi accepterar följande betalningsmetoder:</p>
-    <ul>
-      <li>Kontant betalning</li>
-      <li>Kortbetalning (kredit- och betalkort)</li>
-      <li>Swish</li>
-    </ul>
-    <p>Vid köp av körpaket ska hela beloppet betalas innan första lektionen, om inget annat överenskommits skriftligt.</p>
-    <p>Priser anges inklusive moms. Aktuella priser finns på vår webbplats och kan ändras utan föregående meddelande. Eventuella prisändringar påverkar inte redan betalda paket.</p>
+<section class="content-section bg-white">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">3. Körlektioner</h2>
+      <p class="inner-text">En körlektion för personbil (B-körkort) är 70 minuter. En körlektion för motorcykel (MC-körkort) är 80 minuter. Lektionstiden inkluderar för- och eftergenomgång.</p>
+      <p class="inner-text">Eleven ska kunna uppvisa giltig legitimation vid varje lektionstillfälle. För körkortsutbildning krävs giltigt körkortstillstånd utfärdat av Transportstyrelsen.</p>
+      <p class="inner-text">Eleven förväntas komma i tid till bokad lektion. Vid försenad ankomst förkortas lektionen med motsvarande tid utan prisavdrag.</p>
+      <p class="inner-text">Eleven ska vara i skick att framföra fordon. Trafikskolan har rätt att avbryta en lektion om eleven bedöms vara påverkad av alkohol, droger eller annan substans som kan påverka körförmågan.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>3. Körlektioner</h2>
-    <p>En körlektion för personbil (B-körkort) är 70 minuter. En körlektion för motorcykel (MC-körkort) är 80 minuter. Lektionstiden inkluderar för- och eftergenomgång.</p>
-    <p>Eleven ska kunna uppvisa giltig legitimation vid varje lektionstillfälle. För körkortsutbildning klass B krävs giltigt körkortstillstånd (handledartillstånd krävs ej vid övningskörning med trafikskola, men körkortstillstånd måste vara utfärdat av Transportstyrelsen).</p>
-    <p>Eleven förväntas komma i tid till bokad lektion. Vid försenad ankomst förkortas lektionen med motsvarande tid utan prisavdrag.</p>
-    <p>Eleven ska vara i skick att framföra fordon. Trafikskolan har rätt att avbryta en lektion om eleven bedöms vara påverkad av alkohol, droger eller annan substans som kan påverka körförmågan.</p>
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">4. Kurser och paket</h2>
+      <p class="inner-text">Köpta kurser och körpaket är personliga och kan inte överlåtas till annan person.</p>
+      <p class="inner-text">Körpaket är giltiga i 12 månader från inköpsdatum om inget annat anges. Efter giltighetstiden förfaller oanvända lektioner utan rätt till återbetalning.</p>
+      <p class="inner-text">Riskutbildningar (Riskettan och Risktvåan) bokas och genomförs enligt Transportstyrelsens riktlinjer.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>4. Kurser och paket</h2>
-    <p>Köpta kurser och körpaket är personliga och kan inte överlåtas till annan person.</p>
-    <p>Körpaket är giltiga i 12 månader från inköpsdatum om inget annat anges. Efter giltighetstiden förfaller oanvända lektioner utan rätt till återbetalning.</p>
-    <p>Riskutbildningar (Riskettan och Risktvåan) bokas och genomförs enligt Transportstyrelsens riktlinjer. Eleven ansvarar för att ha körkortstillstånd innan riskutbildning påbörjas.</p>
+<section class="content-section bg-white">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">5. Uppkörning och lån av fordon</h2>
+      <p class="inner-text">Eleven ansvarar själv för att boka sin uppkörning hos Trafikverket. Andre's Trafikskola ansvarar inte för tillgängligheten av uppkörningstider.</p>
+      <p class="inner-text">Trafikskolan erbjuder lån av fordon (bil eller motorcykel) vid uppkörning. Fordonet ska bokas i god tid. Eleven måste ha genomfört tillräckligt antal lektioner för att vara uppkörningsklar, bedömt av ansvarig trafiklärare.</p>
+      <p class="inner-text">Vid avbokning av uppkörning gäller samma avbokningsregler som för körlektioner.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>5. Uppkörning och lån av fordon</h2>
-    <p>Eleven ansvarar själv för att boka sin uppkörning hos Trafikverket. Andre's Trafikskola ansvarar inte för tillgängligheten av uppkörningstider.</p>
-    <p>Trafikskolan erbjuder lån av övningsfordon (bil eller motorcykel) vid uppkörning. Villkor för fordonslån:</p>
-    <ul>
-      <li>Fordonet ska bokas i god tid, minst 5 arbetsdagar före uppkörningen.</li>
-      <li>Eleven måste ha genomfört tillräckligt antal lektioner hos Andre's Trafikskola för att vara uppkörningsklar, bedömt av ansvarig trafiklärare.</li>
-      <li>Vid avbokning av uppkörning gäller samma avbokningsregler som för körlektioner (24 timmar).</li>
-      <li>Eleven ersätter eventuella skador på fordonet som uppstår genom elevens försumlighet under uppkörning.</li>
-    </ul>
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">6. Ansvar och försäkring</h2>
+      <p class="inner-text">Under körlektioner ansvarar eleven för att följa trafikregler och trafiklärarens instruktioner. Trafikläraren har alltid möjlighet att ingripa i körningen av säkerhetsskäl.</p>
+      <p class="inner-text">Andre's Trafikskola har giltig trafikskoleförsäkring som täcker skador under övningskörning i enlighet med svensk lag.</p>
+      <p class="inner-text">Trafikskolan ansvarar inte för personliga tillhörigheter som lämnas i fordonet.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>6. Ansvar</h2>
-    <p>Under körlektioner ansvarar eleven för att följa trafikregler och trafiklärarens instruktioner. Trafikläraren har alltid möjlighet att ingripa i körningen av säkerhetsskäl.</p>
-    <p>Andre's Trafikskola har giltig trafikskoleförsäkring som täcker skador under övningskörning i enlighet med svensk lag. Eleven ansvarar dock för böter vid trafikförseelser som begås under lektionstillfällen, i den mån eleven kan hållas ansvarig enligt gällande lagstiftning.</p>
-    <p>Trafikskolan ansvarar inte för personliga tillhörigheter som lämnas i fordonet.</p>
+<section class="content-section bg-white">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">7. Personuppgifter</h2>
+      <p class="inner-text">Andre's Trafikskola behandlar personuppgifter i enlighet med GDPR och vår <a href="integritetspolicy.html">integritetspolicy</a>. Genom att boka en tjänst samtycker eleven till att vi sparar nödvändiga uppgifter för att kunna genomföra utbildningen.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>7. Personuppgifter</h2>
-    <p>Andre's Trafikskola behandlar personuppgifter i enlighet med GDPR och vår <a href="integritetspolicy.html">integritetspolicy</a>. Genom att boka en tjänst samtycker eleven till att vi sparar nödvändiga uppgifter för att kunna genomföra utbildningen.</p>
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">8. Force majeure/högre hand</h2>
+      <p class="inner-text">Andre's Trafikskola ansvarar inte för förseningar eller utebliven prestation orsakad av omständigheter utanför vår kontroll, såsom naturkatastrofer, pandemi, myndighetsåtgärder, strejk eller extrema väderförhållanden. Vid force majeure har trafikskolan rätt att skjuta upp bokade lektioner till ett senare datum utan ersättningsskyldighet.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>8. Force majeure</h2>
-    <p>Andre's Trafikskola ansvarar inte för förseningar eller utebliven prestation orsakad av omständigheter utanför vår kontroll, såsom naturkatastrofer, pandemi, myndighetsåtgärder, strejk, extrema väderförhållanden eller andra händelser som utgör force majeure. Vid force majeure har trafikskolan rätt att skjuta upp bokade lektioner till ett senare datum utan ersättningsskyldighet.</p>
+<section class="content-section bg-white">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">9. Tvister</h2>
+      <p class="inner-text">Dessa villkor regleras av svensk lag. Eventuella tvister ska i första hand lösas genom dialog mellan parterna. Om parterna inte kan enas ska tvisten avgöras av Malmö tingsrätt.</p>
 
-    <h2>9. Tvister</h2>
-    <p>Dessa villkor regleras av svensk lag. Eventuella tvister som uppstår med anledning av dessa villkor ska i första hand lösas genom dialog mellan parterna. Om parterna inte kan enas ska tvisten avgöras av Malmö tingsrätt.</p>
-    <p>Eleven kan även vända sig till Allmänna reklamationsnämnden (ARN) för prövning av konsumenttvister.</p>
+    </div>
+  </div>
+</section>
 
-    <h2>10. Kontaktuppgifter</h2>
-    <p>Vid frågor om dessa villkor är du välkommen att kontakta oss:</p>
-    <ul>
-      <li><strong>Företag:</strong> Andre's Trafikskola AB</li>
-      <li><strong>Organisationsnummer:</strong> 559435-8979</li>
-      <li><strong>Adress:</strong> Ystadvägen 22B, 214 30 Malmö</li>
-      <li><strong>Telefon:</strong> <a href="tel:+46700099924">+46 700 09 99 24</a></li>
-      <li><strong>E-post:</strong> <a href="mailto:andreskorskola@gmail.com">andreskorskola@gmail.com</a></li>
-    </ul>
-
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">10. Kontaktuppgifter</h2>
+      <p class="inner-text">Vid frågor om dessa villkor är du välkommen att kontakta oss:</p>
+      <p class="inner-text"><strong>Andre's Trafikskola AB</strong><br>Orgnr: 559435-8979<br>Ystadvägen 22B, 214 30 Malmö<br>Telefon: <a href="tel:+46700099924">+46 700 09 99 24</a><br>E-post: <a href="mailto:andreskorskola@gmail.com">andreskorskola@gmail.com</a></p>
+    </div>
   </div>
 </section>
 
@@ -231,7 +254,6 @@
 </footer>
 <button class="back-to-top" id="backToTop" aria-label="Tillbaka till toppen"><i class="fa-solid fa-chevron-up"></i></button>
 <script src="js/main.js" defer></script>
-
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
 </body>
 </html>
