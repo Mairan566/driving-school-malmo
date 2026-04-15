@@ -77,6 +77,10 @@
   flex-wrap: wrap;
 }
 
+.page-hero-ctas.contact-box {
+  margin-top: 1rem;
+}
+
 .page-hero .location-badge i {
   margin-right: 0.35em;
 }
@@ -1007,6 +1011,26 @@
   line-height: 1.6;
 }
 
+/* Inline text links (obvious & clickable inside body copy) */
+.inline-link {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+.inline-link:hover,
+.inline-link:focus-visible {
+  color: var(--primary);
+  text-decoration-thickness: 3px;
+}
+.inline-link i {
+  font-size: 0.75em;
+  margin-left: 0.3em;
+  vertical-align: baseline;
+}
+
 /* ---------- Pricing summary ---------- */
 .pricing-summary-grid {
   display: grid;
@@ -1288,10 +1312,56 @@ a.feature-card {
   margin: 0;
   line-height: 1.8;
 }
+/* Hero contact box — title/short labels hidden globally, shown only on mobile */
+.contact-box-title { display: none; }
+.btn-label-short { display: none; }
+
 @media (max-width: 768px) {
   .footer-columns {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .page-hero-ctas.contact-box {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.875rem 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .page-hero-ctas.contact-box .contact-box-title {
+    display: block;
+    grid-column: 1 / -1;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    opacity: 0.85;
+    margin-bottom: 0.35rem;
+  }
+  .page-hero-ctas.contact-box #emailCta {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+  .page-hero-ctas.contact-box > a {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.85rem;
+    gap: 0.35rem;
+    justify-content: center;
+    white-space: nowrap;
+    min-width: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  .page-hero-ctas.contact-box .btn-label-full { display: none; }
+  .page-hero-ctas.contact-box .btn-label-short { display: inline; }
 }
 @media (max-width: 480px) {
   .footer-columns {

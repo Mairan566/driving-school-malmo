@@ -2199,6 +2199,7 @@ button {
   /* Quote */
   .quote-text { padding: 0; }
   .quote-mark { font-size: 4rem; }
+  .quote-mark.close { margin-top: 0.25rem; }
 
   /* Contact form row */
   .form-row { grid-template-columns: 1fr; }
