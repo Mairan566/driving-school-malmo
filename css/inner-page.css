@@ -81,6 +81,14 @@
   margin-top: 1rem;
 }
 
+/* Hero top CTA row (e.g. Priser + Recensioner on category pages) */
+.hero-top-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .page-hero .location-badge i {
   margin-right: 0.35em;
 }
@@ -1362,6 +1370,29 @@ a.feature-card {
   }
   .page-hero-ctas.contact-box .btn-label-full { display: none; }
   .page-hero-ctas.contact-box .btn-label-short { display: inline; }
+
+  /* Hero top CTAs stay side by side on phones (compact sizing) */
+  .hero-top-ctas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-top-ctas > a {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.8rem;
+    gap: 0.35rem;
+    justify-content: center;
+    white-space: nowrap;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hero-top-ctas .star-trail {
+    display: none;
+  }
 }
 @media (max-width: 480px) {
   .footer-columns {
