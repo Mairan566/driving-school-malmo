@@ -576,4 +576,35 @@
     sections.forEach(function (section) { observer.observe(section); });
   })();
 
+  /* ============================================================
+     CONTACT CTA — desktop fallback
+     On desktop, Ring oss / Skicka SMS / Skicka e-post buttons
+     scroll to the in-page contact form (they rarely open native
+     apps on a laptop). Mobile keeps tel/sms/mailto behaviour.
+  ============================================================ */
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth <= 768) return;
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var isCta = href.indexOf('tel:+46700099924') === 0
+             || href.indexOf('sms:+46700099924') === 0
+             || href.indexOf('mailto:andreskorskola@gmail.com') === 0;
+    if (!isCta) return;
+    // Only intercept button-styled links, not inline text links in body copy
+    var cls = (a.className || '').toString();
+    if (!/btn|hero-cta|nav-cta/.test(cls)) return;
+    var form = document.getElementById('kontakt')
+            || document.getElementById('mc-kontakt')
+            || document.getElementById('contact');
+    if (!form) return;
+    e.preventDefault();
+    var nav = document.getElementById('navbar');
+    var h = nav ? nav.offsetHeight : 80;
+    window.scrollTo({
+      top: form.getBoundingClientRect().top + window.pageYOffset - h,
+      behavior: 'smooth'
+    });
+  });
+
 })();

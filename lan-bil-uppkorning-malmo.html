@@ -72,13 +72,21 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Lån av Bil till Uppkörning Malmö",
+  "serviceType": "Lån av Bil till Uppkörning",
+  "description": "Lån av bil till uppkörning i Malmö – 1 400 SEK inkl. 30 min uppvärmning. Audi A3 (automat) eller Volvo V60 (manuell/automat).",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andre's Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö"
+  "areaServed": "Malmö",
+  "offers": {
+    "@type": "Offer",
+    "price": "1400",
+    "priceCurrency": "SEK",
+    "url": "https://andrestrafikskola.se/lan-bil-uppkorning-malmo.html"
+  }
 }
   </script>
   <script type="application/ld+json">
@@ -117,23 +125,23 @@
       "name": "Vad ingår vid lån av bil till uppkörning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Du får 30 minuters uppvärmningslektion innan provet samt tillgång till bilen under hela uppkörningen hos Trafikverket. Allt ingår i priset 1 400 SEK."
+        "text": "Kort sagt: 30 minuters förberedelse + bilen under hela provet, allt för 1 400 SEK. Se steg-för-steg-guiden ovan för vad som händer på dagen."
       }
     },
     {
       "@type": "Question",
-      "name": "Vilken bil kör jag upp med?",
+      "name": "Vilken bil ska jag välja?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Du kör upp med Audi A3 Sportback 2026 (automat) eller Volvo V60 (automat och manuell) – samma bil du övat i under dina körlektioner."
+        "text": "Välj den bil du har flest lektionstimmar i. Vi erbjuder Audi A3 (automat) och Volvo V60 (automat eller manuell). Om du har kört båda, välj den du är mest bekväm med vid parkering och manövrering – det är där bilkännedom gör störst skillnad."
       }
     },
     {
       "@type": "Question",
-      "name": "Får jag en uppvärmningslektion innan?",
+      "name": "Vad gör vi under uppvärmningen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, 30 minuters uppvärmningslektion ingår i priset. Du får repetera viktiga moment och bli varm i kläderna innan provet startar."
+        "text": "Vi fokuserar på det du vill – ofta parkering, en kort rondellrunda, och en lugn sträcka för att hitta rätt sittposition och spegelinställning."
       }
     },
     {
@@ -141,15 +149,15 @@
       "name": "Var ligger Trafikverket i Malmö?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trafikverkets förarprovskontor i Malmö ligger på Cederströmsgatan 1, 212 39 Malmö."
+        "text": "Trafikverkets förarprovskontor ligger på Cederströmsgatan 1, 212 39 Malmö. Det finns parkering på plats. Gå in 5–10 minuter före din provtid med giltig legitimation (körkortstillstånd och ID)."
       }
     },
     {
       "@type": "Question",
-      "name": "Vad kuggar flest på uppkörningen?",
+      "name": "Vad händer om jag blir underkänd?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vanliga orsaker till underkänt: bristande kontroll av speglar och döda vinkeln, fel hastighetsanpassning, dålig riskmedvetenhet och felaktig tillämpning av väjningsplikt."
+        "text": "Du betalar inte extra för att bilen används under provet – priset gäller oavsett resultat. Om du vill boka om provet och låna bilen igen betalar du en ny avgift. Vi erbjuder rabatt på billån vid ombokning om du bokar en extra övningslektion mellan försöken."
       }
     }
   ]
@@ -188,10 +196,10 @@
     </nav>
     <div class="location-badge"><i class="fa-solid fa-car-side"></i> Lån av bil</div>
     <h1>Lån av Bil till Uppkörning i Malmö</h1>
-    <p class="page-hero-subtitle">Hyr en av våra moderna bilar till din uppkörning hos Trafikverket i Malmö – 1 400 SEK med 30 minuters uppvärmningslektion innan provet.</p>
+    <p class="page-hero-subtitle">Hyr en av våra moderna bilar till din uppkörning hos Trafikverket i Malmö – 1 400 SEK med uppvärmningslektion innan provet.</p>
     <div style="text-align:center; margin-top:1rem;">
-      <a href="http://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary">
-        <i class="fa-solid fa-calendar-check"></i> Boka lektion!
+      <a href="http://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
+        <i class="fa-solid fa-calendar-check"></i> Book lesson online
       </a>
     </div>
     <div class="page-hero-ctas contact-box">
@@ -236,9 +244,16 @@
 <section class="content-section bg-light">
   <div class="container">
     <div class="section-intro">
-      <h2 class="inner-section-heading">Vad ingår vid lån av bil till uppkörning?</h2>
-      <p class="inner-text">När du lånar bil till uppkörning hos Andre's Trafikskola får du 30 minuters uppvärmningslektion innan provet startar. Under uppvärmningen repeterar vi viktiga moment och ser till att du känner dig trygg och förberedd. Du kör i samma bil du övat i under dina körlektioner – antingen vår Audi A3 Sportback 2026 (automat) eller Volvo V60 (automat och manuell).</p>
-      <p class="inner-text">Bilen är din under hela uppkörningen hos Trafikverket på Cederströmsgatan 1 i Malmö. Vi ser till att fordonet är rent, välskött och i perfekt skick för ditt prov. Allt ingår i priset 1 400 SEK – inga dolda kostnader.</p>
+      <h2 class="inner-section-heading">Så fungerar det – steg för steg</h2>
+      <p class="inner-text">Från bokning till provresultat – så ser hela provdagen ut när du lånar bil av oss.</p>
+    </div>
+    <div class="section-intro" style="max-width:820px;">
+      <p class="inner-text"><strong>1. Boka din provtid:</strong> Boka <a href="uppkorning-malmo.html">uppkörningen</a> hos Trafikverket via deras webbplats. Kontakta oss så snart du har ett datum så att vi reserverar bilen åt dig.</p>
+      <p class="inner-text"><strong>2. Välj bil:</strong> Bestäm om du vill köra upp med Audi A3 (automat) eller Volvo V60 (manuell eller automat). Vi rekommenderar att du väljer den bil du övat mest med.</p>
+      <p class="inner-text"><strong>3. Vi ses 40 minuter innan provet:</strong> Vi möts vid skolan på Ystadvägen 22B eller vid Trafikverket på Cederströmsgatan – beroende på vad som passar dig bäst.</p>
+      <p class="inner-text"><strong>4. 30 minuters uppvärmning:</strong> Vi kör <a href="uppkorningsrutter-malmo.html">uppkörningsrutter</a> i området kring Cederströmsgatan och repeterar de moment du vill gå igenom en sista gång. Du bestämmer vad vi fokuserar på, ofta ingår även en snabb genomgång av <a href="sakerhetskontroll-bil-malmo.html">säkerhetskontroll</a>.</p>
+      <p class="inner-text"><strong>5. Provet:</strong> Vi lämnar dig vid Trafikverkets reception. Bilen är din under hela provet – förarprövaren sitter bredvid dig som passagerare.</p>
+      <p class="inner-text"><strong>6. Efter provet:</strong> Du kör tillbaka till Trafikverket oavsett resultat. Vi hämtar bilen där.</p>
     </div>
   </div>
 </section>
@@ -274,9 +289,46 @@
 <section class="content-section bg-light">
   <div class="container">
     <div class="section-intro">
+      <h2 class="inner-section-heading">Våra bilar</h2>
+      <p class="inner-text">Välj den bil du trivs bäst med – båda är moderna, välskötta och utrustade med dubbla pedaler som förarprövaren är van vid.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-car"></i></div>
+        <h3>Audi A3 Sportback (2026) – Automat</h3>
+        <p>Kompakt och lättmanövrerad med bra sikt. Modern DSG-växellåda med mjuk respons. Liten vändradie som gör parkering och manövrering enklare. Bra val om du övar automat och trivs med en något mindre bil.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-car-side"></i></div>
+        <h3>Volvo V60 – Automat &amp; Manuell</h3>
+        <p>Rymligare bil med bekväm sittposition och utmärkt säkerhetsutrustning. Tillgänglig med både automatväxellåda och manuell 6-växlad låda. Den manuella varianten har en förlåtande koppling som är snäll mot nybörjare. Bra val om du föredrar en större bil med mer utrymme.</p>
+      </div>
+    </div>
+    <p class="inner-text" style="text-align:center; margin-top:1.5rem;">Båda bilarna har dubbla instruktörspedaler, modern säkerhetsutrustning och är väl underhållna. Förarprövaren hos Trafikverket är van vid båda fordonen.</p>
+  </div>
+</section>
+
+<section class="content-section bg-white">
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:2rem;">Pris – Lån av bil till uppkörning</h2>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead><tr><th>Tjänst</th><th>Pris</th><th>Detaljer</th></tr></thead>
+        <tbody>
+          <tr class="featured-row"><td>Lån av bil vid uppkörning</td><td>1 400 SEK</td><td>Inkl. uppvärmning, Audi A3 eller Volvo V60</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="inner-text" style="text-align:center; margin-top:1rem;">Alla priser inkl. moms. Trafikverkets provavgift (ca 800 kr) tillkommer separat.</p>
+  </div>
+</section>
+
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
       <h2 class="inner-section-heading">Fördelarna med att köra upp i en bekant bil</h2>
-      <p class="inner-text">Uppkörningen är ett stressande moment för de flesta. Att behöva vänja sig vid en okänd bil – med annan pedalrespons, styrning och sittposition – gör det ännu svårare. När du kör upp i samma bil du övat i vet du exakt hur bilen reagerar i varje situation. Du kan fokusera helt på trafiken och körningen istället för på fordonet.</p>
-      <p class="inner-text">Den 30 minuter långa uppvärmningslektionen innan provet ger dig dessutom möjlighet att repetera moment du känner dig osäker på. Många elever upplever att uppvärmningen gör att nervositeten minskar markant och att de presterar bättre under provet. Det är en investering som ökar dina chanser att klara uppkörningen på första försöket.</p>
+      <p class="inner-text">Provdagen är ett stressande moment för de flesta. Att behöva vänja sig vid en okänd bil – med annan pedalrespons, styrning och sittposition – gör det ännu svårare. När du kör upp i din övningsbil vet du exakt hur den reagerar i varje situation. Du kan fokusera helt på trafiken och körningen istället för på fordonet.</p>
+      <p class="inner-text">Uppvärmningslektionen innan körprovet ger dig dessutom möjlighet att repetera moment du känner dig osäker på. Många elever upplever att förberedelsen gör att nervositeten minskar markant och att de presterar bättre under provet. Det är en investering som ökar dina chanser att klara provtillfället på första försöket.</p>
     </div>
   </div>
 </section>
@@ -284,7 +336,7 @@
 <section class="cta-banner">
   <div class="container">
     <h2>Boka lån av bil</h2>
-    <p>1 400 SEK – inkl. 30 min uppvärmning. Kontakta oss!</p>
+    <p>1 400 SEK – inkl. förberedelse och bilen under hela provet. Kontakta oss!</p>
     <div class="cta-btn-group">
       <a href="tel:+46700099924" class="btn-cta-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
       <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
@@ -303,25 +355,25 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Du får 30 minuters uppvärmningslektion innan provet samt tillgång till bilen under hela uppkörningen hos Trafikverket. Allt ingår i priset 1 400 SEK.</p>
+          <p>Kort sagt: 30 minuters förberedelse + bilen under hela provet, allt för 1 400 SEK. Se steg-för-steg-guiden ovan för vad som händer på dagen.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Vilken bil kör jag upp med?
+          Vilken bil ska jag välja?
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Du kör upp med Audi A3 Sportback 2026 (automat) eller Volvo V60 (automat och manuell) – samma bil du övat i under dina körlektioner.</p>
+          <p>Välj den bil du har flest lektionstimmar i. Vi erbjuder Audi A3 (automat) och Volvo V60 (automat eller manuell). Om du har kört båda, välj den du är mest bekväm med vid parkering och manövrering – det är där bilkännedom gör störst skillnad.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Får jag en uppvärmningslektion innan?
+          Vad gör vi under uppvärmningen?
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Ja, 30 minuters uppvärmningslektion ingår i priset. Du får repetera viktiga moment och bli varm i kläderna innan provet startar.</p>
+          <p>Vi fokuserar på det du vill – ofta parkering, en kort rondellrunda, och en lugn sträcka för att hitta rätt sittposition och spegelinställning.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -330,16 +382,16 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Trafikverkets förarprovskontor i Malmö ligger på Cederströmsgatan 1, 212 39 Malmö.</p>
+          <p>Trafikverkets förarprovskontor ligger på Cederströmsgatan 1, 212 39 Malmö. Det finns parkering på plats. Gå in 5–10 minuter före din provtid med giltig legitimation (körkortstillstånd och ID).</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" aria-expanded="false">
-          Vad kuggar flest på uppkörningen?
+          Vad händer om jag blir underkänd?
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Vanliga orsaker till underkänt: bristande kontroll av speglar och döda vinkeln, fel hastighetsanpassning, dålig riskmedvetenhet och felaktig tillämpning av väjningsplikt.</p>
+          <p>Du betalar inte extra för att bilen används under provet – priset gäller oavsett resultat. Om du vill boka om provet och låna bilen igen betalar du en ny avgift. Vi erbjuder rabatt på billån vid ombokning om du bokar en extra övningslektion mellan försöken.</p>
         </div>
       </div>
     </div>
