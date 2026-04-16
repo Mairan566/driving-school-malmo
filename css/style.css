@@ -1393,7 +1393,7 @@ button {
    ============================================================ */
 .quote-section {
   background: linear-gradient(135deg, var(--primary) 0%, var(--quote-blue) 60%, var(--secondary) 100%);
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -1410,12 +1410,53 @@ button {
 }
 
 .quote-inner {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
   position: relative;
   z-index: 1;
   padding: 0 1.25rem;
+}
+
+/* Horizontal photo-left / text-right layout */
+.quote-layout {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.quote-left {
+  flex-shrink: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.quote-left .quote-photo-wrapper {
+  width: 220px;
+  height: 220px;
+}
+.quote-right {
+  flex: 1;
+  text-align: left;
+}
+.quote-right .quote-heading {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin-bottom: 1rem;
+}
+.quote-right .quote-text {
+  padding: 0;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+}
+.quote-right .quote-mark {
+  font-size: 3rem;
+  line-height: 0.6;
+}
+.quote-right .quote-mark.open {
+  margin-bottom: -0.75rem;
+}
+.quote-right .quote-mark.close {
+  margin-top: -0.5rem;
 }
 
 .quote-heading {
@@ -2219,6 +2260,17 @@ button {
   }
 
   /* Quote */
+  .quote-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .quote-right {
+    text-align: center;
+  }
+  .quote-left .quote-photo-wrapper {
+    width: 180px;
+    height: 180px;
+  }
   .quote-text { padding: 0; }
   .quote-mark { font-size: 4rem; }
   .quote-mark.close { margin-top: 0.25rem; }
