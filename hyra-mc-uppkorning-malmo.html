@@ -46,12 +46,8 @@
       "longitude": 13.011142384994773
     },
     "openingHours": "Mo-Su 10:00-16:00",
-    "priceRange": "750-17990 SEK",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "124"
-    }
+    "areaServed": "Malmö",
+    "priceRange": "750-17990 SEK"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,19 +62,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="alternate" hreflang="sv" href="https://andrestrafikskola.se/hyra-mc-uppkorning-malmo.html" />
-  <link rel="alternate" hreflang="x-default" href="https://andrestrafikskola.se/" />
+  <link rel="alternate" hreflang="x-default" href="https://andrestrafikskola.se/hyra-mc-uppkorning-malmo.html" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Hyra MC till Uppkörning Malmö",
+  "serviceType": "Motorcycle rental for driving test",
+  "description": "Hyra provgodkänd motorcykel till MC-uppkörningen i Malmö för 1 200 SEK. Yamaha MT-07 (35 kW) för A2-körkort, BMW F800 GS för A-körkort. Uppvärmning ingår. På svenska, engelska och arabiska.",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andre's Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö"
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
+  "availableLanguage": ["sv", "en", "ar"],
+  "offers": {
+    "@type": "Offer",
+    "price": "1200",
+    "priceCurrency": "SEK"
+  }
 }
   </script>
   <script type="application/ld+json">
@@ -114,26 +121,34 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Vad kostar det att hyra MC till uppkörning i Malmö?",
+      "name": "Vad kostar det att hyra MC till uppkörning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Att hyra motorcykel till uppkörning kostar 1 200 SEK hos Andre's Trafikskola. Priset inkluderar uppvärmning innan provet så att du hinner känna dig bekväm på motorcykeln."
+        "text": "Att hyra motorcykel till uppkörning kostar 1 200 SEK. Priset inkluderar uppvärmning innan provet så att du hinner bli bekväm på motorcykeln. Trafikverkets provavgift tillkommer och betalas direkt till Trafikverket."
       }
     },
     {
       "@type": "Question",
-      "name": "Vilka motorcyklar kan jag hyra till uppkörningen?",
+      "name": "Vilka motorcyklar kan jag hyra?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vi erbjuder Yamaha MT-07 (35 kW, godkänd för A2-körkort) och BMW F800 GS (godkänd för A-körkort). Båda motorcyklarna uppfyller Trafikverkets krav och är godkända för uppkörning."
+        "text": "Vi erbjuder Yamaha MT-07 (35 kW, godkänd för A2-körkort) och BMW F800 GS (godkänd för A-körkort). Båda uppfyller Trafikverkets samtliga krav. Kontakta oss om du behöver MC för A1-körkort."
       }
     },
     {
       "@type": "Question",
-      "name": "Vilka krav ställer Trafikverket på motorcykeln vid uppkörning?",
+      "name": "Vilka krav ställer Trafikverket på motorcykeln?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kraven varierar per körkortsklass: A1 kräver minst 90 km/h och max 11 kW. A2 kräver minst 100 km/h och 20–35 kW. A kräver minst 100 km/h, minst 50 kW och minst 175 kg tjänstevikt. Alla våra motorcyklar uppfyller dessa krav."
+        "text": "A1: minst 90 km/h, max 11 kW. A2: minst 100 km/h, 20–35 kW. A: minst 100 km/h, minst 50 kW, minst 175 kg tjänstevikt. Alla våra MC uppfyller kraven för respektive klass."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag hyra MC om jag inte gått utbildning hos er?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du kan hyra motorcykel till uppkörning oavsett var du har gått din utbildning. Vi rekommenderar att boka en extra körlektion (990 SEK) för att bekanta dig med motorcykeln innan provdagen."
       }
     },
     {
@@ -141,15 +156,7 @@
       "name": "Ingår uppvärmning före provet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, uppvärmning ingår i hyran. Du får tid att köra motorcykeln innan provet för att vänja dig vid gas, broms, koppling och balans. Det minskar nervositet och ökar dina chanser att klara provet."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kan jag hyra MC om jag inte har gått utbildning hos er?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, du kan hyra motorcykel till uppkörning även om du har övningskört privat eller gått utbildning hos en annan körskola. Kontakta oss för att boka – vi ser till att rätt motorcykel finns tillgänglig på din provdag."
+        "text": "Ja, uppvärmning ingår i hyran på 1 200 SEK. Du får tid att köra motorcykeln före provet för att vänja dig vid gas, broms, koppling och balans. Vi möter dig vid Trafikverket i Malmö."
       }
     }
   ]
@@ -423,8 +430,8 @@
     <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">Relaterade sidor</h3>
     <div class="related-links-grid">
           <a href="mc-uppkorning-malmo.html" class="related-link-btn"><i class="fa-solid fa-flag-checkered"></i> Uppkörningsträning MC</a>
-          <a href="mc-uppkorningsrutter-malmo.html" class="related-link-btn"><i class="fa-solid fa-map"></i> Uppkörningsrutter MC</a>
-          <a href="mc-bokning-uppkorning-malmo.html" class="related-link-btn"><i class="fa-solid fa-calendar-check"></i> Boka Uppkörning</a>
+          <a href="mc-uppkorning-malmo.html#strategi" class="related-link-btn"><i class="fa-solid fa-chess"></i> Strategi &amp; bedömning</a>
+          <a href="mc-uppkorning-malmo.html#krav" class="related-link-btn"><i class="fa-solid fa-clipboard-list"></i> Krav inför uppkörning</a>
           <a href="mc-paket-malmo.html" class="related-link-btn"><i class="fa-solid fa-box"></i> MC Paket</a>
           <a href="mc-korlektioner-malmo.html" class="related-link-btn"><i class="fa-solid fa-motorcycle"></i> MC Körlektioner</a>
     </div>

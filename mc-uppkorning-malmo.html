@@ -46,12 +46,8 @@
       "longitude": 13.011142384994773
     },
     "openingHours": "Mo-Su 10:00-16:00",
-    "priceRange": "750-17990 SEK",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "124"
-    }
+    "areaServed": "Malmö",
+    "priceRange": "750-17990 SEK"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,19 +62,29 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="alternate" hreflang="sv" href="https://andrestrafikskola.se/mc-uppkorning-malmo.html" />
-  <link rel="alternate" hreflang="x-default" href="https://andrestrafikskola.se/" />
+  <link rel="alternate" hreflang="x-default" href="https://andrestrafikskola.se/mc-uppkorning-malmo.html" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Uppkörningsträning MC Malmö",
+  "serviceType": "Driving Test Preparation",
+  "description": "Uppkörningsträning för MC-körprov i Malmö. Vi simulerar Trafikverkets körprov på Rimfrostgatan 5: säkerhetskontroll, lågfart, högfart, nödbromsning från 70 och 90 km/h samt 25 min vägkörning. På svenska, engelska och arabiska.",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andre's Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö"
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
+  "availableLanguage": ["sv", "en", "ar"],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "MC-elev"
+  }
 }
   </script>
   <script type="application/ld+json">
@@ -125,7 +131,7 @@
       "name": "Var genomförs uppkörningsträningen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vi tränar vid och omkring MC-provplatsen på Rimfrostgatan 5, 212 23 Malmö – samma plats och under samma förhållanden som det riktiga körprovet."
+        "text": "Vi tränar vid och omkring MC-provplatsen på Rimfrostgatan 5, 212 23 Malmö – samma plats och under samma förhållanden som det riktiga körprovet. Banövningarna genomförs på samma bana som Trafikverket använder."
       }
     },
     {
@@ -133,7 +139,7 @@
       "name": "Hur lång är uppkörningsträningen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Uppkörningsträningen tar en komplett lektion på 80 minuter. Vi rekommenderar att boka minst en uppkörningsträning innan provet, men gärna två om du vill vara extra förberedd."
+        "text": "Uppkörningsträningen tar en komplett lektion på 80 minuter. Vi rekommenderar att boka minst en uppkörningsträning innan provet, men gärna två om du vill vara extra förberedd. Boka helst samma vecka som uppkörningen."
       }
     },
     {
@@ -141,7 +147,55 @@
       "name": "Behöver jag uppkörningsträning om jag redan har haft körlektioner?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja, uppkörningsträning är starkt rekommenderat oavsett hur många körlektioner du haft. Träningen fokuserar specifikt på provets format, bedömningskriterier och de vanligaste misstagen – det ger dig en avgörande fördel på provdagen."
+        "text": "Ja, uppkörningsträning är starkt rekommenderat oavsett antal körlektioner. Vanliga lektioner fokuserar på att lära sig köra – uppkörningsträningen fokuserar specifikt på provets format, bedömningskriterier och de vanligaste misstagen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilka förkunskapskrav måste vara uppfyllda innan jag bokar MC-uppkörningen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du behöver giltigt körkortstillstånd från Transportstyrelsen, godkänd Riskettan (Risk 1), godkänd Risktvåan MC (Risk 2) samt godkänt teoriprov. Alla måste vara registrerade hos Trafikverket innan du kan boka uppkörningen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur är MC-teoriprovet uppbyggt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MC-teoriprovet hos Trafikverket består av 70 frågor varav 5 är testfrågor som inte räknas. Du behöver minst 52 rätt av de 65 räknade frågorna för godkänt. Provtiden är 50 minuter. Godkänt teoriprov är giltigt i 1 år."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "När kan man köra upp för MC i Malmö?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MC-prov genomförs endast under säsongen från slutet av april till slutet av oktober. Provtider släpps löpande; populära tider (morgon och tidig sommar) fyller snabbt. Boka så fort alla krav är uppfyllda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad ska jag ta med på MC-provdagen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Giltig legitimation, fullständig MC-skyddsutrustning (hjälm, jacka med skydd, handskar, stövlar som täcker vristen, ryggskydd) samt en provgodkänd motorcykel som uppfyller Trafikverkets krav för din körkortsklass."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är det vanligaste misstaget på MC-uppkörningens vägkörning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bristande spegelkoll är det absolut vanligaste felet. Kolla backspeglarna och dödvinkel innan varje manöver – filbyte, sväng, acceleration och inbromsning. Tydlig huvudrörelse gör det synligt för förrättaren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad händer efter godkänd MC-uppkörning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du får ett tillfälligt körkortsbevis direkt av förrättaren. Det permanenta körkortet skickas av Transportstyrelsen via rekommenderat brev till närmaste PostNord-utlämningsställe inom 1–2 veckor. Ta med giltig legitimation vid uthämtning."
       }
     }
   ]
@@ -179,7 +233,7 @@
     </nav>
     <div class="location-badge"><i class="fa-solid fa-flag-checkered"></i> Uppkörningsträning</div>
     <h1>Uppkörningsträning MC Malmö – Simulera Hela Körprovet</h1>
-    <p class="page-hero-subtitle">Träna under provliknande förhållanden vid Trafikverket Malmö. Säkerhetskontroll, lågfartsbana, högfartsbana, bromsövning från 70 och 90 km/h samt 25 minuters vägkörning – precis som det riktiga provet.</p>
+    <p class="page-hero-subtitle">Träna under provliknande förhållanden vid Trafikverkets MC-provplats på Rimfrostgatan 5 i Malmö. Säkerhetskontroll, lågfartsbana, högfartsbana, bromsövning från 70 och 90 km/h samt 25 minuters vägkörning – precis som det riktiga provet.</p>
     <div style="text-align:center;">
       <a href="mc-paket-malmo.html" class="btn-cta-secondary"><i class="fa-solid fa-list"></i> Se MC-paket</a>
     </div>
@@ -219,17 +273,63 @@
   </div>
 </div>
 
+<section class="content-section bg-light" aria-label="Innehåll">
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:1.5rem;">På den här sidan</h2>
+    <div class="related-links-grid" style="max-width:900px; margin:0 auto;">
+      <a href="#krav" class="related-link-btn"><i class="fa-solid fa-clipboard-list"></i> Krav inför uppkörning</a>
+      <a href="#moment" class="related-link-btn"><i class="fa-solid fa-list-check"></i> Provets moment</a>
+      <a href="#strategi" class="related-link-btn"><i class="fa-solid fa-chess"></i> Strategi &amp; bedömning</a>
+      <a href="#provdagen" class="related-link-btn"><i class="fa-solid fa-calendar-check"></i> Provdagen &amp; efter</a>
+    </div>
+  </div>
+</section>
+
 <section class="content-section bg-white">
   <div class="container">
     <div class="section-intro">
       <h2 class="inner-section-heading">Uppkörningsträning – öva hela MC-provet</h2>
-      <p class="inner-text">MC uppkörningen i Malmö genomförs på Rimfrostgatan 5, 212 23 Malmö och är uppdelad i flera moment som alla måste godkännas. Vår uppkörningsträning simulerar hela provproceduren steg för steg – från säkerhetskontroll till vägkörning – så att du vet exakt vad som väntar på provdagen. Du tränar på samma plats och under samma förhållanden som det riktiga provet.</p>
+      <p class="inner-text">MC uppkörningen i Malmö genomförs på Rimfrostgatan 5, 212 23 Malmö och är uppdelad i flera moment som alla måste godkännas. Vår uppkörningsträning simulerar hela provproceduren steg för steg – från säkerhetskontroll till vägkörning – så att du vet exakt vad som väntar på provdagen. Du tränar på samma plats och under samma förhållanden som det riktiga provet, på BMW F800 GS för A-körkort eller Yamaha MT-07 (35 kW) för A2-körkort – samma motorcyklar som under dina vanliga lektioner.</p>
       <p class="inner-text">Skillnaden mellan att träna generellt och att specifikt öva provets format är avgörande. Många elever som kör bra under vanliga lektioner blir nervösa när provet kräver specifika moment i bestämd ordning. Genom att simulera hela provet flera gånger innan den riktiga uppkörningen bygger du muskelminne och rutiner som gör provdagen till en vanlig körlektion.</p>
     </div>
   </div>
 </section>
 
-<section class="content-section bg-light">
+<section class="content-section bg-light" id="krav">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">Krav inför uppkörning</h2>
+      <p class="inner-text">Att boka MC-uppkörning hos Trafikverket kräver att flera förkunskapskrav är uppfyllda. Vi guidar dig genom hela processen och kontrollerar att allt är registrerat innan du bokar provtid – så att du inte riskerar att förlora avgiften eller provtiden.</p>
+    </div>
+    <div class="feature-grid" style="margin-top:2rem;">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-id-card"></i></div>
+        <h3>Övningstillstånd</h3>
+        <p>Ansök om körkortstillstånd hos Transportstyrelsen i god tid – du behöver det innan du börjar övningsköra. Tillståndet är giltigt i 5 år.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Riskettan (Risk 1) godkänd</h3>
+        <p>Teoretisk riskutbildning – obligatorisk. Måste vara godkänd och registrerad hos Trafikverket. Ca 3 timmar. Ingår i vårt <a href="mc-riskpaket-malmo.html">MC Riskpaket</a>.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-road"></i></div>
+        <h3>Risktvåan MC (Risk 2) godkänd</h3>
+        <p>Praktisk riskutbildning på halkbana – obligatorisk. Ca 4 timmar. Kräver fullständig MC-utrustning. Riskettan måste vara klar först. Giltig i 5 år.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3>Teoriprov godkänt</h3>
+        <p>MC-teoriprovet hos Trafikverket: 70 frågor (varav 5 testfrågor som inte räknas), 52 rätt av 65 räknade frågor för godkänt, 50 minuter. Avgiften betalas direkt till Trafikverket. Måste vara godkänt <strong>innan</strong> du bokar uppkörningen. Giltigt 1 år.</p>
+      </div>
+    </div>
+    <div class="highlight-box" style="margin-top:1.5rem;">
+      <p><strong>Viktigt:</strong> Alla fyra punkter måste vara uppfyllda innan du kan boka MC-uppkörning. Vi kontrollerar detta åt dig så att du inte bokar för tidigt och riskerar att förlora provtiden.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section bg-light" id="moment">
   <div class="container">
     <h2 class="inner-section-heading" style="text-align:center; margin-bottom:2rem;">Provets alla moment</h2>
     <div class="feature-grid">
@@ -287,7 +387,118 @@
     <div class="section-intro">
       <h2 class="inner-section-heading">Vägkörning – 25 minuter i trafik</h2>
       <p class="inner-text">Den avslutande delen av MC uppkörningen är 25 minuters vägkörning i verklig trafik runt Trafikverket i Malmö. Provförrättaren sitter i en bil bakom dig och ger instruktioner via radiosändare i hjälmen. Du bedöms på trafiksäkerhet, körfältsplacering, hastighetsanpassning, samspel med andra trafikanter, spegelanvändning och teckengivning.</p>
-      <p class="inner-text">Under vår uppkörningsträning kör vi samma rutter som Trafikverket använder vid provet. Du lär dig hantera de korsningar, rondeller och motorvägsavfarter som ofta förekommer under uppkörningen. Vi går igenom vanliga bedömningskriterier och vad provförrättaren specifikt tittar på. Kombinera gärna uppkörningsträningen med vår <a href="mc-uppkorningsrutter-malmo.html">uppkörningsruttträning</a> för att lära dig alla rutter i detalj.</p>
+      <p class="inner-text">Under vår uppkörningsträning kör vi samma rutter som Trafikverket använder vid provet. Du lär dig hantera de korsningar, rondeller och motorvägsavfarter som ofta förekommer under uppkörningen. Vi går igenom vanliga bedömningskriterier och vad provförrättaren specifikt tittar på. Se avsnittet om <a href="#strategi">strategi och bedömning</a> nedan för en genomgång av vad förrättaren bedömer och de vanligaste misstagen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section bg-light" id="strategi">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">Strategi &amp; bedömning under vägkörningen</h2>
+      <p class="inner-text">Förrättaren följer efter dig i en bil under den 25 minuter långa vägkörningen och bedömer din körning på flera områden. Att veta exakt vad som värderas – och vad som är de vanligaste misstagen – ger dig ett avgörande mentalt försprång på provdagen.</p>
+    </div>
+
+    <h3 style="margin-top:2rem; margin-bottom:1rem;">Vad förrättaren bedömer</h3>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Spegelanvändning</h3>
+        <p>Regelbunden kontroll av backspeglar och dödvinkel. Förrättaren ser direkt om du kollar speglarna – gör det överdrivet tydligt genom att vrida huvudet lätt.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-road"></i></div>
+        <h3>Körfältsplacering</h3>
+        <p>Rätt position i körfältet, särskilt i korsningar och rondeller. På MC är placeringen extra viktig – kör i hjulspåret och undvik mitten av körfältet.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+        <h3>Hastighetsanpassning</h3>
+        <p>Rätt hastighet för trafiksituationen – varken för snabbt eller för långsamt. Visa att du kan läsa trafikbilden och anpassa hastigheten i förväg.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-people-arrows"></i></div>
+        <h3>Samspel i trafiken</h3>
+        <p>Hur du interagerar med andra trafikanter: väjningsregler, ögonkontakt, tydlig teckengivning och förutseende körning.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.5rem; margin-bottom:1rem;">Vanliga misstag att undvika</h3>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3>Bristande spegelkoll</h3>
+        <p>Det absolut vanligaste felet. Kolla backspeglarna innan varje manöver – filbyte, sväng, acceleration och inbromsning. Överdrivet tydlig huvudrörelse hjälper.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <h3>Fel placering i korsningar</h3>
+        <p>Att stå för långt till höger vid vänstersväng eller för långt till vänster vid högersväng. Ställ dig i rätt del av körfältet i god tid innan svängen.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-gauge-simple"></i></div>
+        <h3>För försiktig körning</h3>
+        <p>Att köra för långsamt eller tveka vid filbyten skapar osäkerhet och hindrar trafikflödet. Var bestämd men inte hastig.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-turn-down"></i></div>
+        <h3>Dålig motorvägsinfart</h3>
+        <p>Att accelerera för långsamt på motorvägsrampen eller tveka vid infilning. Accelerera beslutsamt, kolla speglarna och fila in i trafikflödet med rätt hastighet.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.5rem; margin-bottom:1rem;">Mental strategi för provdagen</h3>
+    <p class="inner-text"><strong>Före provet:</strong> Boka minst en uppkörningsträning under veckan innan provet. Kör samma trafikmiljöer vid samma tid på dygnet som ditt prov – trafikbilden varierar kraftigt mellan morgon, mitt på dagen och eftermiddag. Se till att du har sovit ordentligt natten innan provet.</p>
+    <p class="inner-text"><strong>Under provet:</strong> Lyssna noga på förrättarens instruktioner i radion. Om du missar en instruktion, kör rakt fram – förrättaren ger en ny. Försök inte rätta till ett misstag i efterhand. Kör som du brukar under lektionerna. Var konsekvent med spegelanvändning och teckengivning. Om du är osäker på hastighetsbegränsningen, kör i underkant snarare än i överkant.</p>
+    <p class="inner-text"><strong>Mentalt:</strong> Nervositet är normalt men hanterbart. Tänk på provet som en vanlig lektion. Fokusera på nästa moment, inte på hur det gick för 5 minuter sedan. Ett enstaka litet misstag betyder inte automatiskt underkänt.</p>
+  </div>
+</section>
+
+<section class="content-section bg-white">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">Så bokar du körprovet</h2>
+      <p class="inner-text">MC-uppkörningen bokas via Trafikverkets hemsida. Avgiften betalas direkt till Trafikverket. Uppkörningen i Malmö genomförs vid MC-provplatsen på <strong>Rimfrostgatan 5, 212 23 Malmö</strong>. Alla förkunskapskrav (övningstillstånd, Risk 1, Risk 2, teoriprov) måste vara registrerade hos Trafikverket innan du kan boka.</p>
+      <p class="inner-text">Provtider släpps löpande och populära tider (morgon, tidig sommar) fyller snabbt. MC-prov genomförs endast under säsongen <strong>slutet av april till slutet av oktober</strong>. Boka så snart alla krav är uppfyllda och du känner dig redo. Vi rekommenderar att boka minst en uppkörningsträning innan provet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section bg-light" id="provdagen">
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:2rem;">Inför provdagen</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-id-card"></i></div>
+        <h3>Giltig legitimation</h3>
+        <p>Svenskt körkort, pass eller nationellt ID-kort. Utan giltig legitimation kan provet inte genomföras – du förlorar provtiden och avgiften.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+        <h3>Fullständig MC-utrustning</h3>
+        <p>Godkänd hjälm, mc-jacka med skydd, mc-handskar, mc-stövlar (täcker vristen) och ryggskydd. Utan komplett utrustning får du inte genomföra provet.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
+        <h3>Godkänd motorcykel</h3>
+        <p>Motorcykeln måste uppfylla Trafikverkets krav för din körkortsklass. Behöver du hyra MC? Vi erbjuder <a href="hyra-mc-uppkorning-malmo.html">MC-hyra till uppkörning</a> för 1 200 SEK.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>Kom i god tid</h3>
+        <p>Var på plats minst 15 minuter innan provet. Du behöver tid att registrera dig, visa legitimation och göra motorcykeln redo. Stress innan provet är onödigt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section bg-white" id="efter">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">Efter godkänt MC-körprov</h2>
+      <p class="inner-text">När du har klarat MC-uppkörningen får du ett <strong>tillfälligt körkortsbevis</strong> direkt från förrättaren. Detta bevis gäller som körkort tills det permanenta körkortet skickas till dig. Det tillfälliga beviset gäller bara i Sverige.</p>
+      <p class="inner-text">Ditt nya körkort skickas av Transportstyrelsen via <strong>rekommenderat brev</strong> till ditt närmaste PostNord-utlämningsställe. Det tar vanligtvis 1–2 veckor. Du får ett avisering (SMS eller brev) när det finns att hämta. Ta med giltig legitimation när du hämtar ut det. Om du redan har ett B-körkort (bil) slås MC-behörigheten ihop med ditt befintliga körkort på ett nytt kort.</p>
+      <p class="inner-text"><strong>Ålderskrav per klass:</strong> A1-körkort från 16 år, A2-körkort från 18 år, A-körkort från 24 år (eller 20 år om du haft A2 i minst 2 år).</p>
     </div>
   </div>
 </section>
@@ -342,6 +553,60 @@
         </button>
         <div class="faq-answer">
           <p>Ja, uppkörningsträning är starkt rekommenderat oavsett antal körlektioner. Vanliga lektioner fokuserar på att lära sig köra – uppkörningsträningen fokuserar specifikt på provets format, bedömningskriterier och de vanligaste misstagen.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Vilka förkunskapskrav måste vara uppfyllda innan jag bokar MC-uppkörningen?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Du behöver giltigt körkortstillstånd från Transportstyrelsen, godkänd Riskettan (Risk 1), godkänd Risktvåan MC (Risk 2) samt godkänt teoriprov. Alla måste vara registrerade hos Trafikverket innan du kan boka uppkörningen.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Hur är MC-teoriprovet uppbyggt?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>MC-teoriprovet hos Trafikverket består av 70 frågor varav 5 är testfrågor som inte räknas. Du behöver minst 52 rätt av de 65 räknade frågorna för godkänt. Provtiden är 50 minuter. Godkänt teoriprov är giltigt i 1 år.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          När kan man köra upp för MC i Malmö?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>MC-prov genomförs endast under säsongen från slutet av april till slutet av oktober. Provtider släpps löpande; populära tider (morgon och tidig sommar) fyller snabbt. Boka så fort alla krav är uppfyllda.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Vad ska jag ta med på MC-provdagen?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Giltig legitimation, fullständig MC-skyddsutrustning (hjälm, jacka med skydd, handskar, stövlar som täcker vristen, ryggskydd) samt en provgodkänd motorcykel som uppfyller Trafikverkets krav för din körkortsklass.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Vad är det vanligaste misstaget på MC-uppkörningens vägkörning?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Bristande spegelkoll är det absolut vanligaste felet. Kolla backspeglarna och dödvinkel innan varje manöver – filbyte, sväng, acceleration och inbromsning. Tydlig huvudrörelse gör det synligt för förrättaren.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Vad händer efter godkänd MC-uppkörning?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Du får ett tillfälligt körkortsbevis direkt av förrättaren. Det permanenta körkortet skickas av Transportstyrelsen via rekommenderat brev till närmaste PostNord-utlämningsställe inom 1–2 veckor. Ta med giltig legitimation vid uthämtning.</p>
         </div>
       </div>
     </div>
@@ -401,10 +666,10 @@
   <div class="container">
     <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">Relaterade sidor</h3>
     <div class="related-links-grid">
-          <a href="mc-uppkorningsrutter-malmo.html" class="related-link-btn"><i class="fa-solid fa-map"></i> Uppkörningsrutter MC</a>
+          <a href="mc-trafikskola.html" class="related-link-btn"><i class="fa-solid fa-motorcycle"></i> MC Trafikskola</a>
           <a href="hyra-mc-uppkorning-malmo.html" class="related-link-btn"><i class="fa-solid fa-key"></i> Hyra MC Uppkörning</a>
-          <a href="mc-bokning-uppkorning-malmo.html" class="related-link-btn"><i class="fa-solid fa-calendar-check"></i> Boka Uppkörning</a>
-          <a href="mc-lagfartsbana-malmo.html" class="related-link-btn"><i class="fa-solid fa-arrows-spin"></i> Manöverträning MC</a>
+          <a href="mc-korteknik-malmo.html" class="related-link-btn"><i class="fa-solid fa-arrows-spin"></i> MC Körteknik</a>
+          <a href="mc-korlektioner-malmo.html" class="related-link-btn"><i class="fa-solid fa-graduation-cap"></i> MC Körlektioner</a>
           <a href="mc-paket-malmo.html" class="related-link-btn"><i class="fa-solid fa-box"></i> MC Paket</a>
     </div>
   </div>

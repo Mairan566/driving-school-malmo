@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://andrestrafikskola.se/mc-trafikskola.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -213,7 +213,7 @@
   </url>
   <url>
     <loc>https://andrestrafikskola.se/mc-korlektioner-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -225,7 +225,7 @@
   </url>
   <url>
     <loc>https://andrestrafikskola.se/mc-intensivkurs-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -249,13 +249,13 @@
   </url>
   <url>
     <loc>https://andrestrafikskola.se/mc-uppkorning-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://andrestrafikskola.se/hyra-mc-uppkorning-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -274,62 +274,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://andrestrafikskola.se/mc-bromsteknik-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <loc>https://andrestrafikskola.se/mc-korteknik-malmo.html</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-motorvag-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-stadstrafik-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://andrestrafikskola.se/mc-teori-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-uppkorningsrutter-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-bokning-uppkorning-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-lagfartsbana-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-hogfartsbana-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-avancerad-teknik-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/mc-landsvag-malmo.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
