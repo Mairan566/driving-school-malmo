@@ -1231,7 +1231,11 @@ a.feature-card {
   .steps-grid.steps-grid--7 > .step-card:nth-child(7) { grid-column: auto; }
   .reviews-compact-grid { grid-template-columns: 1fr; }
   .reviews-compact-grid > .review-compact-card:last-child { display: none; }
-  .pricing-summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pricing-summary-grid > .pricing-summary-card h3 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
   .pricing-summary-grid > .pricing-summary-featured {
     grid-column: 1 / -1;
     max-width: 280px;
