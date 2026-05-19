@@ -77,17 +77,75 @@ Citation convention: future prompts and audit refs cite `sitewide-foundation §X
 
 ## 2. Trust bar canonical items
 
-Displayed in the hero/trust-bar section of every page.
+Displayed in the hero/trust-bar section of every standard page.
 
-| Item | Canonical value |
-|---|---|
-| Google rating | `5.0 Google-betyg` |
-| Student count | `124+ elever` |
-| Lesson length | `60 min/lektion` |
-| Fleet (short form, cars) | `Audi A3 & Volvo V60` |
-| Languages | `3 språk` (in copy: "Svenska, engelska, arabiska") |
+### 2.1 Canonical items (sv, B-cluster baseline)
 
-Per-license-cluster pages may carry a license-appropriate "fleet (short form)" variant — MC pages substitute the bike fleet. See `b-cluster-foundation` §4 / `mc-cluster-foundation` §4 for the per-cluster vehicle lists.
+| Pos | Icon (FontAwesome) | Canonical text |
+|---|---|---|
+| 1 | `fa-star` | `5.0 Google-betyg` |
+| 2 | `fa-users` | `124+ recensioner` |
+| 3 | `fa-clock` | `60 min/lektion` |
+| 4 | `fa-car` | `Audi A3 & Volvo V60` |
+| 5 | `fa-language` | `3 språk` |
+
+In supporting copy elsewhere on the page, the languages item may be elaborated as "Svenska, engelska, arabiska" where context allows.
+
+**Pos 2 phrasing — 2026-05-19 correction:** Pos 2 canonical was previously `124+ elever` (students). Per Q2 resolution: the figure refers to **Google review count**, not student count. Canonical is now `124+ recensioner`. Pages still using `elever` are drift, including the 23 B-cluster pages previously marked drift-free in the pre-correction discovery — these require Pos 2 alignment in the upcoming remediation sweep.
+
+### 2.2 Per-license-cluster variants
+
+License-cluster pages may diverge on positions 3 and 4 to reflect operational truth:
+
+- **Position 3 (lesson length):** B-cluster pages use `60 min/lektion`. MC-cluster pages use `80 min/lektion` — MC lessons are longer (operational fact, not drift). See `mc-cluster-foundation §4.2` for the full MC trust bar definition.
+- **Position 4 (fleet):** B-cluster pages carry the car fleet copy (`Audi A3 & Volvo V60`). MC-cluster pages carry the bike fleet copy. See `b-cluster-foundation §4.1` / `mc-cluster-foundation §4.1` for the per-cluster vehicle lists.
+
+Positions 1, 2, and 5 do not vary by cluster (all clusters use the same canonical text).
+
+### 2.3 Sub-skill page intent substitution (Pos 4 only)
+
+Sub-skill informational pages within B-cluster may substitute Position 4 with intent-tailored copy aligned to the page's specific topic. Examples:
+
+- `backning-parkering-malmo.html`: `fa-square-parking` / `Alla parkeringstyper`
+- `bostadsomrade-korning-malmo.html`: `fa-map-marker-alt` / `Möllevången & Rosengård`
+
+(The full list of sub-skill pages lives in `b-cluster-foundation §1` sub-skill tier.)
+
+Sub-skill pages must keep positions 1, 2, 3, 5 fully canonical. **Only Position 4 is permitted to vary per page intent.**
+
+### 2.4 Locale variants for translation pages
+
+Translation pages (en/ar variants of cluster members) carry the canonical trust bar adapted to the target locale. They do not mirror the sv canonical structure verbatim — they diverge in three intentional ways:
+
+- **Pattern A — Pos 3/5 swap.** sv pages put lesson length at Pos 3 (`fa-clock`) and language indicator at Pos 5 (`fa-language`). Translation pages swap: language indicator moves to Pos 3 for prominence (`fa-language`), lesson length / supplementary item moves to Pos 5 (`fa-clock` or page-type-specific icon). Reason: translation pages exist to serve a locale-specific audience; the language signal is the strongest reason for them to be on this page.
+- **Pattern B — Pos 4 license-category substitution.** sv pages carry fleet copy at Pos 4 (`Audi A3 & Volvo V60` on B, `BMW F800 GS & Yamaha MT-07` on MC). Translation pages instead carry the license category (`B-licence` on B, `A1, A2 & A` on MC). Reason: non-Swedish-reading audiences benefit more from the license-type signal than the vehicle USP. Fleet info still appears elsewhere on the page (hero, body copy).
+- **Pattern C — "instruction" vs "support" on the Pos 3 language item.** Lessons-cluster translation pages use "instruction" (`English instruction` / `تعليم بالعربية`) — active teaching. Theory-cluster translation pages use "support" (`English support` / `دعم بالعربية`) — passive study support / resources. The verb distinction reflects the actual mode of language assistance.
+
+**These three patterns are localization decisions, not drift — preserve them in future audits.**
+
+**Lessons-cluster translation pages (4 pages: en B/MC, ar B/MC):**
+
+| Pos | sv-B-lessons | sv-MC-lessons | en-B-lessons | en-MC-lessons | ar-B-lessons | ar-MC-lessons |
+|---|---|---|---|---|---|---|
+| 1 | `fa-star` 5.0 Google-betyg | `fa-star` 5.0 Google-betyg | `fa-star` Google 5.0 | `fa-star` Google 5.0 | `fa-star` تقييم Google 5.0 | `fa-star` تقييم Google 5.0 |
+| 2 | `fa-users` 124+ recensioner | `fa-users` 124+ recensioner | `fa-users` 124+ reviews | `fa-users` 124+ reviews | `fa-users` +124 تقييم | `fa-users` +124 تقييم |
+| 3 | `fa-clock` 60 min/lektion | `fa-clock` 80 min/lektion | `fa-language` English instruction | `fa-language` English instruction | `fa-language` تعليم بالعربية | `fa-language` تعليم بالعربية |
+| 4 | `fa-car` Audi A3 & Volvo V60 | `fa-motorcycle` BMW F800 GS & Yamaha MT-07 | `fa-car` B-licence | `fa-motorcycle` A1, A2 & A | `fa-car` رخصة القيادة B | `fa-motorcycle` A1، A2 و A |
+| 5 | `fa-language` 3 språk | `fa-language` 3 språk | `fa-clock` 60 min/lesson | `fa-clock` 80 min/lesson | `fa-clock` 60 دقيقة/درس | `fa-clock` 80 دقيقة/درس |
+
+**Theory-cluster translation pages (4 pages: en B/MC, ar B/MC):**
+
+| Pos | sv-B-theory | sv-MC-theory | en-B-theory | en-MC-theory | ar-B-theory | ar-MC-theory |
+|---|---|---|---|---|---|---|
+| 1 | `fa-star` 5.0 Google-betyg | `fa-star` 5.0 Google-betyg | `fa-star` Google 5.0 | `fa-star` Google 5.0 | `fa-star` تقييم Google 5.0 | `fa-star` تقييم Google 5.0 |
+| 2 | `fa-users` 124+ recensioner | `fa-users` 124+ recensioner | `fa-users` 124+ reviews | `fa-users` 124+ reviews | `fa-users` +124 تقييم | `fa-users` +124 تقييم |
+| 3 | `fa-clock` 60 min/lektion | `fa-clock` 80 min/lektion | `fa-language` English support | `fa-language` English support | `fa-language` دعم بالعربية | `fa-language` دعم بالعربية |
+| 4 | `fa-car` Audi A3 & Volvo V60 | `fa-motorcycle` BMW F800 GS & Yamaha MT-07 | `fa-book-open` Theory code | `fa-book-open` Theory code | `fa-book-open` رمز النظرية | `fa-book-open` رمز النظرية |
+| 5 | `fa-language` 3 språk | `fa-language` 3 språk | `fa-clipboard-check` 70 questions | `fa-clipboard-check` 70 questions | `fa-clipboard-check` 70 سؤال | `fa-clipboard-check` 70 سؤال |
+
+Notes:
+- The `sv-B-theory` and `sv-MC-theory` columns follow the standard sv canonical from §2.1 — sv-side theory pages do not restructure like the translation pages do.
+- Translation theory pages additionally diverge at Pos 4/5 to surface the theory product (`Theory code` / digital teorikod) and question count (`70 questions`) rather than fleet/lesson-length — same intent rationale as Pattern B, adapted for theory pages' study-resource focus. The teoriprov question count (70) is operationally true for both B and MC per §17 RULE T1.
 
 ---
 
