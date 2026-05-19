@@ -336,6 +336,7 @@ Terms specific to MC-license vocabulary. Universal driving terms live in `sitewi
 | Date | Change |
 |---|---|
 | 2026-05-19 | Created as part of foundation-split refactor. Populated §1 (cluster map + consolidation map + hub-link anchors) from auto-memory notes `project_mc_cluster_audit`, `project_consolidation_map`, `project_mc_hub_anchors`. Populated §4 (operational reference) from `project_mc_cluster_facts`. §2 (keyword mapping) deliberately left as stub per user directive (don't invent from page content). §3 (cannibalization) skeleton-populated; full per-pair detail expected when MC audit programme begins. Hreflang cluster definitions moved to `sitewide-foundation §16.3` (MC Lessons) and §16.4 (MC Theory). |
+| 2026-05-19 | DrivingSchool sitewide canonicalization sweep landed (commit `a24152b`); 15 MC-cluster HTML files canonicalized to `sitewide-foundation §6` template (priceRange aligned `750-17990 SEK` → `790-17990 SEK`; `logo` added; `image` URL aligned from prior `mairan566.github.io` to `andrestrafikskola.se`; some `description` drift fixed). **`index.html` deferred to a dedicated homepage audit** (carries 6 SEO-valuable extras: `hasOfferCatalog`, `sameAs`, `knowsLanguage`, `paymentAccepted`, `currenciesAccepted`, `openingHoursSpecification`) — sitewide concern, mirrored in `b-cluster-foundation` change log for cross-reference. |
 
 ---
 
