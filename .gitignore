@@ -1,1 +1,5 @@
 videos/
+
+# Windows NTFS Zone.Identifier alternate-data-stream metadata
+# (created when files are copied from a Windows machine into this repo)
+*Zone.Identifier
