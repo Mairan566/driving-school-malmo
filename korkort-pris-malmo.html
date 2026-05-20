@@ -68,14 +68,115 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Körkort Pris Malmö",
+  "name": "Körkortspriser Malmö",
+  "serviceType": "B-körkortsutbildning",
+  "description": "Komplett prislista för B-körkortsutbildning i Malmö — körlektioner, körpaket, riskutbildning, teorikod och intensivkurs.",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andres Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö"
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Körkortstjänster B-körkort",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Testlektion",
+        "description": "1 körlektion á 60 minuter",
+        "price": "799",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/testlektion-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Litet paket",
+        "description": "5 körlektioner á 60 minuter",
+        "price": "3795",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/korpaket-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Mellan paket",
+        "description": "10 körlektioner á 60 minuter",
+        "price": "7595",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/korpaket-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Stort paket",
+        "description": "15 körlektioner á 60 minuter",
+        "price": "10995",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/korpaket-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Intensivkurspaket",
+        "description": "15 körlektioner + Riskettan + Risktvåan + digital teorikod",
+        "price": "13990",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/intensivkurs-korkort-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Riskettan",
+        "description": "Riskutbildning del 1",
+        "price": "750",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/riskettan-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Risktvåan",
+        "description": "Riskutbildning del 2 — halkbana",
+        "price": "2300",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/risktvaan-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Risk-paketet",
+        "description": "Riskettan + Risktvåan",
+        "price": "2900",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/riskpaket-korkort-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Digital teorikod",
+        "description": "Teoriutbildning online",
+        "price": "850",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/korkortsteori-malmo.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Lån av bil för uppkörning",
+        "description": "Inkl. 30 min uppvärmning inför körprov",
+        "price": "1400",
+        "priceCurrency": "SEK",
+        "availability": "https://schema.org/InStock",
+        "url": "https://andrestrafikskola.se/lan-bil-uppkorning-malmo.html"
+      }
+    ]
+  }
 }
   </script>
   <script type="application/ld+json">
@@ -114,7 +215,7 @@
       "name": "Kan man betala i efterhand?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Paketpriser gäller vid förskottsbetalning. Enstaka körlektion (testlektion) betalas i samband med lektionen. Kontakta oss för att diskutera betalningsalternativ som passar dig."
+        "text": "Paketpriser gäller vid förskottsbetalning. En enskild körlektion (testlektion) betalar du i samband med lektionen. Hör av dig om du vill diskutera ett upplägg som passar dig."
       }
     },
     {
@@ -122,7 +223,7 @@
       "name": "Vad händer om jag avbokar för sent?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Avbokning måste ske senast kl 13.00 föregående vardag. Sen avbokning eller uteblivet möte debiteras som en genomförd lektion."
+        "text": "Du behöver avboka senast kl 13.00 föregående vardag. Vid sen avbokning eller utebliven lektion får du betala som om lektionen blivit av. Vi har den här policyn för att kunna erbjuda tider till så många elever som möjligt."
       }
     },
     {
@@ -130,7 +231,7 @@
       "name": "Finns det några dolda avgifter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nej, vi tror på transparenta priser. Alla priser visas öppet. Därtill tillkommer Trafikverkets egna avgifter för teoriprov och uppkörning, men det är inte något vi tar betalt för."
+        "text": "Nej, vi visar alla priser öppet. Sedan tillkommer Trafikverkets egna avgifter för teoriprov och uppkörning — men de betalar du direkt till Trafikverket, inte till oss."
       }
     },
     {
@@ -138,7 +239,7 @@
       "name": "Ger ni återbetalning?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Vi erbjuder ingen återbetalning vid köp av paket hos oss. Oanvända lektioner kan i vissa fall användas vid ett senare tillfälle."
+        "text": "Vi erbjuder ingen återbetalning vid köp av paket. Oanvända lektioner kan i vissa fall användas senare. Hör av dig så pratar vi om vad som passar i ditt fall."
       }
     },
     {
@@ -146,7 +247,23 @@
       "name": "Vad kostar det totalt att ta körkort i Malmö?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Totalkostnaden beror på hur många körlektioner du behöver. Med vårt Stora paket plus Riskpaket och Teorikod landar du på cirka 14 745 SEK (10 995 kr + 2 900 kr + 850 kr). Därtill tillkommer Trafikverkets avgifter för teoriprov (325 SEK) och uppkörning (800 SEK). De flesta elever tar körkort för mellan 13 000–25 000 SEK totalt."
+        "text": "Totalkostnaden beror på hur många körlektioner du behöver. Med vårt största paket (15 körlektioner) plus Riskpaketet och digital teorikod landar du på cirka 14 745 SEK hos oss (10 995 SEK + 2 900 SEK + 850 SEK). Sedan tillkommer Trafikverkets egna avgifter: teoriprov 420 SEK på dagtid (520 SEK på kvällar och helger) och uppkörning 1 000 SEK på dagtid (1 400 SEK på kvällar och helger). De flesta tar körkort för mellan 13 000–25 000 SEK totalt — beroende på hur många lektioner du behöver. Tips: vårt intensivkurspaket för 13 990 SEK innehåller samma delar, kostar mindre och vi planerar in allt åt dig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är skillnaden mellan Stora paket + Risk + Teori och Intensivkurspaketet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Innehållet är detsamma — 15 körlektioner, Riskettan, Risktvåan och digital teorikod. Skillnaden ligger i pris och planering. Köper du delarna var för sig kostar det 14 745 SEK och du planerar in allt själv. Vårt intensivkurspaket kostar 13 990 SEK och vi planerar in körlektioner, riskutbildning, teoristudier och provtider åt dig — du sparar 755 SEK och slipper koordineringsjobbet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad kostar Trafikverkets prov?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trafikverket tar egna avgifter för proven, separat från vad du betalar oss. Teoriprovet kostar 420 SEK på dagtid (520 SEK på kvällar och helger). Uppkörningen kostar 1 000 SEK på dagtid (1 400 SEK på kvällar och helger). Behöver du också körkortsfoto vid provet är det 80 SEK. Dessa avgifter betalar du direkt till Trafikverket när du bokar."
       }
     }
   ]
@@ -185,7 +302,7 @@
     </nav>
     <div class="location-badge"><i class="fa-solid fa-tag"></i> Transparenta priser</div>
     <h1>Körkortspriser i Malmö</h1>
-    <p class="page-hero-subtitle">Tydliga priser utan dolda avgifter. Från testlektion á 799 SEK till komplett intensivt paket.</p>
+    <p class="page-hero-subtitle">Tydliga priser utan dolda avgifter. Från testlektion 799 SEK till komplett intensivkurspaket 13 990 SEK.</p>
     <div style="text-align:center; margin-top:1rem;">
       <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
         <i class="fa-solid fa-calendar-check"></i> Boka lektion online
@@ -228,7 +345,7 @@
     <div class="section-intro">
       <h2 class="inner-section-heading">Transparenta priser – inga dolda avgifter</h2>
       <p class="inner-text">Vi tror på ärlighet och tydlighet. Alla priser hos Andres Trafikskola visas öppet utan dolda avgifter. Paketpriser gäller vid förskottsbetalning och ger dig bästa pris per körlektion.</p>
-      <p class="inner-text">Nedan finner du alla priser för vår körkortsutbildning i Malmö. Oavsett om du vill börja med en enskild testlektion eller direkt investera i ett komplett paket – vi har ett alternativ som passar dig.</p>
+      <p class="inner-text">Här hittar du alla våra priser för B-körkortsutbildning i Malmö. Oavsett om du vill börja smått med en <a href="testlektion-malmo.html">testlektion</a> eller satsa på ett komplett <a href="intensivkurs-korkort-malmo.html">intensivkurspaket</a> — vi har ett upplägg som passar dig.</p>
     </div>
   </div>
 </section>
@@ -246,16 +363,16 @@
           <tr><th>Tjänst</th><th>Beskrivning</th><th>Pris</th></tr>
         </thead>
         <tbody>
-          <tr><td>Testlektion</td><td>1 körlektion á 60 min</td><td>799 SEK</td></tr>
-          <tr><td>Litet paket</td><td>5 körlektioner á 60 min</td><td>3 795 SEK <span class="save-tag">Spara 200 kr</span></td></tr>
-          <tr><td>Mellan paket</td><td>10 körlektioner á 60 min</td><td>7 595 SEK <span class="save-tag">Spara 395 kr</span></td></tr>
-          <tr><td>Stort paket</td><td>15 körlektioner á 60 min</td><td>10 995 SEK <span class="save-tag">Spara 990 kr</span></td></tr>
-          <tr class="featured-row"><td>Intensivkurs körkort <span class="badge-best">Bäst värde</span></td><td>15 lektioner + Risk 1 + Risk 2 + Teorikod</td><td>13 990 SEK <span class="save-tag">Spara 1 895 kr</span></td></tr>
-          <tr><td>Riskettan</td><td>Riskutbildning del 1</td><td>750 SEK</td></tr>
-          <tr><td>Risktvåan (halkbana)</td><td>Riskutbildning del 2</td><td>2 300 SEK</td></tr>
-          <tr><td>Risk-paketet</td><td>Risk 1 + Risk 2</td><td>2 900 SEK <span class="save-tag">Spara 150 kr</span></td></tr>
-          <tr><td>Digital teorikod</td><td>Teoriutbildning online</td><td>850 SEK</td></tr>
-          <tr><td>Lån av bil</td><td>Inkl. 30 min uppvärmning inför körprov</td><td>1 400 SEK</td></tr>
+          <tr><td><a href="testlektion-malmo.html">Testlektion</a></td><td>1 körlektion á 60 min</td><td>799 SEK</td></tr>
+          <tr><td><a href="korpaket-malmo.html">Litet paket</a></td><td>5 körlektioner á 60 min</td><td>3 795 SEK <span class="save-tag">Spara 200 SEK</span></td></tr>
+          <tr><td><a href="korpaket-malmo.html">Mellan paket</a></td><td>10 körlektioner á 60 min</td><td>7 595 SEK <span class="save-tag">Spara 395 SEK</span></td></tr>
+          <tr><td><a href="korpaket-malmo.html">Stort paket</a></td><td>15 körlektioner á 60 min</td><td>10 995 SEK <span class="save-tag">Spara 990 SEK</span></td></tr>
+          <tr class="featured-row"><td><a href="intensivkurs-korkort-malmo.html">Intensivkurs körkort</a> <span class="badge-best">Bäst värde</span></td><td>15 lektioner + Riskettan + Risktvåan + digital teorikod</td><td>13 990 SEK <span class="save-tag">Spara 1 895 SEK</span></td></tr>
+          <tr><td><a href="riskettan-malmo.html">Riskettan</a></td><td>Riskutbildning del 1</td><td>750 SEK</td></tr>
+          <tr><td><a href="risktvaan-malmo.html">Risktvåan (halkbana)</a></td><td>Riskutbildning del 2</td><td>2 300 SEK</td></tr>
+          <tr><td><a href="riskpaket-korkort-malmo.html">Risk-paketet</a></td><td>Riskettan + Risktvåan</td><td>2 900 SEK <span class="save-tag">Spara 150 SEK</span></td></tr>
+          <tr><td><a href="korkortsteori-malmo.html">Digital teorikod</a></td><td>Teoriutbildning online</td><td>850 SEK</td></tr>
+          <tr><td><a href="lan-bil-uppkorning-malmo.html">Lån av bil</a></td><td>Inkl. 30 min uppvärmning inför körprov</td><td>1 400 SEK</td></tr>
         </tbody>
       </table>
     </div>
@@ -264,10 +381,50 @@
     </div>
     </div><!-- end .table-scroll-container -->
     <div class="highlight-box" style="margin-top:1.5rem;">
+      <p style="margin:0 0 0.5rem 0;"><strong>Trafikverkets avgifter</strong> (tillkommer separat och betalas direkt till Trafikverket):</p>
+      <ul style="margin:0; padding-left:1.25rem;">
+        <li>Teoriprov: 420 SEK på dagtid · 520 SEK på kvällar och helger</li>
+        <li>Uppkörning: 1 000 SEK på dagtid · 1 400 SEK på kvällar och helger</li>
+        <li>Körkortsfoto vid prov: 80 SEK</li>
+      </ul>
+    </div>
+    <div class="highlight-box" style="margin-top:1.5rem;">
       <p><strong>Bokningsvillkor:</strong> Avbokning ska ske senast kl 13.00 föregående vardag. Paketpriser gäller vid förskottsbetalning. Vi erbjuder ingen återbetalning vid köp hos oss.</p>
     </div>
   </div>
 </section>
+
+<section class="content-section bg-light">
+  <div class="container">
+    <div class="section-intro">
+      <h2 class="inner-section-heading">Vilket paket passar dig?</h2>
+      <p class="inner-text">Inte säker på vilket paket du ska välja? Här är en snabb guide:</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>Testlektion – om du vill prova på</h3>
+        <p>En enskild lektion för dig som vill se hur det fungerar innan du bokar mer. <a href="testlektion-malmo.html">Läs om testlektionen</a>.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Körpaket – om du har gott om tid</h3>
+        <p>Buntade lektioner till rabatterat pris (5, 10 eller 15 lektioner) — du tar dem i din egen takt. Bra om du vill bygga upp körningen lugnt. <a href="korpaket-malmo.html">Se körpaketen</a>.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Intensivkurspaket – om du vill snabbt</h3>
+        <p>Allt du behöver i ett paket: 15 lektioner + Riskettan + Risktvåan + teorikod. Klart på 2–3 månader. Bästa pris per moment. <a href="intensivkurs-korkort-malmo.html">Läs om intensivkursen</a>.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3>Risk-paketet – om du redan har körlektioner ordnat</h3>
+        <p><a href="riskettan-malmo.html">Riskettan</a> och <a href="risktvaan-malmo.html">Risktvåan</a> i ett paket — för dig som tar körlektioner någon annanstans eller har körkortstillstånd från utlandet och bara behöver risken klar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-banner">
   <div class="container">
     <h2>Redo att börja? Ring oss idag!</h2>
@@ -290,7 +447,7 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Paketpriser gäller vid förskottsbetalning. Enstaka körlektion (testlektion) betalas i samband med lektionen. Kontakta oss för att diskutera betalningsalternativ som passar dig.</p>
+          <p>Paketpriser gäller vid förskottsbetalning. En enskild körlektion (testlektion) betalar du i samband med lektionen. Hör av dig om du vill diskutera ett upplägg som passar dig.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -299,7 +456,7 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Avbokning måste ske senast kl 13.00 föregående vardag. Sen avbokning eller uteblivet möte debiteras som en genomförd lektion. Vi ber dig respektera vår avbokningspolicy för att vi ska kunna erbjuda tider till alla elever.</p>
+          <p>Du behöver avboka senast kl 13.00 föregående vardag. Vid sen avbokning eller utebliven lektion får du betala som om lektionen blivit av. Vi har den här policyn för att kunna erbjuda tider till så många elever som möjligt.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -308,7 +465,7 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Nej, vi tror på transparenta priser. Alla priser visas öppet. Därtill tillkommer Trafikverkets egna avgifter för teoriprov och uppkörning, men det är inte något vi tar betalt för.</p>
+          <p>Nej, vi visar alla priser öppet. Sedan tillkommer Trafikverkets egna avgifter för teoriprov och uppkörning — men de betalar du direkt till Trafikverket, inte till oss.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -317,7 +474,7 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Vi erbjuder ingen återbetalning vid köp av paket hos oss. Oanvända lektioner kan i vissa fall användas vid ett senare tillfälle. Kontakta oss för att diskutera din specifika situation.</p>
+          <p>Vi erbjuder ingen återbetalning vid köp av paket. Oanvända lektioner kan i vissa fall användas senare. Hör av dig så pratar vi om vad som passar i ditt fall.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -326,7 +483,25 @@
           <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
         </button>
         <div class="faq-answer">
-          <p>Totalkostnaden beror på hur många körlektioner du behöver. Med vårt Stora paket (15 lektioner) plus Riskpaket och Teorikod landar du på cirka 14 745 SEK hos oss (10 995 kr + 2 900 kr + 850 kr). Därtill tillkommer Trafikverkets avgifter för teoriprov (325 SEK) och uppkörning (800 SEK). De flesta elever tar körkort för mellan 13 000–25 000 SEK totalt beroende på behov.</p>
+          <p>Totalkostnaden beror på hur många körlektioner du behöver. Med vårt största paket (15 körlektioner) plus <a href="riskpaket-korkort-malmo.html">Riskpaketet</a> och <a href="korkortsteori-malmo.html">digital teorikod</a> landar du på cirka 14 745 SEK hos oss (10 995 SEK + 2 900 SEK + 850 SEK). Sedan tillkommer Trafikverkets egna avgifter: teoriprov 420 SEK på dagtid (520 SEK på kvällar och helger) och uppkörning 1 000 SEK på dagtid (1 400 SEK på kvällar och helger). De flesta tar körkort för mellan 13 000–25 000 SEK totalt — beroende på hur många lektioner du behöver. Tips: vårt <a href="intensivkurs-korkort-malmo.html">intensivkurspaket</a> för 13 990 SEK innehåller samma delar, kostar mindre och vi planerar in allt åt dig.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Vad är skillnaden mellan Stora paket + Risk + Teori och Intensivkurspaketet?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Innehållet är detsamma — 15 körlektioner, Riskettan, Risktvåan och digital teorikod. Skillnaden ligger i pris och planering. Köper du delarna var för sig kostar det 14 745 SEK och du planerar in allt själv. Vårt <a href="intensivkurs-korkort-malmo.html">intensivkurspaket</a> kostar 13 990 SEK och vi planerar in körlektioner, riskutbildning, teoristudier och provtider åt dig — du sparar 755 SEK och slipper koordineringsjobbet.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Vad kostar Trafikverkets prov?
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>Trafikverket tar egna avgifter för proven, separat från vad du betalar oss. Teoriprovet kostar 420 SEK på dagtid (520 SEK på kvällar och helger). Uppkörningen kostar 1 000 SEK på dagtid (1 400 SEK på kvällar och helger). Behöver du också körkortsfoto vid provet är det 80 SEK. Dessa avgifter betalar du direkt till Trafikverket när du bokar.</p>
         </div>
       </div>
     </div>
