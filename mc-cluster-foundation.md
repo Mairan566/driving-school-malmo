@@ -143,7 +143,7 @@ Stub structure: `<meta http-equiv="refresh" content="0; url=TARGET">` + `<link r
 - `mc-bokning-uppkorning-malmo.html` → `#krav`
 - `mc-uppkorningsrutter-malmo.html` → `#strategi`
 
-**Already-deprecated:** `mc-korkort-malmo.html`.
+**Stub redirect to `mc-trafikskola.html` (live in repo as of commit 01ec099):** `mc-korkort-malmo.html`.
 
 **Anchor convention:** canonical `<link>` always points at the BASE target page (no anchor — Google convention). Meta-refresh and JS `window.location.replace()` use the anchor if applicable.
 

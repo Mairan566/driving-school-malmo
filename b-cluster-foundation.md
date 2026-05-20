@@ -43,7 +43,7 @@ The B-cluster contained **42 pages** at the start of the audit. After consolidat
 | File | Role | Status |
 |---|---|---|
 | `trafikskola.html` | Main B-cluster hub | KEEP — absorbed b-korkort-malmo content during audit |
-| `b-korkort-malmo.html` | Currently parallel info page | **CONSOLIDATE** → unique content folded into `trafikskola.html` 2026-05-19; 301 at deployment |
+| `b-korkort-malmo.html` | Was parallel info page; now stub | **CONSOLIDATE** → unique content folded into `trafikskola.html` 2026-05-19; stub redirect to `trafikskola.html` (live in repo as of commit 01ec099) |
 | `korskola-malmo.html` | Already redirects to `trafikskola.html` | NO ACTION — already handled |
 
 ### 1.2 Core commercial service tier (5 pages)
