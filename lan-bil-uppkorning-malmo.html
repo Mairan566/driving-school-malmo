@@ -68,20 +68,26 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Lån av Bil till Uppkörning Malmö",
-  "serviceType": "Lån av Bil till Uppkörning",
-  "description": "Lån av bil till uppkörning i Malmö – 1 400 SEK inkl. 30 min uppvärmning. Audi A3 (automat) eller Volvo V60 (manuell/automat).",
+  "name": "Lån av bil för uppkörning Malmö",
+  "serviceType": "Lån av bil för uppkörning",
+  "description": "Hyr en uppkörningsbil med 30 min uppvärmning inför körprov hos Trafikverket i Malmö.",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andres Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö",
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
   "offers": {
     "@type": "Offer",
+    "name": "Lån av bil för uppkörning",
+    "description": "Inkl. 30 min uppvärmning inför körprov",
     "price": "1400",
     "priceCurrency": "SEK",
+    "availability": "https://schema.org/InStock",
     "url": "https://andrestrafikskola.se/lan-bil-uppkorning-malmo.html"
   }
 }

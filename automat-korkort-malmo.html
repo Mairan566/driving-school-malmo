@@ -68,19 +68,26 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Automat Körkort Malmö",
-  "description": "Körlektioner med automatväxlad bil i Malmö – Audi A3 Sportback och Volvo V60. Enklare inlärning med fokus på trafiksäkerhet.",
-  "serviceType": "Automatkörkort",
+  "name": "Automatkörkort Malmö",
+  "serviceType": "Automatkörkort B",
+  "description": "B-körkort med automatväxel i Malmö — moderna automatfordon (Audi A3 2026 och Volvo V60 2020).",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andres Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö",
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
   "offers": {
     "@type": "Offer",
+    "name": "Körlektion (automat)",
+    "description": "60 min körlektion i automatfordon",
+    "price": "799",
     "priceCurrency": "SEK",
+    "availability": "https://schema.org/InStock",
     "url": "https://andrestrafikskola.se/automat-korkort-malmo.html"
   }
 }

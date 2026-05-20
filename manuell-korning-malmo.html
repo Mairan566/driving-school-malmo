@@ -68,19 +68,26 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Manuell Körning Malmö",
-  "description": "Manuella körlektioner i Malmö med Volvo V60 – lär dig köra med manuell växellåda och få ett körkort utan automatbegränsning.",
-  "serviceType": "Manuella Körlektioner",
+  "name": "Manuellt körkort Malmö",
+  "serviceType": "Manuellt B-körkort",
+  "description": "B-körkort med manuell växel i Malmö — undvik villkor 78 på körkortet.",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andres Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö",
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
   "offers": {
     "@type": "Offer",
+    "name": "Körlektion (manuell)",
+    "description": "60 min körlektion i manuell bil",
+    "price": "799",
     "priceCurrency": "SEK",
+    "availability": "https://schema.org/InStock",
     "url": "https://andrestrafikskola.se/manuell-korning-malmo.html"
   }
 }

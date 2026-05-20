@@ -68,36 +68,28 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Riskpaket Körkort Malmö",
-  "description": "Kombinerat paket med Riskettan (riskutbildning del 1) och Risktvåan (halkbaneutbildning del 2) för B-körkort i Malmö.",
-  "serviceType": "Riskpaket Körkort",
+  "name": "Risk-paketet Malmö",
+  "serviceType": "Riskutbildning komplett (del 1 + del 2)",
+  "description": "Komplett riskutbildning för B-körkort i Malmö — Riskettan och Risktvåan i ett paket.",
   "provider": {
     "@type": "DrivingSchool",
     "name": "Andres Trafikskola",
     "url": "https://andrestrafikskola.se/",
     "telephone": "+46700099924"
   },
-  "areaServed": "Malmö",
+  "areaServed": {
+    "@type": "City",
+    "name": "Malmö"
+  },
   "offers": {
     "@type": "Offer",
+    "name": "Risk-paketet",
+    "description": "Riskettan + Risktvåan i ett paket",
     "price": "2900",
     "priceCurrency": "SEK",
+    "availability": "https://schema.org/InStock",
     "url": "https://andrestrafikskola.se/riskpaket-korkort-malmo.html"
-  },
-  "includesOffer": [
-    {
-      "@type": "Offer",
-      "name": "Riskettan",
-      "price": "750",
-      "priceCurrency": "SEK"
-    },
-    {
-      "@type": "Offer",
-      "name": "Risktvåan",
-      "price": "2300",
-      "priceCurrency": "SEK"
-    }
-  ]
+  }
 }
   </script>
   <script type="application/ld+json">
