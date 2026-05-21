@@ -276,7 +276,23 @@ Hero "Boka lektion online" buttons cluster-wide point to `https://elev.andrestra
 
 ### 4.6 MC-specific prices
 
-*To be populated when MC pricing review completes. Current canonical priceRange for sitewide schema is `790-17990 SEK` (see `sitewide-foundation §3`); historical MC-side memo used `750-17990 SEK`, which is now superseded.*
+Canonical MC price list — source `mc-paket-malmo.html`, client-confirmed 2026-05-21. Sitewide DrivingSchool `priceRange` remains `790-17990 SEK` (see `sitewide-foundation §3`); the historical `750-17990 SEK` memo is superseded.
+
+| Item | Price | Notes |
+|---|---|---|
+| MC Testlektion (prova på, 80 min) | 790 SEK | Single intro lesson |
+| MC Körlektion (80 min) | 990 SEK | À la carte single lesson |
+| 5 MC Körlektioner | 4 800 SEK | Spara 150 SEK |
+| 10 MC Körlektioner | 9 500 SEK | Spara 400 SEK |
+| MC Paket 1 – Litet | 5 990 SEK | 5 lektioner + Riskettan + Teori online (spara 510 SEK) |
+| MC Paket 2 – Mellan | 13 500 SEK | 10 lektioner + Risk 1 + Risk 2 + Teori online (spara 1 150 SEK) |
+| MC Paket 3 – Intensivkurs | 17 990 SEK | 20 lektioner + Risk 1 + Risk 2 + Teori online (spara 6 560 SEK) |
+| Riskettan MC (Risk 1, teori) | 750 SEK | Year-round |
+| Risktvåan MC (Risk 2, halkbana) | 3 200 SEK | AB Bulltoftabanan |
+| Riskpaket MC (Risk 1 + Risk 2) | 3 800 SEK | Spara 150 SEK vs separat (3 950 SEK) |
+| Lån av MC vid uppkörning | 1 200 SEK | Inkl. uppvärmning |
+
+MC price range: 790–17 990 SEK. Enshrined in Service schema Offers across MC pages in commit `75c3c4e`.
 
 ### 4.7 MC theory test phrasing (RULE T1 supplement)
 
@@ -298,7 +314,7 @@ Short form (table cells, compact cards): `70 frågor (5 testfrågor), 52/65 rät
 
 | Item | Owner | Blocks |
 |---|---|---|
-| MC pricing review (line items, paket prices, riskpaket-mc cost) | Client | finalization of MC §4.6 |
+| MC pricing review (line items, paket prices, riskpaket-mc cost) | Client | RESOLVED 2026-05-21 — prices client-confirmed and §4.6 populated (commit `75c3c4e`) |
 
 ### 4.10 Deferred items
 
