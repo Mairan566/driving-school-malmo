@@ -364,16 +364,29 @@
         <p class="services-intro">Vi erbjuder körkortsutbildning för både personbil och motorcykel i Malmö.</p>
       </div>
 
-      <div class="services-grid">
+      <!-- Mobile-only tab switcher (phone view ≤768px); hidden on desktop/tablet -->
+      <div class="services-tabs">
+        <p class="services-tabs-label" id="services-tabs-label">Vad letar du efter?</p>
+        <div class="services-tab-switcher" role="tablist" aria-labelledby="services-tabs-label">
+          <button class="services-tab active" id="stab-car" role="tab" aria-selected="true" aria-controls="scard-car">
+            <i class="fa-solid fa-car" aria-hidden="true"></i> B Körkort
+          </button>
+          <button class="services-tab" id="stab-mc" role="tab" aria-selected="false" aria-controls="scard-mc">
+            <i class="fa-solid fa-motorcycle" aria-hidden="true"></i> MC Körkort
+          </button>
+        </div>
+      </div>
+
+      <div class="services-grid" data-active="car">
 
         <!-- Card 1: Trafikskola B-körkort -->
-        <a href="trafikskola.html" class="service-card fade-in" aria-label="Trafikskola B-körkort – Personbil">
+        <a href="trafikskola.html" class="service-card service-card--car fade-in" id="scard-car" aria-label="Trafikskola B-körkort – Personbil">
           <div class="service-card-bg service-card-bg--car"></div>
           <div class="service-card-body">
             <div class="service-icon">
               <i class="fa-solid fa-car-side" aria-hidden="true"></i>
             </div>
-            <h3 class="service-card-heading">Trafikskola – B-Körkort</h3>
+            <h3 class="service-card-heading">Trafikskola – B Körkort</h3>
             <p class="service-card-sub">Personbil · Automat &amp; Manuell</p>
             <p class="service-card-text">Hos Andres Trafikskola erbjuder vi en komplett körkortsutbildning för personbil i Malmö. Oavsett om du är nybörjare eller behöver komplettera din utbildning hjälper vi dig hela vägen till godkänt körprov. Vi erbjuder körlektioner i automat och manuell bil, intensivkurs, Riskettan, Risktvåan, teorikurs och mycket mer. Med moderna fordon som Audi A3 och Volvo V60 anpassar vi utbildningen efter just dig. Våra elever har gett oss 5.0 i betyg på Google – och det är vi stolta över.</p>
             <ul class="service-highlights" aria-label="Highlights">
@@ -387,7 +400,7 @@
         </a>
 
         <!-- Card 2: MC Trafikskola -->
-        <a href="mc-trafikskola.html" class="service-card fade-in" aria-label="MC Trafikskola – Motorcykel">
+        <a href="mc-trafikskola.html" class="service-card service-card--mc fade-in" id="scard-mc" aria-label="MC Trafikskola – Motorcykel">
           <div class="service-card-bg service-card-bg--mc"></div>
           <div class="service-card-body">
             <div class="service-icon">
@@ -662,6 +675,32 @@
             tab.classList.add('active');
             tab.setAttribute('aria-selected', 'true');
             document.getElementById(targetId).style.display = 'flex';
+          });
+        });
+      })();
+
+      /* Mobile-only service-type tabs (Välj Din Utbildning) */
+      (function () {
+        var grid = document.querySelector('.services-grid[data-active]');
+        if (!grid) return;
+        var stabs = document.querySelectorAll('.services-tab');
+
+        stabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var targetId = tab.getAttribute('aria-controls');   // scard-car | scard-mc
+
+            stabs.forEach(function (t) {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+            });
+
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            grid.setAttribute('data-active', targetId === 'scard-mc' ? 'mc' : 'car');
+
+            /* Revealed card may not have fired the scroll fade observer yet */
+            var card = document.getElementById(targetId);
+            if (card) card.classList.add('visible');
           });
         });
       })();

@@ -772,6 +772,72 @@ button {
   gap: 2rem;
 }
 
+/* ---- Mobile-only service-type tabs (phone view ≤768px) ---- */
+.services-tabs {
+  display: none;               /* hidden on desktop & tablet */
+}
+
+.services-tabs-label {
+  text-align: center;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.85rem;
+}
+
+.services-tab-switcher {
+  display: flex;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem;
+}
+
+.services-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.7rem 0.75rem;
+  border: none;
+  border-radius: calc(var(--radius-sm) - 2px);
+  background: transparent;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  line-height: 1.3;
+  font-family: inherit;
+}
+
+.services-tab:hover {
+  background: rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.85);
+}
+
+.services-tab.active {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 2px 14px rgba(0,188,212,0.4);
+}
+
+.services-tab i { font-size: 1rem; }
+
+@media (max-width: 768px) {
+  .services-tabs {
+    display: block;
+    max-width: 560px;
+    margin: 0 auto 1.75rem;
+  }
+  .services-header { margin-bottom: 1.75rem; }
+  /* Show only the card matching the active tab */
+  .services-grid[data-active="car"] .service-card--mc { display: none; }
+  .services-grid[data-active="mc"] .service-card--car { display: none; }
+}
+
 .service-card {
   position: relative;
   border-radius: var(--radius-md);
