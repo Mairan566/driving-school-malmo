@@ -213,6 +213,113 @@
   .trust-bar span {
     transition: opacity 0.4s ease;
   }
+
+  /* ============================================================
+     STEPS — desktop unchanged; collapsible accordion on phones.
+     New wrapper elements (.step-head, .step-head-text, .step-panel)
+     are transparent blocks here, and .step-eyebrow / .step-chevron
+     are hidden, so >768px renders exactly like the original cards.
+  ============================================================ */
+  .steps-section .step-eyebrow,
+  .steps-section .step-chevron { display: none; }
+
+  /* Phone view: turn each card into a tap-to-expand panel */
+  @media (max-width: 768px) {
+    .steps-section .steps-grid { gap: 0.6rem; margin-top: 1.25rem; }
+
+    .steps-section .step-card {
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+    }
+    /* No hover-lift on touch; keep it calm */
+    .steps-section .step-card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      border-color: var(--light-gray);
+    }
+    .steps-section .step-card.open { border-color: var(--accent); }
+
+    /* Hide the floating number badge (clipped by overflow anyway) */
+    .steps-section .step-number { display: none; }
+
+    /* Clickable header row: [icon]  [eyebrow + title]  [chevron] */
+    .steps-section .step-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.95rem 1.05rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+    .steps-section .step-head:hover,
+    .steps-section .step-card.open .step-head { background: var(--off-white); }
+    .steps-section .step-head:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .steps-section .step-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.12);
+      color: var(--accent);
+    }
+
+    .steps-section .step-head-text {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .steps-section .step-eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .steps-section .step-head h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+
+    .steps-section .step-chevron {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--accent);
+      font-size: 0.72rem;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .steps-section .step-card.open .step-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .steps-section .step-panel { display: none; padding: 0 1.05rem 1.1rem; }
+    .steps-section .step-card.open .step-panel { display: block; }
+    .steps-section .step-panel p { margin: 0; }
+  }
 </style>
 </head>
 <body>
@@ -331,39 +438,87 @@
         <div class="steps-grid">
           <div class="step-card">
             <div class="step-number">1</div>
-            <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
-            <h3>Ansök om körkortstillstånd</h3>
-            <p>Börja med att ansöka om körkortstillstånd hos Transportstyrelsen. Det finns ingen åldersgräns för själva ansökan, men du måste ha fyllt 16 år för att få övningsköra. I ansökan ingår en hälsodeklaration och en synundersökning hos optiker. Ansökan görs enkelt online via Transportstyrelsens e-tjänst.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 1</span>
+                <h3>Ansök om körkortstillstånd</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-1">
+              <p>Börja med att ansöka om körkortstillstånd hos Transportstyrelsen. Det finns ingen åldersgräns för själva ansökan, men du måste ha fyllt 16 år för att få övningsköra. I ansökan ingår en hälsodeklaration och en synundersökning hos optiker. Ansökan görs enkelt online via Transportstyrelsens e-tjänst.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">2</div>
-            <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
-            <h3>Boka testlektion hos oss</h3>
-            <p><a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="inline-link">Boka en lektion online<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a> eller <a href="#kontakt" class="inline-link">kontakta oss</a>. Vi diskuterar dina behov, väljer rätt paket och bokar din första lektion.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 2</span>
+                <h3>Boka testlektion hos oss</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-2">
+              <p><a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="inline-link">Boka en lektion online<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a> eller <a href="#kontakt" class="inline-link">kontakta oss</a>. Vi diskuterar dina behov, väljer rätt paket och bokar din första lektion.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">3</div>
-            <div class="step-icon"><i class="fa-solid fa-car"></i></div>
-            <h3>Övningsköra och studera teori</h3>
-            <p>Kör med en erfaren trafiklärare i moderna bilar. Vi anpassar takten efter dig och bygger din trygghet steg för steg. Förbered dig samtidigt för teoriprovet med vårt digitala teorimaterial.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 3</span>
+                <h3>Övningsköra och studera teori</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-3">
+              <p>Kör med en erfaren trafiklärare i moderna bilar. Vi anpassar takten efter dig och bygger din trygghet steg för steg. Förbered dig samtidigt för teoriprovet med vårt digitala teorimaterial.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">4</div>
-            <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Gör Riskettan och Risktvåan</h3>
-            <p>Riskutbildning del 1 (teori om risker, alkohol, droger och trötthet) och del 2 (praktisk halkbaneövning) är obligatoriska moment för körkortet. Dessa måste vara genomförda innan du gör dina prov och är giltiga i 5 år.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 4</span>
+                <h3>Gör Riskettan och Risktvåan</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-4">
+              <p>Riskutbildning del 1 (teori om risker, alkohol, droger och trötthet) och del 2 (praktisk halkbaneövning) är obligatoriska moment för körkortet. Dessa måste vara genomförda innan du gör dina prov och är giltiga i 5 år.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">5</div>
-            <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>Boka och klara teoriprovet</h3>
-            <p>Boka ditt teoriprov hos Trafikverket när du känner dig redo. Provet består av 70 frågor, varav 65 är poänggivande. Du behöver minst 52 rätt för att bli godkänd. Teoriprovet måste vara godkänt innan uppkörningen.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 5</span>
+                <h3>Boka och klara teoriprovet</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-5">
+              <p>Boka ditt teoriprov hos Trafikverket när du känner dig redo. Provet består av 70 frågor, varav 65 är poänggivande. Du behöver minst 52 rätt för att bli godkänd. Teoriprovet måste vara godkänt innan uppkörningen.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">6</div>
-            <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h3>Gör uppkörning och få ditt körkort</h3>
-            <p>När du och din trafiklärare är redo bokar vi uppkörning hos Trafikverket. Under provet bedöms din körning i olika trafikmiljöer. Många av våra elever klarar det på första försöket. Efter godkänt prov får du ditt resultat direkt och får börja köra på egen hand. Ditt fysiska körkort skickas hem till dig inom några dagar.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 6</span>
+                <h3>Gör uppkörning och få ditt körkort</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-6">
+              <p>När du och din trafiklärare är redo bokar vi uppkörning hos Trafikverket. Under provet bedöms din körning i olika trafikmiljöer. Många av våra elever klarar det på första försöket. Efter godkänt prov får du ditt resultat direkt och får börja köra på egen hand. Ditt fysiska körkort skickas hem till dig inom några dagar.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -823,6 +978,61 @@
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
+  </script>
+  <script>
+  /* Steps – collapsible accordion on phones only (<=768px).
+     Above that breakpoint the cards render fully expanded and the
+     headers stay plain (no button role), so desktop is untouched. */
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var heads = Array.prototype.slice.call(
+      document.querySelectorAll('.steps-section .step-head')
+    );
+    if (!heads.length) return;
+
+    function toggle(head) {
+      var card = head.closest('.step-card');
+      var open = card.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) { toggle(e.currentTarget); }
+    function onKey(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        toggle(e.currentTarget);
+      }
+    }
+
+    function enable() {
+      heads.forEach(function (head) {
+        var card = head.closest('.step-card');
+        var panel = card.querySelector('.step-panel');
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+        if (panel && panel.id) head.setAttribute('aria-controls', panel.id);
+        head.addEventListener('click', onClick);
+        head.addEventListener('keydown', onKey);
+      });
+    }
+    function disable() {
+      heads.forEach(function (head) {
+        head.removeAttribute('role');
+        head.removeAttribute('tabindex');
+        head.removeAttribute('aria-expanded');
+        head.removeAttribute('aria-controls');
+        head.removeEventListener('click', onClick);
+        head.removeEventListener('keydown', onKey);
+        head.closest('.step-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
   </script>
   <script src="js/main.js" defer></script>
 <script>

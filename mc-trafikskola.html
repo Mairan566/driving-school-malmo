@@ -182,6 +182,113 @@
       margin: 0 auto;
     }
   }
+
+  /* ============================================================
+     STEPS — desktop unchanged; collapsible accordion on phones.
+     New wrapper elements (.step-head, .step-head-text, .step-panel)
+     are transparent blocks here, and .step-eyebrow / .step-chevron
+     are hidden, so >768px renders exactly like the original cards.
+  ============================================================ */
+  .steps-section .step-eyebrow,
+  .steps-section .step-chevron { display: none; }
+
+  /* Phone view: turn each card into a tap-to-expand panel */
+  @media (max-width: 768px) {
+    .steps-section .steps-grid { gap: 0.6rem; margin-top: 1.25rem; }
+
+    .steps-section .step-card {
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+    }
+    /* No hover-lift on touch; keep it calm */
+    .steps-section .step-card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+      border-color: var(--light-gray);
+    }
+    .steps-section .step-card.open { border-color: var(--accent); }
+
+    /* Hide the floating number badge (clipped by overflow anyway) */
+    .steps-section .step-number { display: none; }
+
+    /* Clickable header row: [icon]  [eyebrow + title]  [chevron] */
+    .steps-section .step-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.95rem 1.05rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+    .steps-section .step-head:hover,
+    .steps-section .step-card.open .step-head { background: var(--off-white); }
+    .steps-section .step-head:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .steps-section .step-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.12);
+      color: var(--accent);
+    }
+
+    .steps-section .step-head-text {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .steps-section .step-eyebrow {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .steps-section .step-head h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+
+    .steps-section .step-chevron {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--accent);
+      font-size: 0.72rem;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .steps-section .step-card.open .step-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .steps-section .step-panel { display: none; padding: 0 1.05rem 1.1rem; }
+    .steps-section .step-card.open .step-panel { display: block; }
+    .steps-section .step-panel p { margin: 0; }
+  }
 </style>
 </head>
 <body>
@@ -362,45 +469,101 @@
         <div class="steps-grid steps-grid--7">
           <div class="step-card">
             <div class="step-number">1</div>
-            <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <h3>Ansök om körkortstillstånd</h3>
-            <p>Börja med att ansöka om körkortstillstånd hos Transportstyrelsen. Du behöver göra en synundersökning och fylla i en hälsodeklaration. Ansökan görs enkelt online.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 1</span>
+                <h3>Ansök om körkortstillstånd</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-1">
+              <p>Börja med att ansöka om körkortstillstånd hos Transportstyrelsen. Du behöver göra en synundersökning och fylla i en hälsodeklaration. Ansökan görs enkelt online.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">2</div>
-            <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
-            <h3>Boka startlektion (Testlektion) hos oss</h3>
-            <p>Kontakta oss för att boka en startlektion. Vi går igenom din erfarenhet, väljer rätt behörighet (A1, A2 eller A) och planerar din utbildning.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 2</span>
+                <h3>Boka startlektion (Testlektion) hos oss</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-2">
+              <p>Kontakta oss för att boka en startlektion. Vi går igenom din erfarenhet, väljer rätt behörighet (A1, A2 eller A) och planerar din utbildning.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">3</div>
-            <div class="step-icon"><i class="fa-solid fa-motorcycle"></i></div>
-            <h3>Utbildning och övningskörning</h3>
-            <p>Du kör med våra erfarna MC-lärare på övningsområde och i trafik. Utbildningen inkluderar både manövrering (lågfart och högfart) och körning i olika trafikmiljöer. Vi anpassar efter din nivå och dina mål.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 3</span>
+                <h3>Utbildning och övningskörning</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-3">
+              <p>Du kör med våra erfarna MC-lärare på övningsområde och i trafik. Utbildningen inkluderar både manövrering (lågfart och högfart) och körning i olika trafikmiljöer. Vi anpassar efter din nivå och dina mål.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">4</div>
-            <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>Studera teori</h3>
-            <p>Parallellt med körningen studerar du teori via böcker, appar eller vårt digitala material. Du lär dig trafikregler, riskmedvetenhet och MC-specifika moment som balans, placering och synlighet.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 4</span>
+                <h3>Studera teori</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-4">
+              <p>Parallellt med körningen studerar du teori via böcker, appar eller vårt digitala material. Du lär dig trafikregler, riskmedvetenhet och MC-specifika moment som balans, placering och synlighet.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">5</div>
-            <div class="step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3>Gör Riskettan och Risktvåan (MC)</h3>
-            <p>Riskutbildningen för MC består av två delar: <strong>Risk 1 MC</strong> – teori om risker, alkohol, droger och trötthet (cirka 3 timmar). <strong>Risk 2 MC</strong> – praktiska moment på halkbana med fokus på körteknik och säkerhet (cirka 4–5 timmar), hålls vid Bulltoftabanan på Rimfrostgatan 5 i Malmö. Båda är obligatoriska och separata från riskutbildningen för bil – om du redan har gjort Risk 1 för B-körkort måste du ändå göra Risk 1 för MC. Riskutbildningen är giltig i 5 år eller tills du fått ditt körkort.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 5</span>
+                <h3>Gör Riskettan och Risktvåan (MC)</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-5">
+              <p>Riskutbildningen för MC består av två delar: <strong>Risk 1 MC</strong> – teori om risker, alkohol, droger och trötthet (cirka 3 timmar). <strong>Risk 2 MC</strong> – praktiska moment på halkbana med fokus på körteknik och säkerhet (cirka 4–5 timmar), hålls vid Bulltoftabanan på Rimfrostgatan 5 i Malmö. Båda är obligatoriska och separata från riskutbildningen för bil – om du redan har gjort Risk 1 för B-körkort måste du ändå göra Risk 1 för MC. Riskutbildningen är giltig i 5 år eller tills du fått ditt körkort.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">6</div>
-            <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
-            <h3>Boka och klara teoriprovet</h3>
-            <p>Boka teoriprovet hos Trafikverket Förarprov, Cederströmsgatan 1 i Malmö när du känner dig redo. Provet är 70 frågor (5 testfrågor), 52/65 rätt, 50 min. Provet finns endast på svenska – i särskilda fall kan du ansöka hos Trafikverket om muntligt prov med tolk, men det kräver formell ansökan. Du kan förbereda dig med vårt digitala teorimaterial. Ett godkänt MC-teoriprov är giltigt i 12 månader.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 6</span>
+                <h3>Boka och klara teoriprovet</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-6">
+              <p>Boka teoriprovet hos Trafikverket Förarprov, Cederströmsgatan 1 i Malmö när du känner dig redo. Provet är 70 frågor (5 testfrågor), 52/65 rätt, 50 min. Provet finns endast på svenska – i särskilda fall kan du ansöka hos Trafikverket om muntligt prov med tolk, men det kräver formell ansökan. Du kan förbereda dig med vårt digitala teorimaterial. Ett godkänt MC-teoriprov är giltigt i 12 månader.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">7</div>
-            <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h3>Gör uppkörning och få ditt körkort</h3>
-            <p>När du är redo bokar vi körprovet hos Trafikverket. För MC sker manöverprov och körprov vid <strong>Bulltoftabanan på Rimfrostgatan 5 i Malmö</strong> – inte vid Trafikverket Cederströmsgatan, där bilkörprov sker. Provet består av säkerhetskontroll, manöverprov (lågfartsdel, högfartsdel med undanmanöver i 50 km/h, samt bromsning vid 70 och 90 km/h) och körning i och utanför tätort under minst 25 minuter. Notera att MC-körprov endast genomförs april–oktober. Efter godkänt prov får du resultatet direkt och kan börja köra på din legitimation, och det fysiska körkortet skickas hem inom några dagar.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Steg 7</span>
+                <h3>Gör uppkörning och få ditt körkort</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-7">
+              <p>När du är redo bokar vi körprovet hos Trafikverket. För MC sker manöverprov och körprov vid <strong>Bulltoftabanan på Rimfrostgatan 5 i Malmö</strong> – inte vid Trafikverket Cederströmsgatan, där bilkörprov sker. Provet består av säkerhetskontroll, manöverprov (lågfartsdel, högfartsdel med undanmanöver i 50 km/h, samt bromsning vid 70 och 90 km/h) och körning i och utanför tätort under minst 25 minuter. Notera att MC-körprov endast genomförs april–oktober. Efter godkänt prov får du resultatet direkt och kan börja köra på din legitimation, och det fysiska körkortet skickas hem inom några dagar.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -881,6 +1044,61 @@
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
+  </script>
+  <script>
+  /* Steps – collapsible accordion on phones only (<=768px).
+     Above that breakpoint the cards render fully expanded and the
+     headers stay plain (no button role), so desktop is untouched. */
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var heads = Array.prototype.slice.call(
+      document.querySelectorAll('.steps-section .step-head')
+    );
+    if (!heads.length) return;
+
+    function toggle(head) {
+      var card = head.closest('.step-card');
+      var open = card.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) { toggle(e.currentTarget); }
+    function onKey(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        toggle(e.currentTarget);
+      }
+    }
+
+    function enable() {
+      heads.forEach(function (head) {
+        var card = head.closest('.step-card');
+        var panel = card.querySelector('.step-panel');
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+        if (panel && panel.id) head.setAttribute('aria-controls', panel.id);
+        head.addEventListener('click', onClick);
+        head.addEventListener('keydown', onKey);
+      });
+    }
+    function disable() {
+      heads.forEach(function (head) {
+        head.removeAttribute('role');
+        head.removeAttribute('tabindex');
+        head.removeAttribute('aria-expanded');
+        head.removeAttribute('aria-controls');
+        head.removeEventListener('click', onClick);
+        head.removeEventListener('keydown', onKey);
+        head.closest('.step-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
   </script>
   <script src="js/main.js" defer></script>
   <script>
