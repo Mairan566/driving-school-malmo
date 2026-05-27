@@ -289,6 +289,103 @@
     .steps-section .step-card.open .step-panel { display: block; }
     .steps-section .step-panel p { margin: 0; }
   }
+
+  /* ============================================================
+     MC SERVICE CARDS — desktop unchanged; collapsible accordion
+     on phones only. New wrappers (.svc-head, .svc-panel) are
+     transparent blocks >768px; .svc-chevron hidden. Scoped to
+     .svc-section div so the language cards below stay untouched.
+     Group 3 (Teori/Manöver) nests cards inside wrapper <div>s —
+     the extra selector layer handles those in mobile rules.
+  ============================================================ */
+  .svc-section .svc-chevron { display: none; }
+
+  /* On desktop, make .svc-panel a growing flex column so that
+     cards with display:flex;flex-direction:column keep their
+     margin-top:auto CTA bottom-alignment. */
+  .svc-section .svc-panel { flex: 1 1 auto; display: flex; flex-direction: column; }
+
+  @media (max-width: 768px) {
+    .svc-section .feature-grid { flex-direction: column; gap: 0.6rem; }
+
+    /* Direct feature-card children (groups 1, 2, 4) */
+    .svc-section .feature-grid > .feature-card,
+    .svc-section .feature-grid > .feature-card.center-mobile {
+      flex: 1 1 auto;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+      border-top: none;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-md);
+    }
+
+    /* Group 3: wrapper divs fill full width; nested cards same treatment */
+    .svc-section .feature-grid > div { flex: 1 1 auto; max-width: 100%; }
+    .svc-section .feature-grid > div > .feature-card {
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+      border-top: none;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-md);
+    }
+
+    /* Suppress hover lift on touch */
+    .svc-section .feature-card:hover { transform: none; box-shadow: var(--shadow-sm); }
+    .svc-section .feature-card.open { border-color: var(--accent); }
+
+    /* Clickable header row: [icon]  [title]  [chevron] */
+    .svc-section .svc-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+    .svc-section .feature-card.open .svc-head { background: var(--off-white); }
+    .svc-section .feature-card:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+    .svc-section .feature-card-icon { flex-shrink: 0; width: 40px; height: 40px; margin: 0; font-size: 1rem; }
+
+    .svc-section .svc-head h3 {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary);
+      text-align: left;
+    }
+    .svc-section .svc-chevron {
+      display: flex;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--accent);
+      font-size: 0.72rem;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .svc-section .feature-card.open .svc-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .svc-section .svc-panel { display: none; flex: none; padding: 0 1rem 1rem; text-align: left; }
+    .svc-section .feature-card.open .svc-panel { display: block; }
+    .svc-section .svc-panel p { margin: 0; font-size: 0.82rem; line-height: 1.6; }
+    .svc-section .feature-card-more { margin-top: 0.7rem; }
+  }
 </style>
 </head>
 <body>
@@ -615,32 +712,56 @@
           <p>Allt du behöver för att ta MC-körkortet – från testlektion till godkänd uppkörning. Vi erbjuder utbildning för A1, A2 och A med erfarna instruktörer.</p>
         </div>
 
+        <!-- svc-section: on phones each card collapses into a tap-to-expand
+             panel. Desktop renders the original linked cards untouched. -->
+        <div class="svc-section">
+
         <!-- Utbildning & Lektioner -->
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Utbildning & lektioner</h3>
         <div class="feature-grid">
           <a class="feature-card" href="mc-testlektion-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-            <h3>Testlektion MC</h3>
-            <p>Prova på att köra motorcykel med en erfaren instruktör. 80 min lektion där du testar balans, gas och koppling – perfekt om du vill känna efter innan du bestämmer dig.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+              <h3>Testlektion MC</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-1">
+              <p>Prova på att köra motorcykel med en erfaren instruktör. 80 min lektion där du testar balans, gas och koppling – perfekt om du vill känna efter innan du bestämmer dig.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="mc-korlektioner-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
-            <h3>Motorcykel körlektioner (A, A1, A2)</h3>
-            <p>Körlektioner för alla MC-behörigheter. A1 från 16 år (≤125 cc, 11 kW), A2 från 18 år (≤35 kW), och A från 24 år (obegränsad effekt). Vi anpassar efter din nivå.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <h3>Motorcykel körlektioner (A, A1, A2)</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-2">
+              <p>Körlektioner för alla MC-behörigheter. A1 från 16 år (≤125 cc, 11 kW), A2 från 18 år (≤35 kW), och A från 24 år (obegränsad effekt). Vi anpassar efter din nivå.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="mc-intensivkurs-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-bolt"></i></div>
-            <h3>MC Intensivkurs<br>(Paket 3)</h3>
-            <p>Vårt mest kompletta MC-paket: 20 körlektioner, riskutbildning och teori online för 17 990 SEK. Koncentrerat upplägg för dig som vill ta MC-körkort snabbt.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>MC Intensivkurs (Paket 3)</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-3">
+              <p>Vårt mest kompletta MC-paket: 20 körlektioner, riskutbildning och teori online för 17 990 SEK. Koncentrerat upplägg för dig som vill ta MC-körkort snabbt.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="mc-paket-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-box"></i></div>
-            <h3>Motorcykel körpaket</h3>
-            <p>Välj mellan litet, mellan och stort paket. Fasta priser med körlektioner, manöverträning och trafikövning – spara pengar med ett paket som passar din nivå.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-box"></i></div>
+              <h3>Motorcykel körpaket</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-4">
+              <p>Välj mellan litet, mellan och stort paket. Fasta priser med körlektioner, manöverträning och trafikövning – spara pengar med ett paket som passar din nivå.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
         </div>
 
@@ -648,22 +769,37 @@
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Riskutbildning (obligatorisk)</h3>
         <div class="feature-grid">
           <a class="feature-card" href="riskettan-mc-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>Riskettan motorcykel</h3>
-            <p>Obligatorisk riskutbildning del 1 för MC. Teori om alkohol, droger, trötthet och riskbeteende i trafiken. Giltig i upp till 5 år eller tills du tar körkortet.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-book-open"></i></div>
+              <h3>Riskettan motorcykel</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-5">
+              <p>Obligatorisk riskutbildning del 1 för MC. Teori om alkohol, droger, trötthet och riskbeteende i trafiken. Giltig i upp till 5 år eller tills du tar körkortet.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="risktvaan-mc-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
-            <h3>Risktvåan motorcykel</h3>
-            <p>Obligatorisk praktisk riskutbildning del 2 för MC. Halkbana, nödbromsning och undanmanöver i hög hastighet. Du kör med full skyddsutrustning.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+              <h3>Risktvåan motorcykel</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-6">
+              <p>Obligatorisk praktisk riskutbildning del 2 för MC. Halkbana, nödbromsning och undanmanöver i hög hastighet. Du kör med full skyddsutrustning.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card center-mobile" href="mc-riskpaket-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Riskpaket motorcykel</h3>
-            <p>Riskettan och Risktvåan för MC i ett samlat paket. Bekvämt, billigare och klart på några dagar – båda delarna måste vara klara innan du gör prov.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Riskpaket motorcykel</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-7">
+              <p>Riskettan och Risktvåan för MC i ett samlat paket. Bekvämt, billigare och klart på några dagar – båda delarna måste vara klara innan du gör prov.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
         </div>
 
@@ -672,19 +808,29 @@
           <div>
             <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Teori & förberedelser</h3>
             <a class="feature-card" href="mc-teori-malmo.html" style="text-align:center;">
-              <div class="feature-card-icon"><i class="fa-solid fa-laptop"></i></div>
-              <h3>MC teori – digitalt material</h3>
-              <p>Studera MC-teori digitalt i din egen takt. Övningsfrågor som speglar Trafikverkets prov – 70 frågor (5 testfrågor), 52/65 rätt, 50 min. Täcker fordonskännedom, trafikregler och riskmedvetenhet.</p>
-              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+              <div class="svc-head">
+                <div class="feature-card-icon"><i class="fa-solid fa-laptop"></i></div>
+                <h3>MC teori – digitalt material</h3>
+                <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="svc-panel" id="mc-svc-panel-8">
+                <p>Studera MC-teori digitalt i din egen takt. Övningsfrågor som speglar Trafikverkets prov – 70 frågor (5 testfrågor), 52/65 rätt, 50 min. Täcker fordonskännedom, trafikregler och riskmedvetenhet.</p>
+                <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </a>
           </div>
           <div>
             <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Manöver & körteknik</h3>
             <a class="feature-card" href="mc-korteknik-malmo.html" style="text-align:center;">
-              <div class="feature-card-icon"><i class="fa-solid fa-arrows-spin"></i></div>
-              <h3>MC Körteknik – Uppkörningsförberedelse</h3>
-              <p>Lågfartsbana, högfartsbana, bromsteknik och avancerad körteknik – all praktisk körteknikträning du behöver inför Trafikverkets MC-uppkörning på Rimfrostgatan 5 i Malmö.</p>
-              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+              <div class="svc-head">
+                <div class="feature-card-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                <h3>MC Körteknik – Uppkörningsförberedelse</h3>
+                <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="svc-panel" id="mc-svc-panel-9">
+                <p>Lågfartsbana, högfartsbana, bromsteknik och avancerad körteknik – all praktisk körteknikträning du behöver inför Trafikverkets MC-uppkörning på Rimfrostgatan 5 i Malmö.</p>
+                <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
             </a>
           </div>
         </div>
@@ -693,18 +839,30 @@
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Uppkörning & prov</h3>
         <div class="feature-grid">
           <a class="feature-card" href="mc-uppkorning-malmo.html" style="text-decoration: none; color: inherit; display:flex; flex-direction:column;">
-            <div class="feature-card-icon"><i class="fa-solid fa-flag-checkered"></i></div>
-            <h3>MC Uppkörning</h3>
-            <p>Förbered dig för MC-uppkörningen på Rimfrostgatan 5 i Malmö – krav inför provet, alla moment i körprovet, strategi och bedömning samt vad som händer efter godkänt prov.</p>
-            <span class="feature-card-more" style="margin-top:auto;">Läs mer om MC Uppkörning <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-flag-checkered"></i></div>
+              <h3>MC Uppkörning</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-10">
+              <p>Förbered dig för MC-uppkörningen på Rimfrostgatan 5 i Malmö – krav inför provet, alla moment i körprovet, strategi och bedömning samt vad som händer efter godkänt prov.</p>
+              <span class="feature-card-more" style="margin-top:auto;">Läs mer om MC Uppkörning <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="hyra-mc-uppkorning-malmo.html" style="text-decoration: none; color: inherit; display:flex; flex-direction:column;">
-            <div class="feature-card-icon"><i class="fa-solid fa-key"></i></div>
-            <h3>Hyra MC till uppkörning</h3>
-            <p>Hyr en provgodkänd motorcykel till MC-uppkörningen för 1 200 SEK – uppvärmning ingår. Yamaha MT-07 för A2-körkort eller BMW F800 GS för A-körkort.</p>
-            <span class="feature-card-more" style="margin-top:auto;">Läs mer om MC-hyra <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-key"></i></div>
+              <h3>Hyra MC till uppkörning</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="mc-svc-panel-11">
+              <p>Hyr en provgodkänd motorcykel till MC-uppkörningen för 1 200 SEK – uppvärmning ingår. Yamaha MT-07 för A2-körkort eller BMW F800 GS för A-körkort.</p>
+              <span class="feature-card-more" style="margin-top:auto;">Läs mer om MC-hyra <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
         </div>
+
+        </div><!-- end .svc-section -->
 
         <!-- ====== Undervisning på ditt språk ====== -->
         <div class="section-intro" style="margin-top:2.5rem;">
@@ -978,19 +1136,6 @@
       </div>
     </section>
 
-    <!-- ====== Related Links (full-width, off-white) ====== -->
-    <nav class="related-links" aria-label="Relaterade sidor">
-  <div class="container">
-    <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">Relaterade sidor</h3>
-    <div class="related-links-grid">
-          <a href="trafikskola.html" class="related-link-btn"><i class="fa-solid fa-car"></i> Trafikskola</a>
-          <a href="mc-korlektioner-malmo.html" class="related-link-btn"><i class="fa-solid fa-road"></i> MC Lektioner</a>
-          <a href="mc-paket-malmo.html" class="related-link-btn"><i class="fa-solid fa-box"></i> MC Paket</a>
-          <a href="faq-mc-korkort.html" class="related-link-btn"><i class="fa-solid fa-circle-question"></i> FAQ MC</a>
-    </div>
-  </div>
-</nav>
-
   </main>
 
   <!-- ====== Footer ====== -->
@@ -1094,6 +1239,39 @@
     }
     function apply() { if (mq.matches) enable(); else disable(); }
 
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+  </script>
+  <script>
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.svc-section .feature-card'));
+    if (!cards.length) return;
+    function toggle(card) { var open = card.classList.toggle('open'); card.setAttribute('aria-expanded', String(open)); }
+    function onClick(e) {
+      var card = e.currentTarget;
+      if (e.detail === 0) { if (card.classList.contains('open')) return; e.preventDefault(); toggle(card); return; }
+      if (e.target.closest('.feature-card-more')) return;
+      e.preventDefault(); toggle(card);
+    }
+    function enable() {
+      cards.forEach(function(card) {
+        var panel = card.querySelector('.svc-panel');
+        card.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+        if (panel && panel.id) card.setAttribute('aria-controls', panel.id);
+        card.addEventListener('click', onClick);
+      });
+    }
+    function disable() {
+      cards.forEach(function(card) {
+        card.removeAttribute('aria-expanded'); card.removeAttribute('aria-controls');
+        card.removeEventListener('click', onClick); card.classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
     apply();
     var onChange = function () { disable(); apply(); };
     if (mq.addEventListener) mq.addEventListener('change', onChange);
