@@ -320,6 +320,94 @@
     .steps-section .step-card.open .step-panel { display: block; }
     .steps-section .step-panel p { margin: 0; }
   }
+
+  /* ============================================================
+     SERVICE CARDS — desktop unchanged; collapsible accordion on
+     phones. The new wrappers (.svc-head, .svc-panel) are plain
+     blocks >768px and .svc-chevron is hidden, so the linked cards
+     render exactly like before. Scoped to .svc-section so the other
+     feature grids on the page (e.g. language cards) are untouched.
+  ============================================================ */
+  .svc-section .svc-chevron { display: none; }
+
+  @media (max-width: 768px) {
+    /* Single-column list of tap-to-expand panels */
+    .svc-section .feature-grid { flex-direction: column; gap: 0.6rem; }
+    .svc-section .feature-grid > .feature-card,
+    .svc-section .feature-grid > .feature-card.center-mobile {
+      flex: 1 1 auto;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+      border-top: none;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-md);
+    }
+    /* Keep touch interactions calm – no hover lift */
+    .svc-section .feature-card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+    }
+    .svc-section .feature-card.open { border-color: var(--accent); }
+
+    /* Clickable header row: [icon]  [title]  [chevron] */
+    .svc-section .svc-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+    .svc-section .feature-card.open .svc-head { background: var(--off-white); }
+    .svc-section .feature-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    .svc-section .feature-card-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      font-size: 1rem;
+    }
+    .svc-section .svc-head h3 {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+    .svc-section .svc-chevron {
+      display: flex;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--accent);
+      font-size: 0.72rem;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .svc-section .feature-card.open .svc-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .svc-section .svc-panel { display: none; padding: 0 1rem 1rem; }
+    .svc-section .feature-card.open .svc-panel { display: block; }
+    .svc-section .svc-panel p { margin: 0; font-size: 0.82rem; line-height: 1.6; }
+    .svc-section .feature-card-more { margin-top: 0.7rem; }
+  }
 </style>
 </head>
 <body>
@@ -527,7 +615,10 @@
     <div class="container">
 
       <!-- ====== Tjänster för B-körkort ====== -->
-      <section class="content-section reveal">
+      <!-- svc-section: on phones (<=768px) each card below collapses into a
+           tap-to-expand panel via the inline CSS + script near </body>.
+           Desktop renders the original linked cards untouched. -->
+      <section class="content-section reveal svc-section">
         <div class="section-intro">
           <h2 class="inner-section-heading">Våra tjänster för B-körkort</h2>
           <p>Allt du behöver för att ta B-körkortet – från första lektionen till godkänd uppkörning.</p>
@@ -537,28 +628,48 @@
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Körlektioner &amp; paket</h3>
         <div class="feature-grid reveal-children">
           <a class="feature-card" href="testlektion-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-            <h3>Testlektion</h3>
-            <p>Prova på hur det är att köra med oss innan du bestämmer dig. 60 minuter – perfekt för dig som vill känna efter.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+              <h3>Testlektion</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-1">
+              <p>Prova på hur det är att köra med oss innan du bestämmer dig. 60 minuter – perfekt för dig som vill känna efter.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="korlektioner-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-car"></i></div>
-            <h3>Körlektioner (manuell &amp; automat)</h3>
-            <p>60-minuterslektioner med Audi A3 eller Volvo V60. Vi anpassar efter din nivå – från nybörjare till provförberedande.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-car"></i></div>
+              <h3>Körlektioner (manuell &amp; automat)</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-2">
+              <p>60-minuterslektioner med Audi A3 eller Volvo V60. Vi anpassar efter din nivå – från nybörjare till provförberedande.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="intensivkurs-korkort-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-bolt"></i></div>
-            <h3>Intensivkurs körkort</h3>
-            <p>Ta körkortet snabbt med koncentrerade lektioner. 15 lektioner + Risk 1 &amp; 2 + Teorikod för 13 990 SEK.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3>Intensivkurs körkort</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-3">
+              <p>Ta körkortet snabbt med koncentrerade lektioner. 15 lektioner + Risk 1 &amp; 2 + Teorikod för 13 990 SEK.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="korpaket-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-box"></i></div>
-            <h3>Körpaket</h3>
-            <p>Färdiga paket med 5, 10 eller 15 körlektioner till fast pris. Välj det paket som passar din nivå och budget.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-box"></i></div>
+              <h3>Körpaket</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-4">
+              <p>Färdiga paket med 5, 10 eller 15 körlektioner till fast pris. Välj det paket som passar din nivå och budget.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
         </div>
 
@@ -566,22 +677,37 @@
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Riskutbildning (obligatorisk)</h3>
         <div class="feature-grid reveal-children">
           <a class="feature-card" href="riskettan-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>Riskettan</h3>
-            <p>Obligatorisk riskutbildning del 1. Teoretisk utbildning om alkohol, droger, trötthet och riskbeteende i trafiken.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-book-open"></i></div>
+              <h3>Riskettan</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-5">
+              <p>Obligatorisk riskutbildning del 1. Teoretisk utbildning om alkohol, droger, trötthet och riskbeteende i trafiken.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card" href="risktvaan-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
-            <h3>Risktvåan (halkbana)</h3>
-            <p>Obligatorisk riskutbildning del 2. Praktisk halkbaneövning med nödbromsning, undanmanöver och hastighetsuppfattning.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+              <h3>Risktvåan (halkbana)</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-6">
+              <p>Obligatorisk riskutbildning del 2. Praktisk halkbaneövning med nödbromsning, undanmanöver och hastighetsuppfattning.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
           <a class="feature-card center-mobile" href="riskpaket-korkort-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3>Riskpaket körkort</h3>
-            <p>Riskettan och Risktvåan samlat i ett paket – smidig bokning och du sparar pengar.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Riskpaket körkort</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-7">
+              <p>Riskettan och Risktvåan samlat i ett paket – smidig bokning och du sparar pengar.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
         </div>
 
@@ -589,10 +715,15 @@
         <h3 class="inner-section-subheading" style="text-align:center; margin: 2rem 0 1rem; color: var(--primary);">Teori &amp; förberedelser</h3>
         <div class="feature-grid reveal-children">
           <a class="feature-card center-mobile" href="korkortsteori-malmo.html">
-            <div class="feature-card-icon"><i class="fa-solid fa-laptop"></i></div>
-            <h3>Körkortsteori</h3>
-            <p>Digital teorikod för självstudier. Förbered dig för teoriprovet (70 frågor, 52 rätt av 65 poänggivande krävs) i din egen takt.</p>
-            <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            <div class="svc-head">
+              <div class="feature-card-icon"><i class="fa-solid fa-laptop"></i></div>
+              <h3>Körkortsteori</h3>
+              <span class="svc-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="svc-panel" id="svc-panel-8">
+              <p>Digital teorikod för självstudier. Förbered dig för teoriprovet (70 frågor, 52 rätt av 65 poänggivande krävs) i din egen takt.</p>
+              <span class="feature-card-more">Läs mer <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </a>
         </div>
       </section>
@@ -1024,6 +1155,63 @@
         head.removeEventListener('click', onClick);
         head.removeEventListener('keydown', onKey);
         head.closest('.step-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+  </script>
+  <script>
+  /* Service cards – collapsible accordion on phones only (<=768px).
+     Each card is a single <a href>. On phones a tap on the header
+     toggles its panel; only the "Läs mer" link follows the href.
+     Keyboard: Enter opens a closed card, and once open follows the
+     link. Above 768px the native link + full card layout are left
+     completely untouched. */
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var cards = Array.prototype.slice.call(
+      document.querySelectorAll('.svc-section .feature-card')
+    );
+    if (!cards.length) return;
+
+    function toggle(card) {
+      var open = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) {
+      var card = e.currentTarget;
+      // Keyboard activation (Enter) reports detail 0: open first, then navigate.
+      if (e.detail === 0) {
+        if (card.classList.contains('open')) return; // let the link navigate
+        e.preventDefault();
+        toggle(card);
+        return;
+      }
+      // Pointer tap: the "Läs mer" CTA navigates, anything else toggles.
+      if (e.target.closest('.feature-card-more')) return;
+      e.preventDefault();
+      toggle(card);
+    }
+
+    function enable() {
+      cards.forEach(function (card) {
+        var panel = card.querySelector('.svc-panel');
+        card.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+        if (panel && panel.id) card.setAttribute('aria-controls', panel.id);
+        card.addEventListener('click', onClick);
+      });
+    }
+    function disable() {
+      cards.forEach(function (card) {
+        card.removeAttribute('aria-expanded');
+        card.removeAttribute('aria-controls');
+        card.removeEventListener('click', onClick);
+        card.classList.remove('open');
       });
     }
     function apply() { if (mq.matches) enable(); else disable(); }
