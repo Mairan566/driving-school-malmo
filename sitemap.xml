@@ -364,30 +364,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://andrestrafikskola.se/motorvagskoring-malmo.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/stadstrafik-malmo.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/landsvagskoring-malmo.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/bostadsomrade-korning-malmo.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://andrestrafikskola.se/backning-parkering-malmo.html</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -396,12 +372,6 @@
   <!-- NEW: Previously missing B-körkort service pages -->
   <url>
     <loc>https://andrestrafikskola.se/manovrering-vandning-malmo.html</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://andrestrafikskola.se/rondelltraning-malmo.html</loc>
     <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
