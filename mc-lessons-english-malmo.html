@@ -124,6 +124,49 @@
   ]
 }
 </script>
+<style>
+  /* Desktop: eyebrow + chevron hidden; step-head/panel are plain blocks */
+  .steps-section .step-eyebrow,
+  .steps-section .step-chevron { display: none; }
+
+  @media (max-width: 768px) {
+    .steps-section .steps-grid { gap: 0.6rem; margin-top: 1.25rem; }
+    .steps-section .step-card { padding: 0; text-align: left; overflow: hidden; }
+    .steps-section .step-card:hover { transform: none; box-shadow: var(--shadow-sm); border-color: var(--light-gray); }
+    .steps-section .step-card.open { border-color: var(--accent); }
+    .steps-section .step-number { display: none; }
+    .steps-section .step-head {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.95rem 1.05rem; cursor: pointer;
+      -webkit-tap-highlight-color: transparent; transition: background 0.2s;
+    }
+    .steps-section .step-head:hover,
+    .steps-section .step-card.open .step-head { background: var(--off-white, #f8f9fa); }
+    .steps-section .step-head:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .steps-section .step-icon {
+      flex-shrink: 0; width: 44px; height: 44px; margin: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; border-radius: 50%;
+      background: rgba(0,188,212,0.12); color: var(--accent);
+    }
+    .steps-section .step-head-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+    .steps-section .step-eyebrow {
+      display: block; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent);
+    }
+    .steps-section .step-head h3 { margin: 0; font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--primary); }
+    .steps-section .step-chevron {
+      flex-shrink: 0; width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center; border-radius: 50%;
+      background: rgba(0,188,212,0.1); color: var(--accent);
+      font-size: 0.72rem; transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .steps-section .step-card.open .step-chevron { transform: rotate(180deg); background: var(--accent); color: var(--primary); }
+    .steps-section .step-panel { display: none; padding: 0 1.05rem 1.1rem; }
+    .steps-section .step-card.open .step-panel { display: block; }
+    .steps-section .step-panel p { margin: 0; }
+  }
+</style>
 </head>
 <body>
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
@@ -202,7 +245,7 @@
       <section class="content-section bg-white">
         <div class="container"><div class="section-intro">
           <h2 class="inner-section-heading">Motorcycle lessons in English in Malmö</h2>
-          <p class="inner-text">Want to get a Swedish motorcycle licence? We offer motorcycle driving lessons with English-speaking instructors as part of our <a href="mc-trafikskola.html">MC training in Malmö</a>. Whether you are new to riding or already have experience from another country, we guide you through the entire Swedish MC licensing process. Our school is located at <span style="white-space:nowrap">Ystadvägen 22B, 214 30 Malmö</span>, and we welcome students from all over the Malmö area and Skåne region. We train on BMW F800 GS and Yamaha MT-07 (35 kW) motorcycles.</p>
+          <p class="inner-text">Want to get a Swedish motorcycle licence? We offer motorcycle driving lessons with English-speaking instructors as part of our MC training in Malmö. Whether you are new to riding or already have experience from another country, we guide you through the entire Swedish MC licensing process. Our school is located at <span style="white-space:nowrap">Ystadvägen 22B, 214 30 Malmö</span>, and we welcome students from all over the Malmö area and Skåne region. We train on BMW F800 GS and Yamaha MT-07 (35 kW) motorcycles.</p>
           <p class="inner-text">We offer comprehensive training covering all stages of getting your licence: from theory preparation and risk courses to practical riding and the final driving test on Rimfrostgatan 5 in Malmö. Each practical lesson is 80 minutes of focused riding instruction.</p>
         </div></div>
       </section>
@@ -275,59 +318,156 @@
         <div class="steps-grid steps-grid--7">
           <div class="step-card">
             <div class="step-number">1</div>
-            <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <h3>Apply for learner's permit</h3>
-            <p>Start by applying for a learner's permit (körkortstillstånd) from Transportstyrelsen. You need an eye test and a health declaration. The application is straightforward and done online.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 1</span>
+                <h3>Apply for learner's permit</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-1">
+              <p>Start by applying for a learner's permit (körkortstillstånd) from Transportstyrelsen. You need an eye test and a health declaration. The application is straightforward and done online.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">2</div>
-            <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
-            <h3>Book your first lesson</h3>
-            <p>Call us to book your first lesson. We assess your experience level, help you choose the right category (A1, A2 or A) and create a training plan that suits you.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 2</span>
+                <h3>Book your first lesson</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-2">
+              <p>Book your test lesson with us online or call us to book your first lesson. We assess your experience level, help you choose the right category (A1, A2 or A) and create a training plan that suits you.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">3</div>
-            <div class="step-icon"><i class="fa-solid fa-motorcycle"></i></div>
-            <h3>Practical riding training</h3>
-            <p>Train with our experienced instructors on the practice area and in traffic. Training includes manoeuvres (at low and high speed) and riding in different environments. We adapt to your level and goals.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 3</span>
+                <h3>Practical riding training</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-3">
+              <p>Train with our experienced instructors on the practice area and in traffic. Training includes manoeuvres (at low and high speed) and riding in different environments. We adapt to your level and goals.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">4</div>
-            <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>Theory study</h3>
-            <p>Alongside your riding lessons, study theory using books, apps or our digital materials. Learn traffic rules, risk awareness and motorcycle-specific topics like balance, road positioning and visibility.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 4</span>
+                <h3>Theory study</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-4">
+              <p>Alongside your riding lessons, study theory using books, apps or our digital materials. Learn traffic rules, risk awareness and motorcycle-specific topics like balance, road positioning and visibility.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">5</div>
-            <div class="step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3>Complete risk training (Riskettan & Risktvåan MC)</h3>
-            <p>MC risk training has two parts: Risk 1 MC – theory on hazards, alcohol, drugs and fatigue. Risk 2 MC – practical exercises focusing on riding style and safety. Both must be completed before the tests and are valid for 5 years.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 5</span>
+                <h3>Complete risk training (Riskettan &amp; Risktvåan MC)</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-5">
+              <p>MC risk training has two parts: Risk 1 MC – theory on hazards, alcohol, drugs and fatigue. Risk 2 MC – practical exercises focusing on riding style and safety. Both must be completed before the tests and are valid for 5 years.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">6</div>
-            <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
-            <h3>Book and pass theory test</h3>
-            <p>Book the theory test at Trafikverket when you feel ready. The test has 65 questions and you need at least 52 correct to pass. You can prepare with our digital materials. The theory test must be passed before the riding test.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 6</span>
+                <h3>Book and pass theory test</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-6">
+              <p>Book the theory test at Trafikverket when you feel ready. The test has 65 questions and you need at least 52 correct to pass. You can prepare with our digital materials. The theory test must be passed before the riding test.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">7</div>
-            <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h3>Driving test and get your licence</h3>
-            <p>When you are ready, we book the riding test at Trafikverket. The test consists of a manoeuvre part (low and high speed) and a traffic riding part where your safety and control are assessed. After passing, you receive the result immediately and your licence arrives by post.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">Step 7</span>
+                <h3>Driving test and get your licence</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-7">
+              <p>When you are ready, we book the riding test at Trafikverket. The test consists of a manoeuvre part (low and high speed) and a traffic riding part where your safety and control are assessed. After passing, you receive the result immediately and your licence arrives by post.</p>
+            </div>
           </div>
-        </div></div>
-      </section>
-
-      <!-- ====== Why choose us ====== -->
-      <section class="content-section bg-white">
-        <div class="container"><div class="section-intro">
-          <h2 class="inner-section-heading">Why choose Andres Trafikskola?</h2>
-          <p class="inner-text">We understand the challenges English speakers face when learning to ride in Sweden. Language can be a significant barrier when it comes to understanding Swedish traffic rules and technical terminology. That is why we offer instruction in English to help you understand everything clearly – from right-of-way rules to braking and balance.</p>
-          <p class="inner-text">Our instructors are certified by Transportstyrelsen and have extensive experience in motorcycle training. We use modern, well-maintained motorcycles – BMW F800 GS and Yamaha MT-07 (35 kW). We offer flexible scheduling on weekdays and weekends to fit your timetable.</p>
         </div></div>
       </section>
 
       <!-- ====== FAQ ====== -->
+      <!-- ====== Contact form ====== -->
+      <section class="inner-contact-section" id="contact">
+        <div class="container">
+          <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Ready to start riding?</h2>
+          <div style="text-align:center; margin-bottom:1rem;">
+            <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
+              <i class="fa-solid fa-calendar-check"></i> Book lesson online
+            </a>
+          </div>
+          <div style="text-align:center; margin-bottom:2rem;">
+            <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Call us or send an SMS.</p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+              <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Call us</a>
+              <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Send SMS</a>
+            </div>
+            <p style="color:#555;">Or fill in the form and we'll get back to you.</p>
+          </div>
+          <div class="inner-contact-form-wrap">
+            <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Your name" required autocomplete="name" aria-required="true" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactPhone" class="form-label">Phone <span aria-hidden="true">*</span></label>
+                  <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Email <span aria-hidden="true">*</span></label>
+                  <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message <span aria-hidden="true">*</span></label>
+                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Write your message here..." required rows="5" aria-required="true"></textarea>
+              </div>
+              <button type="submit" class="btn-submit" id="submitBtn" aria-label="Send message">
+                <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send</span>
+                <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending...</span>
+              </button>
+              <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                Thank you! We will get back to you as soon as possible.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       <section class="faq-section bg-light">
         <div class="container"><div class="section-intro">
           <h2 class="inner-section-heading">Frequently asked questions</h2>
@@ -381,69 +521,6 @@
         </div></div>
       </section>
 
-      <!-- ====== Contact form ====== -->
-      <section class="inner-contact-section" id="contact">
-        <div class="container">
-          <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Ready to start riding?</h2>
-          <div style="text-align:center; margin-bottom:1rem;">
-            <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
-              <i class="fa-solid fa-calendar-check"></i> Book lesson online
-            </a>
-          </div>
-          <div style="text-align:center; margin-bottom:2rem;">
-            <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Call us or send an SMS.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
-              <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Call us</a>
-              <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Send SMS</a>
-            </div>
-            <p style="color:#555;">Or fill in the form and we'll get back to you.</p>
-          </div>
-          <div class="inner-contact-form-wrap">
-            <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
-              <div class="form-group">
-                <label for="contactName" class="form-label">Name <span aria-hidden="true">*</span></label>
-                <input type="text" id="contactName" name="name" class="form-input" placeholder="Your name" required autocomplete="name" aria-required="true" />
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="contactPhone" class="form-label">Phone <span aria-hidden="true">*</span></label>
-                  <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
-                </div>
-                <div class="form-group">
-                  <label for="contactEmail" class="form-label">Email <span aria-hidden="true">*</span></label>
-                  <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="contactMessage" class="form-label">Message <span aria-hidden="true">*</span></label>
-                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Write your message here..." required rows="5" aria-required="true"></textarea>
-              </div>
-              <button type="submit" class="btn-submit" id="submitBtn" aria-label="Send message">
-                <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send</span>
-                <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending...</span>
-              </button>
-              <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                Thank you! We will get back to you as soon as possible.
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-    <!-- ====== Related Links ====== -->
-    <nav class="related-links" aria-label="Related pages">
-      <div class="container">
-        <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">Related pages</h3>
-        <div class="related-links-grid">
-          <a href="mc-theory-english-malmo.html" class="related-link-btn"><i class="fa-solid fa-book"></i> MC Theory in English</a>
-          <a href="mc-trafikskola.html" class="related-link-btn"><i class="fa-solid fa-school"></i> MC Trafikskola</a>
-          <a href="mc-paket-malmo.html" class="related-link-btn"><i class="fa-solid fa-box"></i> Prices & packages</a>
-          <a href="driving-lessons-english-malmo.html" class="related-link-btn"><i class="fa-solid fa-car"></i> Car Lessons in English</a>
-          <a href="driving-theory-english-malmo.html" class="related-link-btn"><i class="fa-solid fa-laptop"></i> Car Theory in English</a>
-        </div>
-      </div>
-    </nav>
   </main>
 
   <footer class="footer" role="contentinfo" aria-label="Sidfot">
@@ -516,6 +593,55 @@ document.querySelectorAll('.faq-question').forEach(btn => {
       }
     });
   });
+</script>
+<script>
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var heads = Array.prototype.slice.call(
+      document.querySelectorAll('.steps-section .step-head')
+    );
+    if (!heads.length) return;
+
+    function toggle(head) {
+      var card = head.closest('.step-card');
+      var open = card.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) { toggle(e.currentTarget); }
+    function onKey(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault(); toggle(e.currentTarget);
+      }
+    }
+    function enable() {
+      heads.forEach(function (head) {
+        var card = head.closest('.step-card');
+        var panel = card.querySelector('.step-panel');
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        if (panel && panel.id) head.setAttribute('aria-controls', panel.id);
+        head.addEventListener('click', onClick);
+        head.addEventListener('keydown', onKey);
+      });
+    }
+    function disable() {
+      heads.forEach(function (head) {
+        head.removeAttribute('role');
+        head.removeAttribute('tabindex');
+        head.removeAttribute('aria-expanded');
+        head.removeAttribute('aria-controls');
+        head.removeEventListener('click', onClick);
+        head.removeEventListener('keydown', onKey);
+        head.closest('.step-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
 </script>
 </body>
 </html>

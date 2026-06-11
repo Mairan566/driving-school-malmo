@@ -216,6 +216,86 @@
       max-width: 60%;
     }
   }
+
+  /* Desktop: chevron hidden, panel always visible */
+  .teori-cat-chevron { display: none; }
+  .teori-cat-panel { display: block; }
+
+  /* Mobile: accordion */
+  @media (max-width: 768px) {
+    .teori-cats-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .teori-cats-grid > .teori-cat-card {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      padding: 0 !important;
+      overflow: hidden;
+      text-align: left !important;
+      box-sizing: border-box;
+    }
+    .teori-cat-card:hover {
+      transform: none !important;
+      box-shadow: var(--shadow-sm) !important;
+    }
+    .teori-cat-card.open { border-color: var(--accent); }
+    .teori-cat-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.95rem 1.05rem;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.2s;
+    }
+    .teori-cat-head:hover,
+    .teori-cat-card.open .teori-cat-head { background: var(--off-white, #f8f9fa); }
+    .teori-cat-head:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+    .teori-cat-head .feature-card-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    .teori-cat-head h3 {
+      flex: 1;
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .teori-cat-chevron {
+      display: flex;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--accent);
+      font-size: 0.72rem;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .teori-cat-card.open .teori-cat-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+      color: var(--primary);
+    }
+    .teori-cat-panel {
+      display: none;
+      padding: 0 1.05rem 1.1rem;
+    }
+    .teori-cat-card.open .teori-cat-panel { display: block; }
+    .teori-cat-panel p { margin: 0; }
+  }
 </style>
 </head>
 <body>
@@ -256,7 +336,7 @@
     </div>
     <div style="text-align:center; margin-top:1rem;">
       <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
-        <i class="fa-solid fa-calendar-check"></i> Boka lektion online
+        <i class="fa-solid fa-calendar-check"></i> Börja teorin idag!
       </a>
     </div>
     <div class="page-hero-ctas contact-box" style="margin-top:1rem;">
@@ -296,64 +376,70 @@
     <div class="section-intro">
       <h2 class="inner-section-heading">MC teoriprov – vad du behöver veta</h2>
       <p class="inner-text">MC teoriprovet hos Trafikverket är obligatoriskt för alla som vill ta motorcykelkörkort – oavsett om du siktar på A1, A2 eller A-körkort. Provet består av <strong>70 frågor</strong> varav <strong>65 räknas</strong> (5 frågor är utprovningsfrågor som inte påverkar ditt resultat). Du behöver minst <strong>52 rätt av 65</strong> för att bli godkänd. Provtiden är <strong>50 minuter</strong> och provet genomförs digitalt på en dator hos Trafikverket.</p>
-      <p class="inner-text">Teoriprovet för MC skiljer sig från bilteoriprovet genom att det innehåller frågor specifika för motorcykel – fordonskännedom om motorcykelns teknik, bromssystem och hjulsystem, samt trafiksäkerhet med fokus på motorcykelns särskilda risker. Vi ger dig tillgång till digitalt studiematerial via vår egen elevportal — anpassat för MC-teoriprovet, uppdaterat enligt Trafikverkets aktuella frågor och täcker alla fem kategorier. Du loggar in på <strong>elev.andrestrafikskola.se</strong> och pluggar i din egen takt, var och när du vill, med övningsfrågor som liknar det riktiga provet.</p>
+      <p class="inner-text">Teoriprovet för MC skiljer sig från bilteoriprovet genom att det innehåller frågor specifika för motorcykel – fordonskännedom om motorcykelns teknik, bromssystem och hjulsystem, samt trafiksäkerhet med fokus på motorcykelns särskilda risker. Vi ger dig tillgång till digitalt studiematerial via vår egen elevportal — anpassat för MC-teoriprovet, uppdaterat enligt Trafikverkets aktuella frågor och täcker alla fem kategorier. Du loggar in på <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer"><strong>elev.andrestrafikskola.se</strong></a> och pluggar i din egen takt, var och när du vill, med övningsfrågor som liknar det riktiga provet.</p>
     </div>
   </div>
 </section>
 
-<section class="content-section bg-light">
+<section class="content-section bg-light teori-cats-section">
   <div class="container">
     <h2 class="inner-section-heading" style="text-align:center; margin-bottom:2rem;">5 kategorier på MC teoriprovet</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
-        <h3>Fordonskännedom</h3>
-        <p>Motorcykelns teknik och funktion: motor, bromssystem, kraftöverföring, däck, fjädring och elssystem. Förstå hur din MC fungerar för att köra säkert och upptäcka fel.</p>
+    <div class="feature-grid teori-cats-grid">
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
+          <h3>Fordonskännedom</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Motorcykelns teknik och funktion: motor, bromssystem, kraftöverföring, däck, fjädring och elsystem. Förstå hur din MC fungerar för att köra säkert och upptäcka fel.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fa-solid fa-leaf"></i></div>
-        <h3>Miljö</h3>
-        <p>Bränsleförbrukning, utsläpp och miljövänlig körning. Hur du kör bränsleeffektivt, minskar avgasutsläpp och bidrar till en bättre miljö genom ditt körsätt.</p>
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Miljö</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Bränsleförbrukning, utsläpp och miljövänlig körning. Hur du kör bränsleeffektivt, minskar avgasutsläpp och bidrar till en bättre miljö genom ditt körsätt.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Trafiksäkerhet</h3>
-        <p>Risker specifika för motorcyklister: synlighet, bromssträckor, kurvteknik, väggrepp och skyddsutrustningens betydelse. Hur du skyddar dig själv och andra.</p>
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Trafiksäkerhet</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Risker specifika för motorcyklister: synlighet, bromssträckor, kurvteknik, väggrepp och skyddsutrustningens betydelse. Hur du skyddar dig själv och andra.</p>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fa-solid fa-signs-post"></i></div>
-        <h3>Trafikregler</h3>
-        <p>Vägmärken, trafiksignaler, väjningsregler, hastighetsgränser och övriga bestämmelser. Grundläggande regler som alla förare måste behärska.</p>
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-signs-post"></i></div>
+          <h3>Trafikregler</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Vägmärken, trafiksignaler, väjningsregler, hastighetsgränser och övriga bestämmelser. Grundläggande regler som alla förare måste behärska.</p>
+        </div>
       </div>
-      <div class="feature-card center-all">
-        <div class="feature-card-icon"><i class="fa-solid fa-brain"></i></div>
-        <h3>Personliga faktorer</h3>
-        <p>Trötthet, alkohol, droger, läkemedel, stress och grupptryck. Hur personliga faktorer påverkar din förmåga att köra MC säkert i trafiken.</p>
+      <div class="feature-card teori-cat-card center-all">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3>Personliga faktorer</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Trötthet, alkohol, droger, läkemedel, stress och grupptryck. Hur personliga faktorer påverkar din förmåga att köra MC säkert i trafiken.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-banner">
-  <div class="container">
-    <h2>Börja studera direkt</h2>
-    <p>Logga in på vår elevportal för att komma igång med MC-teorin – eller boka en körlektion samtidigt.</p>
-    <div class="cta-btn-group">
-      <a href="https://elev.andrestrafikskola.se/login" target="_blank" rel="noopener noreferrer" class="btn-cta-primary"><i class="fa-solid fa-right-to-bracket"></i> Logga in för att studera</a>
-      <a href="https://elev.andrestrafikskola.se/login" target="_blank" rel="noopener noreferrer" class="btn-cta-secondary"><i class="fa-solid fa-calendar-check"></i> Eller boka lektion online</a>
-    </div>
-  </div>
-</section>
 
-<section class="content-section bg-white">
-  <div class="container">
-    <div class="section-intro">
-      <h2 class="inner-section-heading">Digitalt studiematerial – plugga i din egen takt</h2>
-      <p class="inner-text">Vårt digitala MC-teorimaterial ger dig tillgång till tusentals övningsfrågor som liknar det riktiga provet hos Trafikverket. Du kan plugga från din dator, surfplatta eller mobil – hemma, på bussen eller under lunchrasten. Materialet täcker alla fem kategorier och hjälper dig identifiera vilka ämnen du behöver öva mer på. Du ser din framsteg och kan göra provsimuleringar under realistiska förhållanden med tidsbegränsning.</p>
-      <p class="inner-text">Det digitala studiematerialet ingår i alla våra MC-paket (Paket 1, 2 och 3) eller kan köpas separat. Materialet är på svenska men vi kan komplettera med förklaringar på engelska eller arabiska vid behov. Vi rekommenderar att du pluggar regelbundet under minst 2–4 veckor innan du bokar teoriprovet. De flesta elever som konsekvent når 85–90% rätt på övningsproven klarar det riktiga provet utan problem.</p>
-    </div>
-  </div>
-</section>
 
 <section class="content-section bg-light">
   <div class="container">
@@ -372,7 +458,7 @@
       <div class="feature-card">
         <div class="feature-card-icon"><i class="fa-solid fa-bullseye"></i></div>
         <h3>Fokusera på svaga ämnen</h3>
-        <p>Identifiera vilka kategorier du får flest fel i och lägg extra tid på dessa. Fordonskännedom och trafiksäkerhet kräver ofta mest övning för MC-elever.</p>
+        <p>Teoricentralen, plattformen vi använder, identifierar automatiskt dina svaga punkter och riktar in övningarna där du behöver förbättra dig mest.</p>
       </div>
       <div class="feature-card">
         <div class="feature-card-icon"><i class="fa-solid fa-clock"></i></div>
@@ -388,19 +474,56 @@
     <div class="section-intro">
       <h2 class="inner-section-heading">Efter godkänt teoriprov</h2>
       <p class="inner-text">När du har klarat MC teoriprovet registreras resultatet hos Trafikverket och du kan börja planera din praktiska uppkörning. Godkänt teoriprov gäller i <strong>1 år</strong> – du måste genomföra och klara den praktiska uppkörningen inom denna period. Om du inte hinner behöver du göra om teoriprovet.</p>
-      <p class="inner-text">Innan du kan boka <a href="mc-uppkorning-malmo.html">uppkörningen</a> måste du också ha godkänd riskutbildning – <a href="riskettan-mc-malmo.html">Riskettan</a> och <a href="risktvaan-mc-malmo.html">Risktvåan MC</a>, eller bundlat som <a href="mc-riskpaket-malmo.html">MC Riskpaket</a> – samt ett giltigt övningstillstånd. Vi hjälper dig planera hela processen så att allt faller på plats i rätt ordning. Se <a href="mc-trafikskola.html">vägen till MC-körkort</a> för en översikt, eller kontakta oss så går vi igenom din situation och lägger upp en plan.</p>
+      <p class="inner-text">Innan du kan boka <a href="mc-uppkorning-malmo.html">uppkörningen</a> måste du också ha godkänd riskutbildning – <a href="riskettan-mc-malmo.html">Riskettan</a> och <a href="risktvaan-mc-malmo.html">Risktvåan MC</a>, eller bundlat som <a href="mc-riskpaket-malmo.html">MC Riskpaket</a> – samt ett giltigt övningstillstånd. Vi hjälper dig planera hela processen så att allt faller på plats i rätt ordning.</p>
     </div>
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="inner-contact-section" id="kontakt">
   <div class="container">
-    <h2>Redo att börja plugga MC teori?</h2>
-    <p>Kontakta oss för tillgång till digitalt studiematerial eller boka ett komplett MC-paket.</p>
-    <div class="cta-btn-group">
-      <a href="tel:+46700099924" class="btn-cta-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
-      <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-      <a href="mc-paket-malmo.html" class="btn-cta-secondary"><i class="fa-solid fa-box"></i> Se MC-paket</a>
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Redo att börja?</h2>
+    <div style="text-align:center; margin-bottom:1rem;">
+      <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
+        <i class="fa-solid fa-calendar-check"></i> Börja teorin idag!
+      </a>
+    </div>
+    <div style="text-align:center; margin-bottom:2rem;">
+      <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Ring oss eller skicka ett SMS.</p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
+        <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
+      </div>
+      <p style="color:#555;">Du kan också fylla i formuläret så återkommer vi så snart vi kan.</p>
+    </div>
+    <div class="inner-contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
+        <div class="form-group">
+          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
+          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
+          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
+        </button>
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          Tack! Vi återkommer till dig så snart som möjligt.
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -476,56 +599,6 @@
   </div>
 </section>
 
-<section class="inner-contact-section" id="kontakt">
-  <div class="container">
-    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Redo att börja?</h2>
-    <div style="text-align:center; margin-bottom:1rem;">
-      <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
-        <i class="fa-solid fa-calendar-check"></i> Boka lektion online
-      </a>
-    </div>
-    <div style="text-align:center; margin-bottom:2rem;">
-      <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Ring oss eller skicka ett SMS.</p>
-      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
-        <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
-        <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-      </div>
-      <p style="color:#555;">Du kan också fylla i formuläret så återkommer vi så snart vi kan.</p>
-    </div>
-    <div class="inner-contact-form-wrap">
-      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
-        <div class="form-group">
-          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
-          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
-            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
-          </div>
-          <div class="form-group">
-            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
-            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
-          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
-        </div>
-        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
-          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
-          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
-        </button>
-        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
-          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-          Tack! Vi återkommer till dig så snart som möjligt.
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-
 <footer class="footer" role="contentinfo" aria-label="Sidfot">
   <div class="footer-top">
     <div class="footer-logo" aria-label="Andres Trafikskola">
@@ -580,6 +653,57 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 <script src="js/main.js" defer></script>
+<script>
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var heads = Array.prototype.slice.call(
+      document.querySelectorAll('.teori-cat-head')
+    );
+    if (!heads.length) return;
+
+    function toggle(head) {
+      var card = head.closest('.teori-cat-card');
+      var open = card.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) { toggle(e.currentTarget); }
+    function onKey(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        toggle(e.currentTarget);
+      }
+    }
+    function enable() {
+      heads.forEach(function (head) {
+        var card = head.closest('.teori-cat-card');
+        var panel = card.querySelector('.teori-cat-panel');
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        if (panel) head.setAttribute('aria-controls', panel.id || '');
+        head.addEventListener('click', onClick);
+        head.addEventListener('keydown', onKey);
+      });
+    }
+    function disable() {
+      heads.forEach(function (head) {
+        head.removeAttribute('role');
+        head.removeAttribute('tabindex');
+        head.removeAttribute('aria-expanded');
+        head.removeAttribute('aria-controls');
+        head.removeEventListener('click', onClick);
+        head.removeEventListener('keydown', onKey);
+        head.closest('.teori-cat-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+</script>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {

@@ -362,7 +362,7 @@
     <div class="section-intro">
       <h2 class="inner-section-heading">Välj rätt MC-paket för din utbildning</h2>
       <p class="inner-text">Vi erbjuder tre tydliga MC-paket som samlar körlektioner, riskutbildning och teorimaterial till ett förmånligt paketpris. Oavsett om du har viss erfarenhet och behöver komplettera, eller om du är nybörjare som vill ha en komplett mc-utbildning i Malmö, finns ett paket som passar dig.</p>
-      <p class="inner-text">Alla priser visas öppet och utan dolda avgifter – Trafikverkets provavgifter tillkommer utöver paketpriset. Paketpriser gäller vid förskottsbetalning. MC-proven sker under säsongen april–oktober, så planera lektionerna och Risk 2 utifrån det. På översiktssidan hittar du <a href="mc-trafikskola.html">vårt kompletta MC-utbud</a>.</p>
+      <p class="inner-text">Alla priser visas öppet och utan dolda avgifter – Trafikverkets provavgifter tillkommer utöver paketpriset. Paketpriser gäller vid förskottsbetalning. MC-proven sker under säsongen april–oktober, så planera lektionerna och Risk 2 utifrån det.</p>
     </div>
   </div>
 </section>
@@ -416,7 +416,7 @@
       </div>
       <div class="feature-card" style="border: 2px solid var(--accent); color: var(--text-dark, #1a1a2e);">
         <div class="feature-card-icon"><i class="fa-solid fa-box-open"></i></div>
-        <h3 style="color: var(--primary);">Paket 2 – Mellan <span class="badge-best" style="font-size:0.75rem;">Populärast</span></h3>
+        <h3 style="color: var(--primary);">Paket 2 – Mellan</h3>
         <p><strong>13 500 SEK</strong></p>
         <p style="color: var(--text-mid, #555);">10 körlektioner (80 min), Riskettan (Risk 1), Risktvåan MC (Risk 2, halkbana) och teori online. Passar de flesta nybörjare. Spara 1 150 SEK.</p>
       </div>
@@ -450,17 +450,55 @@
   </div>
 </section>
 
-<section class="cta-banner">
+<section class="inner-contact-section" id="kontakt">
   <div class="container">
-    <h2>Behöver hjälp att välja paket?</h2>
-    <p>Vi hjälper dig välja rätt paket och komma igång mot MC-körkortet.</p>
-    <div class="cta-btn-group">
-      <a href="tel:+46700099924" class="btn-cta-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
-      <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-      <a href="mailto:andreskorskola@gmail.com" class="btn-cta-secondary"><i class="fa-solid fa-envelope"></i> Skicka e-post</a>
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Redo att börja?</h2>
+    <div style="text-align:center; margin-bottom:1rem;">
+      <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
+        <i class="fa-solid fa-calendar-check"></i> Boka lektion online
+      </a>
+    </div>
+    <div style="text-align:center; margin-bottom:2rem;">
+      <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Ring oss eller skicka ett SMS.</p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
+        <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
+      </div>
+      <p style="color:#555;">Du kan också fylla i formuläret så återkommer vi så snart vi kan.</p>
+    </div>
+    <div class="inner-contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
+        <div class="form-group">
+          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
+          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
+          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
+        </button>
+        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          Tack! Vi återkommer till dig så snart som möjligt.
+        </div>
+      </form>
     </div>
   </div>
 </section>
+
 
 <section class="faq-section bg-light">
   <div class="container">
@@ -529,56 +567,6 @@
           <p>Teoriprovet skrivs hos Trafikverket på Cederströmsgatan 1, 212 39 Malmö. MC-uppkörningen och Risktvåan sker hos Bulltoftabanan på Rimfrostgatan 5 i Malmö. MC-proven hos Trafikverket körs säsongsmässigt – från slutet av april till slutet av oktober – så planera dina körlektioner och Risk 2 utifrån det.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="inner-contact-section" id="kontakt">
-  <div class="container">
-    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">Redo att börja?</h2>
-    <div style="text-align:center; margin-bottom:1rem;">
-      <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
-        <i class="fa-solid fa-calendar-check"></i> Boka lektion online
-      </a>
-    </div>
-    <div style="text-align:center; margin-bottom:2rem;">
-      <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">Ring oss eller skicka ett SMS.</p>
-      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
-        <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> Ring oss</a>
-        <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> Skicka SMS</a>
-      </div>
-      <p style="color:#555;">Du kan också fylla i formuläret så återkommer vi så snart vi kan.</p>
-    </div>
-    <div class="inner-contact-form-wrap">
-      <form class="contact-form" id="contactForm" novalidate aria-label="Kontaktformulär">
-        <div class="form-group">
-          <label for="contactName" class="form-label">Namn <span aria-hidden="true">*</span></label>
-          <input type="text" id="contactName" name="name" class="form-input" placeholder="Ditt namn" required autocomplete="name" aria-required="true" />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="contactPhone" class="form-label">Telefon <span aria-hidden="true">*</span></label>
-            <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" />
-          </div>
-          <div class="form-group">
-            <label for="contactEmail" class="form-label">E-post <span aria-hidden="true">*</span></label>
-            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="din@email.com" required autocomplete="email" aria-required="true" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="contactMessage" class="form-label">Meddelande <span aria-hidden="true">*</span></label>
-          <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="Skriv ditt meddelande här..." required rows="5" aria-required="true"></textarea>
-        </div>
-        <button type="submit" class="btn-submit" id="submitBtn" aria-label="Skicka meddelande">
-          <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> SKICKA</span>
-          <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Skickar...</span>
-        </button>
-        <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
-          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-          Tack! Vi återkommer till dig så snart som möjligt.
-        </div>
-      </form>
     </div>
   </div>
 </section>
