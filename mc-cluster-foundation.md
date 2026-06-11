@@ -92,7 +92,7 @@ A-series pages cover license category eligibility (age requirements, vehicle res
 
 | File | Role | Status |
 |---|---|---|
-| `mc-korteknik-malmo.html` | MC technique reference (consolidated from 4 prior tier-2 technique pages) | KEEP — Tier 1 framework, 8 FAQs, ~777 lines |
+| `mc-korteknik-malmo.html` | MC technique reference (was consolidated from 4 prior tier-2 technique pages) | **RETIRED 2026-06-11** — redirect stub → `mc-uppkorning-malmo.html`. Lågfart/högfart/bromsning content already present on surviving page; countersteering FAQ folded in. Do not recreate. |
 
 ### 1.8 Trafikmiljö pages
 
@@ -125,12 +125,16 @@ Stub structure: `<meta http-equiv="refresh" content="0; url=TARGET">` + `<link r
 - `mc-korskola-skane.html`
 - `mc-bostadsomrade-malmo.html`
 
-**Tier 2 technique pages → `mc-korteknik-malmo.html` (no anchor):**
+**Tier 2 technique pages → `mc-uppkorning-malmo.html` (no anchor) [updated 2026-06-11 — previously pointed to mc-korteknik-malmo.html which is now itself a stub]:**
 
 - `mc-bromsteknik-malmo.html`
 - `mc-avancerad-teknik-malmo.html`
 - `mc-lagfartsbana-malmo.html`
 - `mc-hogfartsbana-malmo.html`
+
+**Retired technique page → `mc-uppkorning-malmo.html` (no anchor) [2026-06-11]:**
+
+- `mc-korteknik-malmo.html`
 
 **Tier 2 environment pages → `mc-korlektioner-malmo.html` (no anchor; folded as new sections):**
 
@@ -191,7 +195,7 @@ For cross-cluster B↔MC cannibalization, see `sitewide-foundation §19`.
 
 | Page | Owns | Don't bleed into |
 |---|---|---|
-| `mc-korteknik-malmo.html` | Comprehensive MC technique reference (consolidated) | Was 4 separate pages; the consolidated page owns the full technique territory now |
+| `mc-uppkorning-malmo.html` | Uppkörningsträning + absorbed technique content (lågfart, högfart, bromsning, motstyrning) | `mc-korteknik-malmo.html` is now a redirect stub — technique territory fully belongs to `mc-uppkorning-malmo.html` |
 
 ### 3.2 Within MC: service-page funnel
 
@@ -336,8 +340,8 @@ All surviving MC service-tier pages:
 - `mc-uppkorning-malmo.html`, `hyra-mc-uppkorning-malmo.html`
 - `mc-teori-malmo.html`, `mc-theory-english-malmo.html`, `mc-teori-arabiska-malmo.html`
 - `mc-lessons-english-malmo.html`, `mc-korkort-arabiska.html`
-- `mc-korteknik-malmo.html`
 - A-series: `a-korkort-malmo.html`, `a1-korkort-malmo.html`, `a2-korkort-malmo.html`
+- ~~`mc-korteknik-malmo.html`~~ — **retired 2026-06-11; now a noindex redirect stub**
 
 `Service.availableLanguage`: `["sv", "en", "ar"]` where instruction supports all three (most MC service pages).
 
@@ -374,9 +378,9 @@ Terms specific to MC-license vocabulary. Universal driving terms live in `sitewi
 | AM-behörighet | Moped class I authorization | Reference (also B context) |
 | Manöverprov MC | MC maneuvering test | `mc-uppkorning-malmo.html` |
 | Halkbana MC | MC skid pan (AB Bulltoftabanan) | `risktvaan-mc-malmo.html` |
-| Bromsteknik MC | MC braking technique | `mc-korteknik-malmo.html` |
-| Lågfartsbana | Low-speed maneuvering course (consolidated into mc-korteknik) | `mc-korteknik-malmo.html` |
-| Högfartsbana | High-speed track (consolidated into mc-korteknik) | `mc-korteknik-malmo.html` |
+| Bromsteknik MC | MC braking technique | `mc-uppkorning-malmo.html` |
+| Lågfartsbana | Low-speed maneuvering course | `mc-uppkorning-malmo.html` |
+| Högfartsbana | High-speed track | `mc-uppkorning-malmo.html` |
 | Skyddsutrustning | Protective gear (helmet, jacket, gloves, pants, boots) | MC pages |
 | Trehjuling | Three-wheeled motorcycle (not in current fleet) | Reference |
 
@@ -387,6 +391,7 @@ Terms specific to MC-license vocabulary. Universal driving terms live in `sitewi
 | Date | Change |
 |---|---|
 | 2026-05-19 | Created as part of foundation-split refactor. Populated §1 (cluster map + consolidation map + hub-link anchors) from auto-memory notes `project_mc_cluster_audit`, `project_consolidation_map`, `project_mc_hub_anchors`. Populated §4 (operational reference) from `project_mc_cluster_facts`. §2 (keyword mapping) deliberately left as stub per user directive (don't invent from page content). §3 (cannibalization) skeleton-populated; full per-pair detail expected when MC audit programme begins. Hreflang cluster definitions moved to `sitewide-foundation §16.3` (MC Lessons) and §16.4 (MC Theory). |
+| 2026-06-11 | `mc-korteknik-malmo.html` retired and converted to noindex redirect stub → `mc-uppkorning-malmo.html`. Content overlap resolved: lågfart/högfart/bromsning content already present on surviving page. Countersteering FAQ folded into `mc-uppkorning-malmo.html` (HTML + FAQPage schema). Four existing technique sub-stubs (mc-bromsteknik, mc-avancerad-teknik, mc-lagfartsbana, mc-hogfartsbana) retargeted directly to `mc-uppkorning-malmo.html` to eliminate double-redirect chain. `mc-korteknik-malmo.html` removed from sitemap.xml. §1.7, §1.11, §3.1, §5.1, §6 updated. |
 | 2026-05-19 | DrivingSchool sitewide canonicalization sweep landed (commit `a24152b`); 15 MC-cluster HTML files canonicalized to `sitewide-foundation §6` template (priceRange aligned `750-17990 SEK` → `790-17990 SEK`; `logo` added; `image` URL aligned from prior `mairan566.github.io` to `andrestrafikskola.se`; some `description` drift fixed). **`index.html` deferred to a dedicated homepage audit** (carries 6 SEO-valuable extras: `hasOfferCatalog`, `sameAs`, `knowsLanguage`, `paymentAccepted`, `currenciesAccepted`, `openingHoursSpecification`) — sitewide concern, mirrored in `b-cluster-foundation` change log for cross-reference. |
 | 2026-05-19 | Trust bar canonical added (§4.2). A-series pages folded into §1 scope as §1.2 (`a-korkort-malmo`, `a1-korkort-malmo`, `a2-korkort-malmo`). Subsection numbering in §1 and §4 shifted accordingly. |
 

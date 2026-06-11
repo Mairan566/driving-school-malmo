@@ -1281,10 +1281,10 @@ a.feature-card {
 /* Footer columns */
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1.5rem 2rem;
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
 }
 .footer-col-section h4 {
@@ -1311,13 +1311,38 @@ a.feature-card {
 .footer-col-section a:hover {
   color: #fff;
 }
+.footer-col-social {
+  display: flex;
+  flex-direction: column;
+}
+.footer-col-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 188, 212, 0.35);
+  background: rgba(0, 188, 212, 0.08);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  text-decoration: none;
+  margin-bottom: 0.45rem;
+}
+.footer-col-social a:hover {
+  background: rgba(0, 188, 212, 0.22);
+  color: #fff;
+  border-color: var(--accent);
+  text-decoration: none;
+}
 .footer-links-wide h4 {
   text-align: center;
 }
 .footer-links-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.25rem 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem 1rem;
 }
 .footer-col-section p {
   color: var(--text-muted, #ccc);
@@ -1331,6 +1356,7 @@ a.feature-card {
 @media (max-width: 768px) {
   .footer-columns {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
   }
 
   .page-hero-ctas.contact-box {
