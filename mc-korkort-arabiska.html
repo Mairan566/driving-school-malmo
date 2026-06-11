@@ -124,6 +124,49 @@
   ]
 }
   </script>
+<style>
+  /* Desktop: eyebrow + chevron hidden; step-head/panel are plain blocks */
+  .steps-section .step-eyebrow,
+  .steps-section .step-chevron { display: none; }
+
+  @media (max-width: 768px) {
+    .steps-section .steps-grid { gap: 0.6rem; margin-top: 1.25rem; }
+    .steps-section .step-card { padding: 0; text-align: right; overflow: hidden; }
+    .steps-section .step-card:hover { transform: none; box-shadow: var(--shadow-sm); border-color: var(--light-gray); }
+    .steps-section .step-card.open { border-color: var(--accent); }
+    .steps-section .step-number { display: none; }
+    .steps-section .step-head {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.95rem 1.05rem; cursor: pointer;
+      -webkit-tap-highlight-color: transparent; transition: background 0.2s;
+    }
+    .steps-section .step-head:hover,
+    .steps-section .step-card.open .step-head { background: var(--off-white, #f8f9fa); }
+    .steps-section .step-head:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .steps-section .step-icon {
+      flex-shrink: 0; width: 44px; height: 44px; margin: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; border-radius: 50%;
+      background: rgba(0,188,212,0.12); color: var(--accent);
+    }
+    .steps-section .step-head-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+    .steps-section .step-eyebrow {
+      display: block; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.07em; color: var(--accent);
+    }
+    .steps-section .step-head h3 { margin: 0; font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--primary); }
+    .steps-section .step-chevron {
+      flex-shrink: 0; width: 28px; height: 28px; display: flex;
+      align-items: center; justify-content: center; border-radius: 50%;
+      background: rgba(0,188,212,0.1); color: var(--accent);
+      font-size: 0.72rem; transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .steps-section .step-card.open .step-chevron { transform: rotate(180deg); background: var(--accent); color: var(--primary); }
+    .steps-section .step-panel { display: none; padding: 0 1.05rem 1.1rem; }
+    .steps-section .step-card.open .step-panel { display: block; }
+    .steps-section .step-panel p { margin: 0; }
+  }
+</style>
 </head>
 <body>
   <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
@@ -272,48 +315,104 @@
         <div class="container"><div class="section-intro">
           <h2 class="inner-section-heading">خطوات الحصول على رخصة الدراجة النارية</h2>
         </div>
-        <div class="steps-grid steps-grid--7">
+        <div class="steps-grid steps-grid--7 steps-animated">
           <div class="step-card">
             <div class="step-number">1</div>
-            <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <h3>تقديم طلب تصريح القيادة</h3>
-            <p>ابدأ بتقديم طلب تصريح تعلم القيادة (körkortstillstånd) لدى Transportstyrelsen. تحتاج فحص نظر وتعبئة استمارة صحية. التقديم سهل ويتم عبر الإنترنت.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 1</span>
+                <h3>تقديم طلب تصريح القيادة</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-1">
+              <p>ابدأ بتقديم طلب تصريح تعلم القيادة (körkortstillstånd) لدى Transportstyrelsen. تحتاج فحص نظر وتعبئة استمارة صحية. التقديم سهل ويتم عبر الإنترنت.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">2</div>
-            <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
-            <h3>احجز أول درس معنا</h3>
-            <p>اتصل بنا لحجز أول درس. نتعرف على مستوى خبرتك، نختار الرخصة المناسبة لك (A1 أو A2 أو A) ونضع خطة تدريب تناسبك.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 2</span>
+                <h3>احجز أول درس معنا</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-2">
+              <p><a href="https://elev.andrestrafikskola.se/login" style="color: var(--accent); text-decoration: underline;">احجز موعد لاول درس لك عبر الانترنت</a> او اتصل بنا لحجز أول درس. نتعرف على مستوى خبرتك، نختار الرخصة المناسبة لك (A1 أو A2 أو A) ونضع خطة تدريب تناسبك.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">3</div>
-            <div class="step-icon"><i class="fa-solid fa-motorcycle"></i></div>
-            <h3>التدريب العملي على القيادة</h3>
-            <p>تتدرب مع مدربينا ذوي الخبرة في ساحة التمارين وفي حركة المرور. التدريب يشمل المناورات (بسرعة منخفضة وعالية) والقيادة في بيئات مختلفة. نتكيف مع مستواك وأهدافك.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 3</span>
+                <h3>التدريب العملي على القيادة</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-3">
+              <p>تتدرب مع مدربينا ذوي الخبرة في ساحة التمارين وفي حركة المرور. التدريب يشمل المناورات (بسرعة منخفضة وعالية) والقيادة في بيئات مختلفة. نتكيف مع مستواك وأهدافك.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">4</div>
-            <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>دراسة النظرية</h3>
-            <p>بالتوازي مع دروس القيادة، تدرس النظرية عبر الكتب أو التطبيقات أو موادنا الرقمية. تتعلم قوانين المرور، الوعي بالمخاطر، ومواضيع خاصة بالدراجة النارية مثل التوازن والوضعية على الطريق والرؤية.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 4</span>
+                <h3>دراسة النظرية</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-4">
+              <p>بالتوازي مع دروس القيادة، تدرس النظرية عبر الكتب أو التطبيقات أو موادنا الرقمية. تتعلم قوانين المرور، الوعي بالمخاطر، ومواضيع خاصة بالدراجة النارية مثل التوازن والوضعية على الطريق والرؤية.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">5</div>
-            <div class="step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3>إكمال تدريب المخاطر (Riskettan و Risktvåan MC)</h3>
-            <p>تدريب المخاطر للدراجة النارية يتكون من جزأين: تدريب المخاطر 1 (Risk 1 MC) – نظرية عن المخاطر والكحول والمخدرات والتعب. تدريب المخاطر 2 (Risk 2 MC) – تمارين عملية تركز على أسلوب القيادة والسلامة. يجب إكمال الجزأين قبل الاختبارات وهما صالحان لمدة 5 سنوات.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 5</span>
+                <h3>إكمال تدريب المخاطر<br>(Riskettan و Risktvåan MC)</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-5">
+              <p>تدريب المخاطر للدراجة النارية يتكون من جزأين: تدريب المخاطر 1 (Risk 1 MC) – نظرية عن المخاطر والكحول والمخدرات والتعب. تدريب المخاطر 2 (Risk 2 MC) – تمارين عملية تركز على أسلوب القيادة والسلامة. يجب إكمال الجزأين قبل الاختبارات وهما صالحان لمدة 5 سنوات.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">6</div>
-            <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
-            <h3>حجز واجتياز اختبار النظرية</h3>
-            <p>احجز اختبار النظرية لدى Trafikverket عندما تشعر بالاستعداد. الاختبار يتكون من 65 سؤالاً وتحتاج 52 إجابة صحيحة على الأقل للنجاح. يمكنك التحضير بموادنا الرقمية. يجب اجتياز اختبار النظرية قبل اختبار القيادة العملي.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 6</span>
+                <h3>حجز واجتياز اختبار النظرية</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-6">
+              <p>احجز اختبار النظرية لدى Trafikverket عندما تشعر بالاستعداد. الاختبار يتكون من 65 سؤالاً وتحتاج 52 إجابة صحيحة على الأقل للنجاح. يمكنك التحضير بموادنا الرقمية. يجب اجتياز اختبار النظرية قبل اختبار القيادة العملي.</p>
+            </div>
           </div>
           <div class="step-card">
             <div class="step-number">7</div>
-            <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h3>اختبار القيادة والحصول على الرخصة</h3>
-            <p>عندما تكون جاهزاً نحجز لك اختبار القيادة لدى Trafikverket. الاختبار يتكون من جزء المناورات (بسرعة منخفضة وعالية) وجزء القيادة في حركة المرور حيث يتم تقييم سلامتك وتحكمك. بعد النجاح تحصل على النتيجة مباشرة ويمكنك البدء بالقيادة، ورخصتك تصل بالبريد.</p>
+            <div class="step-head">
+              <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
+              <div class="step-head-text">
+                <span class="step-eyebrow">الخطوة 7</span>
+                <h3>اختبار القيادة والحصول على الرخصة</h3>
+              </div>
+              <span class="step-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+            <div class="step-panel" id="step-panel-7">
+              <p>عندما تكون جاهزاً نحجز لك اختبار القيادة لدى Trafikverket. الاختبار يتكون من جزء المناورات (بسرعة منخفضة وعالية) وجزء القيادة في حركة المرور حيث يتم تقييم سلامتك وتحكمك. بعد النجاح تحصل على النتيجة مباشرة ويمكنك البدء بالقيادة، ورخصتك تصل بالبريد.</p>
+            </div>
           </div>
         </div></div>
       </section>
@@ -325,6 +424,56 @@
           <p class="inner-text">نحن نفهم التحديات التي يواجهها المتحدثون بالعربية عند تعلم القيادة في السويد. اللغة قد تكون عائقاً كبيراً في فهم قواعد المرور السويدية والمصطلحات التقنية. لذلك نقدم شرحاً بالعربية لمساعدتك على فهم كل شيء بوضوح – من قواعد الأولوية إلى الفرامل والتوازن.</p>
           <p class="inner-text">مدرسون معتمدون من Transportstyrelsen ذوو خبرة واسعة في تعليم القيادة. نستخدم دراجات نارية حديثة ومحافظ عليها جيداً. نقدم مواعيد مرنة في أيام الأسبوع وعطل نهاية الأسبوع لتتناسب مع جدولك الزمني.</p>
         </div></div>
+      </section>
+
+      <!-- ====== نموذج الاتصال ====== -->
+      <section class="inner-contact-section" id="contact">
+        <div class="container">
+          <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">هل أنت مستعد للبدء؟</h2>
+          <div style="text-align:center; margin-bottom:1rem;">
+            <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
+              <i class="fa-solid fa-calendar-check"></i> احجز درسك الآن
+            </a>
+          </div>
+          <div style="text-align:center; margin-bottom:2rem;">
+            <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">اتصل بنا أو أرسل رسالة SMS.</p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+              <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> اتصل بنا</a>
+              <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> أرسل رسالة</a>
+            </div>
+            <p style="color:#555;">أو املأ النموذج وسنعود إليك.</p>
+          </div>
+          <div class="inner-contact-form-wrap">
+            <form class="contact-form" id="contactForm" novalidate aria-label="نموذج الاتصال">
+              <div class="form-group">
+                <label for="contactName" class="form-label">الاسم <span aria-hidden="true">*</span></label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="اسمك" required autocomplete="name" aria-required="true" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactPhone" class="form-label">الهاتف <span aria-hidden="true">*</span></label>
+                  <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" dir="ltr" />
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">البريد الإلكتروني <span aria-hidden="true">*</span></label>
+                  <input type="email" id="contactEmail" name="email" class="form-input" placeholder="بريدك@email.com" required autocomplete="email" aria-required="true" dir="ltr" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">الرسالة <span aria-hidden="true">*</span></label>
+                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="اكتب رسالتك هنا..." required rows="5" aria-required="true"></textarea>
+              </div>
+              <button type="submit" class="btn-submit" id="submitBtn" aria-label="إرسال الرسالة">
+                <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> إرسال</span>
+                <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جاري الإرسال...</span>
+              </button>
+              <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                شكراً! سنعود إليك في أقرب وقت ممكن.
+              </div>
+            </form>
+          </div>
+        </div>
       </section>
 
       <!-- ====== أسئلة شائعة ====== -->
@@ -380,70 +529,6 @@
           </div>
         </div></div>
       </section>
-
-      <!-- ====== نموذج الاتصال ====== -->
-      <section class="inner-contact-section" id="contact">
-        <div class="container">
-          <h2 class="inner-section-heading" style="text-align:center; margin-bottom:0.5rem;">هل أنت مستعد للبدء؟</h2>
-          <div style="text-align:center; margin-bottom:1rem;">
-            <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
-              <i class="fa-solid fa-calendar-check"></i> احجز درسك الآن
-            </a>
-          </div>
-          <div style="text-align:center; margin-bottom:2rem;">
-            <p style="color:#555; margin-bottom:1rem; font-size:1.1rem;">اتصل بنا أو أرسل رسالة SMS.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
-              <a href="tel:+46700099924" class="btn-primary"><i class="fa-solid fa-phone"></i> اتصل بنا</a>
-              <a href="sms:+46700099924" class="btn-cta-sms"><i class="fa-solid fa-comment-sms"></i> أرسل رسالة</a>
-            </div>
-            <p style="color:#555;">أو املأ النموذج وسنعود إليك.</p>
-          </div>
-          <div class="inner-contact-form-wrap">
-            <form class="contact-form" id="contactForm" novalidate aria-label="نموذج الاتصال">
-              <div class="form-group">
-                <label for="contactName" class="form-label">الاسم <span aria-hidden="true">*</span></label>
-                <input type="text" id="contactName" name="name" class="form-input" placeholder="اسمك" required autocomplete="name" aria-required="true" />
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="contactPhone" class="form-label">الهاتف <span aria-hidden="true">*</span></label>
-                  <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+46 7XX XXX XXX" required autocomplete="tel" aria-required="true" dir="ltr" />
-                </div>
-                <div class="form-group">
-                  <label for="contactEmail" class="form-label">البريد الإلكتروني <span aria-hidden="true">*</span></label>
-                  <input type="email" id="contactEmail" name="email" class="form-input" placeholder="بريدك@email.com" required autocomplete="email" aria-required="true" dir="ltr" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="contactMessage" class="form-label">الرسالة <span aria-hidden="true">*</span></label>
-                <textarea id="contactMessage" name="message" class="form-input form-textarea" placeholder="اكتب رسالتك هنا..." required rows="5" aria-required="true"></textarea>
-              </div>
-              <button type="submit" class="btn-submit" id="submitBtn" aria-label="إرسال الرسالة">
-                <span class="btn-text"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> إرسال</span>
-                <span class="btn-loading" style="display:none;"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جاري الإرسال...</span>
-              </button>
-              <div class="form-success" id="formSuccess" role="alert" aria-live="polite" style="display:none;">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-                شكراً! سنعود إليك في أقرب وقت ممكن.
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-
-    <!-- ====== روابط ذات صلة ====== -->
-    <nav class="related-links" aria-label="صفحات ذات صلة">
-      <div class="container">
-        <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">صفحات ذات صلة</h3>
-        <div class="related-links-grid">
-          <a href="mc-teori-arabiska-malmo.html" class="related-link-btn"><i class="fa-solid fa-book"></i> نظرية MC بالعربي</a>
-          <a href="mc-trafikskola.html" class="related-link-btn"><i class="fa-solid fa-school"></i> MC Trafikskola</a>
-          <a href="mc-paket-malmo.html" class="related-link-btn"><i class="fa-solid fa-box"></i> الاسعار والاختيارات</a>
-          <a href="arabiska-korkort-malmo.html" class="related-link-btn"><i class="fa-solid fa-car"></i> رخصة السيارة بالعربية</a>
-          <a href="arabiska-teori-malmo.html" class="related-link-btn"><i class="fa-solid fa-laptop"></i> نظرية السيارة بالعربي</a>
-        </div>
-      </div>
-    </nav>
   </main>
 
   <footer class="footer" role="contentinfo" aria-label="Sidfot">
@@ -496,6 +581,55 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     btn.setAttribute('aria-expanded', !isOpen);
   });
 });
+</script>
+<script>
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var heads = Array.prototype.slice.call(
+      document.querySelectorAll('.steps-section .step-head')
+    );
+    if (!heads.length) return;
+
+    function toggle(head) {
+      var card = head.closest('.step-card');
+      var open = card.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) { toggle(e.currentTarget); }
+    function onKey(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault(); toggle(e.currentTarget);
+      }
+    }
+    function enable() {
+      heads.forEach(function (head) {
+        var card = head.closest('.step-card');
+        var panel = card.querySelector('.step-panel');
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        if (panel && panel.id) head.setAttribute('aria-controls', panel.id);
+        head.addEventListener('click', onClick);
+        head.addEventListener('keydown', onKey);
+      });
+    }
+    function disable() {
+      heads.forEach(function (head) {
+        head.removeAttribute('role');
+        head.removeAttribute('tabindex');
+        head.removeAttribute('aria-expanded');
+        head.removeAttribute('aria-controls');
+        head.removeEventListener('click', onClick);
+        head.removeEventListener('keydown', onKey);
+        head.closest('.step-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
 </script>
 <script src="js/main.js" defer></script>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>

@@ -6,6 +6,7 @@
   <title>MC Theory in English – Malmö | Andres Trafikskola</title>
   <meta name="description" content="Motorcycle theory preparation in English in Malmö – A1, A2 and A. The MC test is Swedish-only; we prepare you in English. Also in Swedish and Arabic.">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Andres Trafikskola">
   <link rel="canonical" href="https://andrestrafikskola.se/mc-theory-english-malmo.html">
   <meta name="geo.region" content="SE-M">
   <meta name="geo.placename" content="Malmö, Sweden">
@@ -20,6 +21,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://andrestrafikskola.se/mc-theory-english-malmo.html">
   <meta property="og:site_name" content="Andres Trafikskola" />
+  <meta property="og:locale" content="en">
   <meta property="og:image" content="https://andrestrafikskola.se/images/og-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -86,6 +88,19 @@
   }
   </script>
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "MC Theory in English – Malmö",
+  "description": "Digital study material in English to prepare for the Swedish motorcycle (MC) theory test at Trafikverket. Covers the five exam categories: vehicle knowledge, environment, traffic safety, traffic rules and personal factors.",
+  "provider": { "@type": "DrivingSchool", "name": "Andres Trafikskola", "sameAs": "https://andrestrafikskola.se/" },
+  "educationalLevel": "Beginner",
+  "inLanguage": "en",
+  "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "location": { "@type": "VirtualLocation", "url": "https://elev.andrestrafikskola.se/login" } },
+  "audience": { "@type": "EducationalAudience", "educationalRole": "student" }
+}
+  </script>
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -120,10 +135,50 @@
     {"@type":"Question","name":"How many questions are on the test?","acceptedAnswer":{"@type":"Answer","text":"The test has 70 questions in total — 5 are unscored pilot questions, and 65 are scored. You need at least 52 correct out of the 65 scored questions (80%) to pass. The test duration is 50 minutes."}},
     {"@type":"Question","name":"Do I need to pass the theory test before the riding test?","acceptedAnswer":{"@type":"Answer","text":"Yes, the theory test must be passed before you can book and take the practical riding test at Trafikverket."}},
     {"@type":"Question","name":"Is the MC theory test different from the car theory test?","acceptedAnswer":{"@type":"Answer","text":"Yes, while there is overlap in general traffic rules, the MC test includes motorcycle-specific questions about balance, braking, protective gear, positioning and riding techniques that are not on the car test."}},
-    {"@type":"Question","name":"What happens if I do not pass the test?","acceptedAnswer":{"@type":"Answer","text":"You can retake the test. There is no limit on the number of attempts, but you must pay the Trafikverket fee each time. We recommend studying thoroughly and making sure you are ready before booking to save time and money."}}
+    {"@type":"Question","name":"What happens if I do not pass the test?","acceptedAnswer":{"@type":"Answer","text":"You can retake the test. There is no limit on the number of attempts, but you must pay the Trafikverket fee each time. We recommend studying thoroughly and making sure you are ready before booking to save time and money."}},
+    {"@type":"Question","name":"How long is a passed theory test valid?","acceptedAnswer":{"@type":"Answer","text":"A passed MC theory test is valid for 1 year. You must take and pass the practical riding test within that period, otherwise you'll need to retake the theory test."}},
+    {"@type":"Question","name":"What subjects does the MC theory test cover?","acceptedAnswer":{"@type":"Answer","text":"The test covers five categories: vehicle knowledge (the motorcycle's technology), environment (fuel use and emissions), traffic safety (risks and protective gear), traffic rules (signs and right-of-way) and personal factors (fatigue, alcohol, drugs)."}},
+    {"@type":"Question","name":"How do I access the digital study material?","acceptedAnswer":{"@type":"Answer","text":"You study on our student portal at elev.andrestrafikskola.se. When you book an MC package or buy the theory material separately, you receive login details. On the portal you study theory, track your progress and can also book riding lessons. Contact us if you need help with your first login."}}
   ]
 }
 </script>
+<style>
+  .teori-cat-chevron { display: none; }
+  .teori-cat-panel { display: block; }
+
+  @media (max-width: 768px) {
+    .teori-cats-grid { display: flex; flex-direction: column; gap: 0.6rem; }
+    .teori-cats-grid > .teori-cat-card {
+      flex: 0 0 100% !important; max-width: 100% !important;
+      width: 100% !important; padding: 0 !important;
+      overflow: hidden; text-align: left !important; box-sizing: border-box;
+    }
+    .teori-cat-card:hover { transform: none !important; box-shadow: var(--shadow-sm) !important; }
+    .teori-cat-card.open { border-color: var(--accent); }
+    .teori-cat-head {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding: 0.95rem 1.05rem; cursor: pointer;
+      -webkit-tap-highlight-color: transparent; transition: background 0.2s;
+    }
+    .teori-cat-head:hover,
+    .teori-cat-card.open .teori-cat-head { background: var(--off-white, #f8f9fa); }
+    .teori-cat-head:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+    .teori-cat-head .feature-card-icon {
+      flex-shrink: 0; width: 44px; height: 44px; margin: 0; font-size: 1.1rem;
+    }
+    .teori-cat-head h3 { flex: 1; margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--primary); }
+    .teori-cat-chevron {
+      display: flex; flex-shrink: 0; width: 28px; height: 28px;
+      align-items: center; justify-content: center; border-radius: 50%;
+      background: rgba(0,188,212,0.1); color: var(--accent);
+      font-size: 0.72rem; transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+    .teori-cat-card.open .teori-cat-chevron { transform: rotate(180deg); background: var(--accent); color: var(--primary); }
+    .teori-cat-panel { display: none; padding: 0 1.05rem 1.1rem; }
+    .teori-cat-card.open .teori-cat-panel { display: block; }
+    .teori-cat-panel p { margin: 0; }
+  }
+</style>
 </head>
 <body>
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
@@ -191,7 +246,7 @@
         <span><i class="fa-solid fa-star"></i> Google 5.0</span>
         <span><i class="fa-solid fa-users"></i> 130+ reviews</span>
         <span><i class="fa-solid fa-language"></i> English support</span>
-        <span><i class="fa-solid fa-book-open"></i> Theory code</span>
+        <span><i class="fa-solid fa-a"></i> A1 · A2 · A</span>
         <span><i class="fa-solid fa-clipboard-check"></i> 70 questions</span>
       </div>
     </div>
@@ -207,97 +262,66 @@
         </div></div>
       </section>
 
-      <!-- ====== How we help ====== -->
-      <section class="content-section">
-        <div class="container"><div class="section-intro">
-          <h2 class="inner-section-heading">How we help you prepare</h2>
-        </div>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-laptop"></i></div>
-            <h3>Digital study materials</h3>
-            <p>Access comprehensive digital theory materials to study anytime, anywhere. Study at your own pace on your phone or computer.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-language"></i></div>
-            <h3>English explanations</h3>
-            <p>Our instructors explain Swedish traffic rules, road signs and motorcycle-specific topics in clear English so nothing gets lost in translation.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
-            <h3>MC-specific focus</h3>
-            <p>Beyond general traffic rules, we cover motorcycle-specific theory: balance, braking techniques, road positioning, visibility and protective gear.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-            <h3>Practice questions</h3>
-            <p>Test your knowledge with practice questions that mirror the real Trafikverket exam format before you book your test.</p>
-          </div>
-        </div></div>
-      </section>
-
-      <!-- ====== What the test covers ====== -->
+      <!-- ====== 5 categories ====== -->
       <section class="content-section bg-light">
-        <div class="container"><div class="section-intro">
-          <h2 class="inner-section-heading">What does the test cover?</h2>
-          <p class="inner-text">The Trafikverket motorcycle theory test includes questions on these key areas:</p>
+  <div class="container">
+    <h2 class="inner-section-heading" style="text-align:center; margin-bottom:2rem;">The 5 categories of the MC theory test</h2>
+    <div class="feature-grid teori-cats-grid">
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-motorcycle"></i></div>
+          <h3>Vehicle knowledge</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
         </div>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-signs-post"></i></div>
-            <h3>Traffic rules and road signs</h3>
-            <p>Swedish traffic regulations, road signs, right-of-way rules and speed limits. You need to know what each sign means and how to act accordingly.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h3>Risk awareness</h3>
-            <p>Hazard perception, effects of alcohol, drugs and fatigue, and how to handle dangerous situations. This part is very important on the test.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-road"></i></div>
-            <h3>Road behaviour</h3>
-            <p>Road positioning, safe following distance, overtaking, riding in different weather and road conditions.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-card-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-            <h3>MC-specific topics</h3>
-            <p>Balance and steering, braking techniques, protective equipment, passenger riding and motorcycle maintenance. These questions do not appear on the car test.</p>
-          </div>
-        </div></div>
-      </section>
+        <div class="teori-cat-panel">
+          <p>The motorcycle's technology and function: engine, brakes, transmission, tyres, suspension and electrical system. Understanding how your MC works helps you ride safely and spot faults.</p>
+        </div>
+      </div>
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Environment</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Fuel consumption, emissions and eco-friendly riding. How to ride fuel-efficiently, reduce emissions and lower your environmental impact through the way you ride.</p>
+        </div>
+      </div>
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Traffic safety</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Risks specific to motorcyclists: visibility, braking distances, cornering technique, grip and the importance of protective gear. How to protect yourself and others.</p>
+        </div>
+      </div>
+      <div class="feature-card teori-cat-card">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-signs-post"></i></div>
+          <h3>Traffic rules</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Road signs, traffic signals, right-of-way rules, speed limits and other regulations — the fundamental rules every rider must know.</p>
+        </div>
+      </div>
+      <div class="feature-card teori-cat-card center-all">
+        <div class="teori-cat-head">
+          <div class="feature-card-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3>Personal factors</h3>
+          <span class="teori-cat-chevron" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="teori-cat-panel">
+          <p>Fatigue, alcohol, drugs, medication, stress and peer pressure — how personal factors affect your ability to ride a motorcycle safely.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- ====== Steps to pass ====== -->
-      <section class="content-section steps-section">
-        <div class="container"><div class="section-intro">
-          <h2 class="inner-section-heading">Steps to pass the theory test</h2>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <div class="step-icon"><i class="fa-solid fa-phone"></i></div>
-            <h3>Contact us</h3>
-            <p>Call or send us an SMS. We discuss your experience level and which licence category (A1, A2 or A) suits you.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <div class="step-icon"><i class="fa-solid fa-book-open"></i></div>
-            <h3>Study the materials</h3>
-            <p>Use the digital theory materials to study traffic rules, risk awareness and MC-specific topics at your own pace.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
-            <h3>Practice tests</h3>
-            <p>Take practice exams to check your readiness. Our instructors can explain anything you find difficult in English.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h3>Pass the test</h3>
-            <p>Book your theory test at Trafikverket when you feel ready. The test is in Swedish — non-Swedish speakers can request an oral test (muntligt prov) with an interpreter when booking. You need 52 out of 65 correct answers to pass.</p>
-          </div>
-        </div></div>
-      </section>
+
 
       <!-- ====== Important information ====== -->
       <section class="content-section bg-white">
@@ -308,7 +332,15 @@
         </div></div>
       </section>
 
-      <!-- ====== FAQ ====== -->
+      <!-- ====== After you pass ====== -->
+      <section class="content-section bg-white">
+  <div class="container"><div class="section-intro">
+    <h2 class="inner-section-heading">After you pass the theory test</h2>
+    <p class="inner-text">Once you pass the MC theory test, your result is registered with Trafikverket and a passed theory test is valid for <strong>1 year</strong>. You must take and pass the practical riding test within that year — if you don't, you'll need to retake the theory test.</p>
+    <p class="inner-text">Before you can book the practical riding exam, you also need to have completed the motorcycle risk training — Riskettan (Risk 1) and Risktvåan MC (Risk 2) — and hold a valid learner's permit (körkortstillstånd). We help you plan the whole process in the right order so nothing holds you up. <a href="mc-lessons-english-malmo.html">See our MC lessons in English</a> or <a href="mc-paket-malmo.html">view prices &amp; packages</a>.</p>
+  </div></div>
+</section>
+
       <!-- ====== Contact form ====== -->
       <section class="inner-contact-section" id="contact">
         <div class="container">
@@ -409,22 +441,21 @@
               <p>You can retake the test. There is no limit on the number of attempts, but you must pay the Trafikverket fee each time. We recommend studying thoroughly and making sure you are ready before booking to save time and money.</p>
             </div>
           </div>
+<div class="faq-item">
+  <button class="faq-question" aria-expanded="false">How long is a passed theory test valid?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></button>
+  <div class="faq-answer"><p>A passed MC theory test is valid for 1 year. You must take and pass the practical riding test within that period, otherwise you'll need to retake the theory test.</p></div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" aria-expanded="false">What subjects does the MC theory test cover?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></button>
+  <div class="faq-answer"><p>The test covers five categories: vehicle knowledge (the motorcycle's technology), environment (fuel use and emissions), traffic safety (risks and protective gear), traffic rules (signs and right-of-way) and personal factors (fatigue, alcohol, drugs).</p></div>
+</div>
+<div class="faq-item">
+  <button class="faq-question" aria-expanded="false">How do I access the digital study material?<span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span></button>
+  <div class="faq-answer"><p>You study on our student portal at elev.andrestrafikskola.se. When you book an MC package or buy the theory material separately, you receive login details. On the portal you study theory, track your progress and can also book riding lessons. Contact us if you need help with your first login.</p></div>
+</div>
         </div></div>
       </section>
 
-    <!-- ====== Related Links ====== -->
-    <nav class="related-links" aria-label="Related pages">
-      <div class="container">
-        <h3 style="text-align:center; margin-bottom:1.5rem; color:var(--primary);">Related pages</h3>
-        <div class="related-links-grid">
-          <a href="mc-lessons-english-malmo.html" class="related-link-btn"><i class="fa-solid fa-motorcycle"></i> MC Lessons in English</a>
-          <a href="mc-trafikskola.html" class="related-link-btn"><i class="fa-solid fa-school"></i> MC Trafikskola</a>
-          <a href="mc-paket-malmo.html" class="related-link-btn"><i class="fa-solid fa-box"></i> Prices & packages</a>
-          <a href="driving-theory-english-malmo.html" class="related-link-btn"><i class="fa-solid fa-book"></i> Car Theory in English</a>
-          <a href="driving-lessons-english-malmo.html" class="related-link-btn"><i class="fa-solid fa-car"></i> Car Lessons in English</a>
-        </div>
-      </div>
-    </nav>
   </main>
 
   <footer class="footer" role="contentinfo" aria-label="Sidfot">
@@ -479,6 +510,40 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 </script>
 <script src="js/main.js" defer></script>
+<script>
+  (function () {
+    var mq = window.matchMedia('(max-width: 768px)');
+    var heads = Array.prototype.slice.call(document.querySelectorAll('.teori-cat-head'));
+    if (!heads.length) return;
+    function toggle(head) {
+      var card = head.closest('.teori-cat-card');
+      var open = card.classList.toggle('open');
+      head.setAttribute('aria-expanded', String(open));
+    }
+    function onClick(e) { toggle(e.currentTarget); }
+    function onKey(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); toggle(e.currentTarget); }
+    }
+    function enable() {
+      heads.forEach(function (head) {
+        head.setAttribute('role', 'button'); head.setAttribute('tabindex', '0'); head.setAttribute('aria-expanded', 'false');
+        head.addEventListener('click', onClick); head.addEventListener('keydown', onKey);
+      });
+    }
+    function disable() {
+      heads.forEach(function (head) {
+        head.removeAttribute('role'); head.removeAttribute('tabindex'); head.removeAttribute('aria-expanded');
+        head.removeEventListener('click', onClick); head.removeEventListener('keydown', onKey);
+        head.closest('.teori-cat-card').classList.remove('open');
+      });
+    }
+    function apply() { if (mq.matches) enable(); else disable(); }
+    apply();
+    var onChange = function () { disable(); apply(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+</script>
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-samtycke" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#fff;padding:16px 24px;z-index:9999;box-shadow:0 -2px 10px rgba(0,0,0,0.2);font-family:Poppins,sans-serif;font-size:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px"><p style="margin:0;flex:1;min-width:200px">Vi använder cookies för att förbättra din upplevelse. Genom att fortsätta använda sidan godkänner du vår <a href="integritetspolicy.html" style="color:#f0c040;text-decoration:underline">integritetspolicy</a>.</p><div style="display:flex;gap:8px"><button onclick="acceptCookies()" style="background:#f0c040;color:#1a1a2e;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;font-family:Poppins,sans-serif">Godkänn</button><button onclick="declineCookies()" style="background:transparent;color:#fff;border:1px solid #fff;padding:8px 20px;border-radius:4px;cursor:pointer;font-family:Poppins,sans-serif">Avvisa</button></div></div><script>function acceptCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","accepted")}function declineCookies(){document.getElementById("cookieBanner").style.display="none";localStorage.setItem("cookieConsent","declined")}if(!localStorage.getItem("cookieConsent")){document.getElementById("cookieBanner").style.display="flex"}</script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
