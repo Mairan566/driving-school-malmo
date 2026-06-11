@@ -184,13 +184,147 @@
   }
 
   /* ============================================================
-     STEPS — desktop unchanged; collapsible accordion on phones.
-     New wrapper elements (.step-head, .step-head-text, .step-panel)
-     are transparent blocks here, and .step-eyebrow / .step-chevron
-     are hidden, so >768px renders exactly like the original cards.
+     STEPS — collapsible accordion on all screen sizes.
+     Desktop (>768px): polished single-column list, first item
+     open by default. Mobile (≤768px): compact tap-to-expand.
   ============================================================ */
-  .steps-section .step-eyebrow,
-  .steps-section .step-chevron { display: none; }
+
+  /* ---- Desktop accordion ---- */
+  @media (min-width: 769px) {
+    /* Single-column list, centred */
+    .steps-section .steps-grid {
+      grid-template-columns: 1fr;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 0.55rem;
+    }
+    /* Cancel the complex 8-column span rules */
+    .steps-section .steps-grid--7 > .step-card,
+    .steps-section .steps-grid--7 > .step-card:nth-child(-n+4),
+    .steps-section .steps-grid--7 > .step-card:nth-child(5),
+    .steps-section .steps-grid--7 > .step-card:nth-child(6),
+    .steps-section .steps-grid--7 > .step-card:nth-child(7) { grid-column: auto; }
+
+    /* Card shell */
+    .steps-section .step-card {
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .steps-section .step-card:hover {
+      transform: none;
+      box-shadow: var(--shadow-sm);
+    }
+    .steps-section .step-card.open {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px rgba(0, 188, 212, 0.13);
+    }
+
+    /* Hide the absolute number badge — eyebrow text replaces it */
+    .steps-section .step-number { display: none; }
+
+    /* Clickable header row */
+    .steps-section .step-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.05rem 1.4rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .steps-section .step-head:hover { background: rgba(0, 188, 212, 0.04); }
+    .steps-section .step-card.open .step-head {
+      background: rgba(0, 188, 212, 0.05);
+      border-bottom: 1px solid rgba(0, 188, 212, 0.18);
+    }
+    .steps-section .step-head:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -2px;
+    }
+
+    /* Icon circle */
+    .steps-section .step-icon {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.12);
+      color: var(--accent);
+    }
+
+    /* Text block */
+    .steps-section .step-head-text {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .steps-section .step-eyebrow {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .steps-section .step-head h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+
+    /* Chevron pill */
+    .steps-section .step-chevron {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--accent);
+      font-size: 0.72rem;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+      margin-left: auto;
+    }
+    .steps-section .step-card.open .step-chevron {
+      transform: rotate(180deg);
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    /* Panel: hidden by default, smooth max-height expand */
+    .steps-section .step-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s ease, padding 0.38s ease;
+      padding: 0 1.4rem;
+    }
+    .steps-section .step-card.open .step-panel {
+      max-height: 500px;
+      padding: 1rem 1.4rem 1.3rem;
+    }
+    .steps-section .step-panel p { margin: 0; font-size: 0.95rem; line-height: 1.7; }
+    .steps-section .step-panel a {
+      color: var(--accent-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
 
   /* Phone view: turn each card into a tap-to-expand panel */
   @media (max-width: 768px) {
@@ -1112,7 +1246,7 @@
   <script>
   /* Steps – collapsible accordion on phones only (<=768px).
      Above that breakpoint the cards render fully expanded and the
-     headers stay plain (no button role), so desktop is untouched. */
+     first step auto-opens on desktop; independent tap-to-expand on mobile. */
   (function () {
     var mq = window.matchMedia('(max-width: 768px)');
     var heads = Array.prototype.slice.call(
@@ -1122,8 +1256,16 @@
 
     function toggle(head) {
       var card = head.closest('.step-card');
-      var open = card.classList.toggle('open');
-      head.setAttribute('aria-expanded', String(open));
+      var opening = !card.classList.contains('open');
+      // Desktop: close all others first (true accordion)
+      if (!mq.matches) {
+        heads.forEach(function (h) {
+          h.closest('.step-card').classList.remove('open');
+          h.setAttribute('aria-expanded', 'false');
+        });
+      }
+      card.classList.toggle('open', opening);
+      head.setAttribute('aria-expanded', String(opening));
     }
     function onClick(e) { toggle(e.currentTarget); }
     function onKey(e) {
@@ -1144,6 +1286,14 @@
         head.addEventListener('click', onClick);
         head.addEventListener('keydown', onKey);
       });
+      // Auto-open first step on desktop
+      if (!mq.matches && heads.length) {
+        var firstCard = heads[0].closest('.step-card');
+        if (!firstCard.classList.contains('open')) {
+          firstCard.classList.add('open');
+          heads[0].setAttribute('aria-expanded', 'true');
+        }
+      }
     }
     function disable() {
       heads.forEach(function (head) {
@@ -1156,7 +1306,7 @@
         head.closest('.step-card').classList.remove('open');
       });
     }
-    function apply() { if (mq.matches) enable(); else disable(); }
+    function apply() { enable(); }
 
     apply();
     var onChange = function () { disable(); apply(); };
