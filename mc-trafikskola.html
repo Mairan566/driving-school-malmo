@@ -521,37 +521,60 @@
     .svc-section .feature-card-more { margin-top: 0.7rem; }
   }
 
+  /* Dots hidden on desktop, shown on mobile via media query below */
+  .carousel-dots { display: none; }
+
   /* ---- MC category cards – horizontal snap carousel on mobile ---- */
   @media (max-width: 768px) {
     .feature-grid--carousel {
       flex-wrap: nowrap;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      scroll-padding-left: 1.25rem;
+      overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
       /* Bleed past .container padding so carousel spans edge-to-edge */
       margin-left: -1.25rem;
       margin-right: -1.25rem;
-      padding: 0.5rem 1.25rem 1rem;
+      /* 9vw = (100vw - 82vw) / 2 — puts A1 center exactly at viewport midpoint,
+         making snap-point = scrollLeft 0 (valid). Also pads right for A3. */
+      padding: 0.5rem 9vw 1rem;
       gap: 0.75rem;
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
     .feature-grid--carousel::-webkit-scrollbar { display: none; }
-    /* Trailing spacer keeps last card's right edge visible */
-    .feature-grid--carousel::after {
-      content: '';
-      display: block;
-      flex: 0 0 0.5rem;
-    }
     .feature-grid--carousel > .feature-card {
       flex: 0 0 82vw;
       max-width: 82vw;
-      scroll-snap-align: start;
+      scroll-snap-align: center;
     }
     .feature-grid--carousel > .feature-card:hover {
       transform: none;
       box-shadow: var(--shadow-sm);
+    }
+    /* Pagination dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      background: rgba(0, 188, 212, 0.3);
+      cursor: pointer;
+      transition: background 0.25s, width 0.25s, border-radius 0.25s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .carousel-dot.active {
+      background: var(--accent);
+      width: 20px;
+      border-radius: 4px;
     }
   }
 </style>
@@ -712,6 +735,11 @@
             <p>Från 24 år, eller från 21 år om du haft A2-behörighet i minst 2 år. Inga effektbegränsningar – kör vilken motorcykel du vill, inklusive vår BMW F800 GS.</p>
             <span class="feature-card-more">Läs mer om A-körkort <i class="fa-solid fa-arrow-right"></i></span>
           </a>
+        </div>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" type="button" aria-label="A1 – Lätt motorcykel"></button>
+          <button class="carousel-dot" type="button" aria-label="A2 – Mellanstor MC"></button>
+          <button class="carousel-dot" type="button" aria-label="A – Full effekt"></button>
         </div>
       </div>
     </section>
@@ -1379,6 +1407,41 @@
     var onChange = function () { disable(); apply(); };
     if (mq.addEventListener) mq.addEventListener('change', onChange);
     else if (mq.addListener) mq.addListener(onChange);
+  })();
+  </script>
+  <script>
+  /* MC category carousel – dot sync */
+  (function () {
+    var grid = document.querySelector('.feature-grid--carousel');
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.carousel-dot'));
+    if (!grid || !dots.length) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.feature-card'));
+    if (!cards.length) return;
+
+    function updateDots() {
+      var gridRect = grid.getBoundingClientRect();
+      var cx = gridRect.left + gridRect.width / 2;
+      var best = 0, bestDist = Infinity;
+      cards.forEach(function (card, i) {
+        var r = card.getBoundingClientRect();
+        var dist = Math.abs(r.left + r.width / 2 - cx);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      });
+      dots.forEach(function (dot, i) { dot.classList.toggle('active', i === best); });
+    }
+
+    grid.addEventListener('scroll', updateDots, { passive: true });
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        var r = cards[i].getBoundingClientRect();
+        var gr = grid.getBoundingClientRect();
+        var scrollTarget = grid.scrollLeft + (r.left + r.width / 2) - (gr.left + gr.width / 2);
+        grid.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
+      });
+    });
+
+    updateDots();
   })();
   </script>
   <script src="js/main.js" defer></script>
