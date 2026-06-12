@@ -529,6 +529,7 @@
     .feature-grid--carousel {
       flex-wrap: nowrap;
       overflow-x: auto;
+      justify-content: flex-start;
       scroll-snap-type: x mandatory;
       overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
@@ -737,8 +738,8 @@
           </a>
         </div>
         <div class="carousel-dots">
-          <button class="carousel-dot active" type="button" aria-label="A1 – Lätt motorcykel"></button>
-          <button class="carousel-dot" type="button" aria-label="A2 – Mellanstor MC"></button>
+          <button class="carousel-dot" type="button" aria-label="A1 – Lätt motorcykel"></button>
+          <button class="carousel-dot active" type="button" aria-label="A2 – Mellanstor MC"></button>
           <button class="carousel-dot" type="button" aria-label="A – Full effekt"></button>
         </div>
       </div>
@@ -1431,6 +1432,11 @@
     }
 
     grid.addEventListener('scroll', updateDots, { passive: true });
+
+    // Start at A2 (middle card)
+    var r0 = cards[1].getBoundingClientRect();
+    var g0 = grid.getBoundingClientRect();
+    grid.scrollLeft = Math.max(0, (r0.left + r0.width / 2) - (g0.left + g0.width / 2));
 
     dots.forEach(function (dot, i) {
       dot.addEventListener('click', function () {
