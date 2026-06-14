@@ -384,8 +384,6 @@ For a regulated industry like driving education, these gaps are significant.
 | 10 | bostadsomrade-korning-malmo.html | 51 | Yes | Yes | DS, S, FAQ, BL | -- |
 | 11 | driving-lessons-english-malmo.html | 56 | Yes | Yes | DS, S, BL | -- |
 | 12 | driving-theory-english-malmo.html | 55 | Yes | Yes | DS, S, BL | -- |
-| 13 | faq-korkort.html | 56 | Yes | Yes | FAQ, BL | -- |
-| 14 | faq-mc-korkort.html | 59 | Yes | Yes | FAQ, BL | -- |
 | 15 | hyra-mc-uppkorning-malmo.html | 51 | Yes | Yes | DS, S, BL, FAQ | -- |
 | 16 | index.html | 49 | Yes | Yes | DS, FAQ | -- |
 | 17 | intensivkurs-korkort-malmo.html | 48 | Yes | Yes | DS, S, BL | -- |

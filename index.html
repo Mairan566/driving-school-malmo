@@ -135,6 +135,41 @@
     }
   }
 
+  /* ---- Footer social column ---- */
+  .footer-col-social {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-col-social h4 {
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+  }
+  .footer-col-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 188, 212, 0.35);
+    background: rgba(0, 188, 212, 0.08);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    margin-bottom: 0.45rem;
+    width: fit-content;
+  }
+  .footer-col-social a:hover {
+    background: rgba(0, 188, 212, 0.22);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
   /* Platform cards – horizontal snap carousel (mobile only) */
   .platform-carousel-dots { display: none; }
   @media (max-width: 768px) {
@@ -236,27 +271,13 @@
         <a href="https://elev.andrestrafikskola.se/" target="_blank" rel="noopener noreferrer" class="btn-cta-primary" style="color:#fff;">
           <i class="fa-solid fa-calendar-check"></i> Boka lektion online
         </a>
-      </div>
-      <div class="hero-top-btns" style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
-        <a href="https://maps.app.goo.gl/LGEG8iZpSkfx2e7r5" target="_blank" rel="noopener noreferrer" class="btn-cta-sms" style="margin:0;"><i class="fa-solid fa-star"></i> Se våra recensioner! 5.0 <i class="fa-solid fa-star"></i></a>
-      </div>
-      <div class="page-hero-ctas contact-box">
-        <span class="contact-box-title">Kontakta oss</span>
-        <a href="tel:+46700099924" class="btn-primary" aria-label="Ring oss">
-          <i class="fa-solid fa-phone"></i>
-          <span class="btn-label-full">Ring oss</span>
-          <span class="btn-label-short">Ring</span>
-        </a>
-        <a href="sms:+46700099924" class="btn-cta-sms" aria-label="Skicka SMS">
-          <i class="fa-solid fa-comment-sms"></i>
-          <span class="btn-label-full">Skicka SMS</span>
-          <span class="btn-label-short">SMS</span>
-        </a>
-        <a href="mailto:andreskorskola@gmail.com" class="btn-cta-sms" id="emailCta" aria-label="Skicka e-post">
-          <i class="fa-solid fa-envelope"></i>
-          <span class="btn-label-full">Skicka e-post</span>
-          <span class="btn-label-short">E-post</span>
-        </a>
+        <div style="margin-top:0.75rem;">
+          <a href="tel:+46700099924" class="btn-primary" aria-label="Ring oss">
+            <i class="fa-solid fa-phone"></i>
+            <span class="btn-label-full">Ring oss</span>
+            <span class="btn-label-short">Ring</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -1390,12 +1411,10 @@
       </div>
       <div class="footer-nav-col">
         <h4>Information</h4>
-        <a href="faq-korkort.html">FAQ Bil</a>
-        <a href="faq-mc-korkort.html">FAQ MC</a>
         <a href="integritetspolicy.html">Integritetspolicy</a>
         <a href="villkor.html">Villkor</a>
       </div>
-      <div class="footer-nav-col">
+      <div class="footer-col-section footer-col-social">
         <h4>Sociala medier</h4>
         <a href="https://www.facebook.com/andrestrafikskola" target="_blank" rel="noopener noreferrer" aria-label="Besök oss på Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</a>
         <a href="https://www.instagram.com/andrestrafikskola" target="_blank" rel="noopener noreferrer" aria-label="Besök oss på Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>

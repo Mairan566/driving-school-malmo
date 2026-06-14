@@ -98,12 +98,6 @@ A-series pages cover license category eligibility (age requirements, vehicle res
 
 After the consolidation pivot, MC trafikmiljö pages were folded as new sections into `mc-korlektioner-malmo.html`. Surviving page is the hub/lessons aggregator.
 
-### 1.9 FAQ
-
-| File | Role | Status |
-|---|---|---|
-| `faq-mc-korkort.html` | MC FAQ hub | KEEP — questions must NOT duplicate per-service-page FAQs |
-
 ### 1.10 Out-of-cluster / utility
 
 Shared with B-cluster (`index.html`, `404.html`, `integritetspolicy.html`, `villkor.html`).
@@ -223,10 +217,6 @@ For cross-cluster B↔MC cannibalization, see `sitewide-foundation §19`.
 ### 3.5 Within MC: A-series ↔ MC service pages
 
 A-series pages (§1.2) and MC service pages (§1.3) cover overlapping search intent (someone searching `a2-körkort malmö` may also be a candidate for MC lessons/packages). Differentiation rule: A-series pages own license-category eligibility and step-up rules (age, kW limits, A1→A2→A progression). MC service pages own pricing/scheduling/instructor/fleet. A-series pages cross-link to MC service pages for the conversion path; MC service pages cross-link back for category-specific eligibility detail.
-
-### 3.6 Within MC: FAQ duplication
-
-Per-page MC FAQs must NOT duplicate questions on `faq-mc-korkort.html`. Audit each MC service page's FAQs against the FAQ hub during per-page audits. Same editorial pattern as B's `faq-korkort.html` watchlist. Technical FAQPage rules (schema/HTML byte-match) are sitewide — see `sitewide-foundation §9`.
 
 ---
 

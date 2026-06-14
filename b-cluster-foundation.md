@@ -126,12 +126,6 @@ All 13 are confirmed quality (genuine local content, not templated). All keep.
 
 *Filename consistency: 7 of 13 omit the `-malmo` suffix. Document only; do not rename slugs (requires 301 redirects, deferred to deployment).*
 
-### 1.9 FAQ (1 page)
-
-| File | Role | Status |
-|---|---|---|
-| `faq-korkort.html` | B-license FAQ hub | KEEP — audit. Questions must NOT duplicate per-service-page FAQs. |
-
 ### 1.10 Out-of-cluster / utility
 
 Shared with MC-cluster (`index.html`, `404.html`, `integritetspolicy.html`, `villkor.html`).
@@ -470,16 +464,6 @@ Each page owns one neighborhood-level keyword cluster. Cannibalization between n
 - **Secondary:** `körskola västra hamnen malmö`, `körskola i västra hamnen`, `trafikskola västra hamnen`, `körkort västra hamnen malmö`
 - **Audit notes:** Newer development, modern grid streets, heavy cyclist traffic, Turning Torso area. Cross-link to `stadstrafik-malmo.html` and `bostadsomrade-korning-malmo.html`.
 
-### 2.9 FAQ
-
-#### `faq-korkort.html`
-
-- **Primary:** `vanliga frågor körkort malmö`
-- **Secondary:** `faq körkort malmö`, `körkort frågor och svar`, `b-körkort vanliga frågor`
-- **Intent:** Informational
-- **Audit notes:** Questions on this page must NOT duplicate per-service-page FAQs. This page asks broader cross-cutting questions (general "hur tar man körkort," general process questions). Service-page FAQs answer questions specific to that service. Audit must check every service page's FAQs against faq-korkort.html for duplicates.
-- **Cannibalization watch:** §3.7 (FAQ duplication within B-cluster). Technical schema/HTML rule per `sitewide-foundation §9`.
-
 ---
 
 ## 3. B Cannibalization Watchlist (within-cluster)
@@ -527,12 +511,6 @@ For cross-cluster B ↔ MC cannibalization, see `sitewide-foundation §19`.
 | `landsvagskoring-malmo.html` | `motorvagskoring-malmo.html` | both are higher-speed roads | Naturally distinct: landsväg = 70-90 km/h with möten/omkörning. Motorväg = 110+ km/h with påfart/avfart/filbyte. |
 | `rondelltraning-malmo.html` | `manovrering-vandning-malmo.html` | both involve turning | Rondell = navigating a circular intersection. Manövrering = three-point turns / U-svängar. |
 | `uppkorning-malmo.html` | `uppkorningsrutter-malmo.html` | both about the driving test | Uppkörning = the test as a service (booking, what to expect). Uppkorningsrutter = the routes (informational prep). |
-
-### 3.6 FAQ duplication watch (within B-cluster)
-
-| Source | Risk |
-|---|---|
-| `faq-korkort.html` (B FAQ hub) | ⚠️ Service pages each have their own FAQs. These must NOT repeat questions verbatim. faq-korkort.html asks broader cross-cutting questions. Service-page FAQs answer service-specific questions. During audit, check every service page's FAQs against faq-korkort.html for duplicates and rewrite. Technical schema/HTML rule per `sitewide-foundation §9`. |
 
 ### 3.7 Special audience-overlap watch (positive cross-link)
 
